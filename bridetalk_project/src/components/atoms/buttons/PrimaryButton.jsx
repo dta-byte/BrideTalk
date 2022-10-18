@@ -1,8 +1,9 @@
 import React from 'react'
+import './primarybutton.css'
 
 export const PrimaryButton = ({ children }) => {
     return (
-        <button type="button">
+        <button class="primarybutton">
             {children}
         </button>
     );
