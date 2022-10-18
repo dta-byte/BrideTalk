@@ -1,8 +1,9 @@
-import React from 'React';
+import React from 'react'
 
-export const PrimaryButton = () => {
-    return ( 
-        <Button variant = "contained"> nabkjnfkj</Button>
-
-    )
-}
+export const PrimaryButton = ({ children }) => {
+    return (
+        <button type="button">
+            {children}
+        </button>
+    );
+};

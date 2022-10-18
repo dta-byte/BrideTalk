@@ -1,13 +1,15 @@
 import { PrimaryButton } from "../../atoms"
-
+import { useState } from "react";
 
 export const HomePage = () => {
+
+
+   
+
     return (
-        <>
-        <PrimaryButton></PrimaryButton>
         <div>
-            HomePage!!!
-        </div>
-                </>
+       <PrimaryButton>{"Knappe navn"}</PrimaryButton>
+      </div>
+          
     )
 } 
