@@ -10,7 +10,7 @@ export const MasterLayout = () => {
             <Routes>
             {/* Public route for HomePage */}
             <Route path="/" element={<HomePage />}>
-
+           
             </Route>
             </Routes>
         </BrowserRouter>
