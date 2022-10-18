@@ -1,10 +1,9 @@
 import './App.css';
-import { HomePage } from "./components/pages/HomePage/HomePage" 
-
+import { MasterLayout } from "./components/pages/MasterLayout";
 function App() {
   return (
     <>
-    <HomePage></HomePage>
+    <MasterLayout/>
     </>
   );
 }
