@@ -1,9 +1,9 @@
-
+import { MainHeadline } from "../../atoms"
 
 export const LoginPage = () => {
     return (
         <div>
-      LogIn page
+        <MainHeadline headline="Log in!"></MainHeadline>
       </div>
           
     )
