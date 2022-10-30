@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Inter";
+    src: url(" https://github.com/rsms/inter");
+  }
+
+.form{
+        background-color: hsl(346, 58%, 98%);
+        border-radius: 5px;
+        width: 370px;
+        margin: 20px auto;
+        border-radius: 40px;
+    
+}
+
