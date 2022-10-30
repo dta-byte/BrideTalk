@@ -3,12 +3,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./homepage/HomePage";
 import { LoginPage } from "./login/LogInPage";
 import { CreateUserPage } from "./create-user/CreateUserPage";
+import { Footer } from "../molecule/navigation/footer/Footer";
+
+import "./masterlayout.css"
+import { Navbar } from "../molecule/navigation/navbar/Navbar";
+
 
 export const MasterLayout = () => {
     return (
         <>
+        
         <BrowserRouter>
 
+        <div className="img">
+        <Navbar></Navbar>
             <Routes>
             {/* Public route for HomePage */}
             <Route path="/" element={<HomePage />}></Route>
@@ -20,7 +28,8 @@ export const MasterLayout = () => {
             <Route path="/create-user" element={<CreateUserPage />}></Route> 
 
             </Routes>
-            
+            <Footer></Footer>
+            </div>
         </BrowserRouter>
         </>
     )
