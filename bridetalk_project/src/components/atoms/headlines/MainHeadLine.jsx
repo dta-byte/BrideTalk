@@ -1,4 +1,5 @@
 import React from "react";
+import "./mainheadline.css";
 
 export const MainHeadline = (props) => {
   const { headline } = props;
