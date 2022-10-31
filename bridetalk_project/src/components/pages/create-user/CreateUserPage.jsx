@@ -1,9 +1,26 @@
 import { CreateUserForm } from "../../molecule";
-
+import "./createuserpage.css";
 export const CreateUserPage = () => {
   return (
-    <div>
-      <CreateUserForm></CreateUserForm>
+    <div class="flex-container">
+      <div class="flex-child 1">
+        <CreateUserForm></CreateUserForm>
+      </div>
+
+      <div class="flex-child2">
+        <div className="info">
+          <p>Connect with other future brides.</p>
+          <p>
+            Bride Talk is a platform that allows you to find group chats about
+            specific wedding topics.{" "}
+          </p>
+          <p>
+            You can chose to connect with people in a specific area to make sure
+            their recommendations are useful for you.
+          </p>
+          <p>Create a free profile and start chatting</p>
+        </div>
+      </div>
     </div>
   );
 };
