@@ -3,15 +3,17 @@
     src: url(" https://github.com/rsms/inter");
   }
 
- 
-  
-.primarybutton{
+
+.primarybutton2{
     background-color: hsl(345, 39%, 67%);
-    padding: 2%;
-    border-radius: 25px;
+    padding-left: 2.5%;
+    padding-right:2.5%;
+    padding-top: 0.8%;
+    padding-bottom: 0.8%;
+    border-radius: 8px;
     font-family: "Inter";
     border-color: hsl(345, 39%, 67%);
     color: hsl(0, 11%, 0%);
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;   
 }

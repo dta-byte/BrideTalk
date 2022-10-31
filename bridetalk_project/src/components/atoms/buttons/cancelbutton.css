@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Inter";
+    src: url(" https://github.com/rsms/inter");
+  }
+
+
+.cancelbutton{
+    background-color: hsl(0, 0%, 85%);
+    padding-left: 2.5%;
+    padding-right:2.5%;
+    padding-top: 0.8%;
+    padding-bottom: 0.8%;
+    border-radius: 8px;
+    font-family: "Inter";
+    border-color: hsl(0, 0%, 85%);
+    color: hsl(0, 11%, 0%);
+    font-size: 12px;
+    font-weight: bold;   
+    margin-top: 15px;
+    margin-right: 5px;
+    margin-left: 30%;
+
+}
