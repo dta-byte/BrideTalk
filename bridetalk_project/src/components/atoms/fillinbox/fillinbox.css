@@ -12,23 +12,23 @@
     margin-left: 28%;
   }
 
-  .dropdown {
-    padding: 10px 10px;
-    margin-left: 28%;
-  }
 
-  .form__label {
-    width: 60%;
-    color: hsl(0, 0%, 20%);
-  }
+    .dropdown {
+        padding: 10px 10px;
+        margin-left: 28%;
+        line-height: 1.4;
+    }
+    
+    .form__label{
+        width: 60%;
+        color:hsl(0, 0%, 20%);
+        line-height: 1.4;
+    }
 
-  .footer {
-    text-align: center;
-  }
-
-  .question {
-    text-align: center;
-  }
+.question{
+   text-align: center;
+ 
+}
 
   .headline {
     text-align: center;

@@ -1,10 +1,9 @@
 @font-face {
-    font-family: "Inter";
-    src: url(" https://github.com/rsms/inter");
-  }
+  font-family: "Inter";
+  src: url(" https://github.com/rsms/inter");
+}
 
- 
-  
+
 .primarybutton{
   background-color: hsl(345, 39%, 67%);
   padding-left: 2.5%;
