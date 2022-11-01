@@ -7,29 +7,29 @@
   color: hsl(0, 0%, 20%);
 }
 
-.form-body {
-  padding: 10px 10px;
-  margin-left: 28%;
-}
+  .form-body {
+    padding: 10px 10px;
+    margin-left: 28%;
+  }
 
-.dropdown {
-  padding: 10px 10px;
-  margin-left: 28%;
-}
+  .dropdown {
+    padding: 10px 10px;
+    margin-left: 28%;
+  }
 
-.form__label {
-  width: 60%;
-  color: hsl(0, 0%, 20%);
-}
+  .form__label {
+    width: 60%;
+    color: hsl(0, 0%, 20%);
+  }
 
-.footer {
-  text-align: center;
-}
+  .footer {
+    text-align: center;
+  }
 
-.question {
-  text-align: center;
-}
+  .question {
+    text-align: center;
+  }
 
-.headline {
-  text-align: center;
-}
+  .headline {
+    text-align: center;
+  }
