@@ -3,12 +3,27 @@
     src: url(" https://github.com/rsms/inter");
   }
 
-.form{
-        background-color: hsl(346, 58%, 98%);
-        border-radius: 5px;
-        width: 370px;
-        margin: 20px auto;
-        border-radius: 40px;
-    
+.flex-container {
+    display: flex;
 }
 
+
+
+.flex-child:first-child {
+    margin-left: 200px;
+    margin-right: 10px;
+} 
+
+.info{
+background-color:hsl(346, 58%, 98%) ;
+text-align: left;
+border-radius: 40px;
+width: 55%;
+line-height: 1.8;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-right:25px;
+padding-left:40px;
+margin-left: 120px;
+margin-top: 120px;
+}

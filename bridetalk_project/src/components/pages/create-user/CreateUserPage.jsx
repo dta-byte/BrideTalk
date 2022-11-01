@@ -1,43 +1,25 @@
-import {
-  CenteredHeadline,
-  PrimaryButton2,
-  CancelButton,
-  EnterText,
-  EnterEmail,
-  EnterPassword,
-  Dropdown,
-} from "../../atoms";
+import { CreateUserForm } from "../../molecule";
 import "./createuserpage.css";
 export const CreateUserPage = () => {
   return (
-    <div>
-      <div className="form">
-        <CenteredHeadline headline="Sign up to Bride Talk"></CenteredHeadline>
-        <div
-          className="question"
-          style={{
-            paddingBottom: "15px",
-            paddingTop: "0px",
-          }}
-        >
-          Already a user?{" "}
-          <span
-            style={{
-              fontWeight: "bold",
-              textDecoration: "underline",
-            }}
-          >
-            Log in here
-          </span>
+    <div class="flex-container">
+      <div class="flex-child 1">
+        <CreateUserForm></CreateUserForm>
+      </div>
+
+      <div class="flex-child2">
+        <div className="info">
+          <p>Connect with other future brides.</p>
+          <p>
+            Bride Talk is a platform that allows you to find group chats about
+            specific wedding topics.{" "}
+          </p>
+          <p>
+            You can chose to connect with people in a specific area to make sure
+            their recommendations are useful for you.
+          </p>
+          <p>Create a free profile and start chatting</p>
         </div>
-        <EnterText text="First Name "></EnterText>
-        <EnterText text="Last Name "></EnterText>
-        <EnterEmail email="Email "></EnterEmail>
-        <EnterPassword password="Password"></EnterPassword>
-        <EnterPassword password="Confirm Password"></EnterPassword>
-        <Dropdown question="Which locations are you interested in?"></Dropdown>
-        <CancelButton>{"Go back"}</CancelButton>
-        <PrimaryButton2>{"Sign me up"}</PrimaryButton2>
       </div>
     </div>
   );
