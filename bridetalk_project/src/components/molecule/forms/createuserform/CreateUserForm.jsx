@@ -5,7 +5,7 @@ import {
   EnterText,
   EnterEmail,
   EnterPassword,
-  Dropdown,
+  DropdownLocation,
 } from "../../../atoms";
 import "./createuserform.css";
 
@@ -40,7 +40,7 @@ export const CreateUserForm = () => {
         <EnterEmail email="Email "></EnterEmail>
         <EnterPassword password="Password"></EnterPassword>
         <EnterPassword password="Confirm Password"></EnterPassword>
-        <Dropdown question="Which locations are you interested in?"></Dropdown>
+        <DropdownLocation question="Which locations are you interested in?"></DropdownLocation>
         <CancelButton>{"Go back"}</CancelButton>
         <TestButton text={"Sign me up"} handleClick={handeClick}></TestButton>
       </div>
