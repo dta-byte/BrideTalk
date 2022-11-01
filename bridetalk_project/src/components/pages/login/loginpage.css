@@ -1,33 +1,24 @@
 .login-container {
-  width: 45%;
-  background-color: hsl(345, 52%, 98%);
-  margin-left: 30px;
+  width: 30%;
+  background-color: hsl(346, 58%, 98%);
   height: 80%;
-  padding: 5px 10px 10px 10px;
-  border-radius: 10px;
+  padding: 20px 10px 40px 10px;
+  border-radius: 35px;
   display: block;
   text-align: center;
+  margin: 60px auto;
 }
 
 .login-fields-container {
-  margin: 10% 20% 15% 18%;
   text-align: start;
   display: block;
+  margin-top: 10px;
+  margin-bottom: 10p;
 }
 
-#e-mail-text {
-  margin-bottom: -15px;
-  font: inter;
+.forgot-password{
+  margin-left: 28%;
+  margin-bottom: 40px;
 }
 
-#e-mail-input {
-  margin-bottom: 15px;
-}
 
-#password-text {
-  margin-bottom: -15px;
-}
-
-#password-input {
-  margin-bottom: 25px;
-}

@@ -1,16 +1,17 @@
-.form{
-    background-color: hsl(346, 58%, 98%);
-    border-radius: 40px;
-    width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    color: hsl(0, 0%, 20%);
-      }
+.form {
+  background-color: hsl(346, 58%, 98%);
+  border-radius: 40px;
+  width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  color: hsl(0, 0%, 20%);
+}
 
-      .form-body{
-        padding: 10px 10px;
-        margin-left: 28%;
-    }
+  .form-body {
+    padding: 10px 10px;
+    margin-left: 28%;
+  }
+
 
     .dropdown {
         padding: 10px 10px;
@@ -29,6 +30,6 @@
  
 }
 
-.headline {
+  .headline {
     text-align: center;
-}
+  }
