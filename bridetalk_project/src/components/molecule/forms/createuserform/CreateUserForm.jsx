@@ -27,6 +27,7 @@ export const CreateUserForm = () => {
         >
           Already a user?{" "}
           <span
+            className="login"
             style={{
               fontWeight: "bold",
               textDecoration: "underline",

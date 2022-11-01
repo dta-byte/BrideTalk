@@ -16,3 +16,9 @@
     text-align: center;
    }
    
+.login{
+    color:hsl(0, 0%, 0%)
+}
+.login:hover{
+    color:hsl(345, 39%, 67%)
+}
