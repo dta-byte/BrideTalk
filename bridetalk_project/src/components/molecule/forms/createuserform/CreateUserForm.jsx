@@ -8,7 +8,12 @@ import {
   Dropdown,
 } from "../../../atoms";
 import "./createuserform.css";
+
+import TestButton from "../../../atoms/buttons/TestButton";
 export const CreateUserForm = () => {
+  function handeClick() {
+    console.log("Button has been clickec");
+  }
   return (
     <div>
       <div className="form">
@@ -37,7 +42,7 @@ export const CreateUserForm = () => {
         <EnterPassword password="Confirm Password"></EnterPassword>
         <Dropdown question="Which locations are you interested in?"></Dropdown>
         <CancelButton>{"Go back"}</CancelButton>
-        <PrimaryButton>{"Sign me up"}</PrimaryButton>
+        <TestButton text={"Sign me up"} handleClick={handeClick}></TestButton>
       </div>
     </div>
   );
