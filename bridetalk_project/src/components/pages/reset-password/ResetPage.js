@@ -6,7 +6,7 @@ import {
 } from "../../atoms";
 import "./resetPage.css";
 
-import TestButton from "../../atoms/buttons/TestButton";
+
 
 export const ResetPage = () => {
   function handleClick() {

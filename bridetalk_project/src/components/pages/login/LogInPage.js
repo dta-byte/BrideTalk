@@ -1,12 +1,11 @@
 import {
   MainHeadline,
-  PrimaryButton,
   EnterPassword,
   EnterEmail,
 } from "../../atoms";
 import "./loginpage.css";
 
-import TestButton from "../../atoms/buttons/TestButton";
+import PrimaryButton from "../../atoms/buttons/PrimaryButton";
 
 export const LoginPage = () => {
   function handleClick() {
@@ -31,7 +30,7 @@ export const LoginPage = () => {
         </div>
       </div>
 
-      <TestButton text={"Let me chat"} handleClick={handleClick}></TestButton>
+      <PrimaryButton text={"Let me chat"} handleClick={handleClick}></PrimaryButton>
     </div>
   );
 };
