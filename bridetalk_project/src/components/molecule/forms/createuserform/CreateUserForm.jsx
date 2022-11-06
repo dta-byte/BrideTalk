@@ -45,7 +45,7 @@ export const CreateUserForm = () => {
               textDecoration: "underline",
             }}
           >
-            Log in here
+            <a href="http://localhost:3000/login">Log in here</a>
           </span>
         </div>
         <EnterText text="First Name "></EnterText>
