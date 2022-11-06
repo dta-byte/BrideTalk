@@ -1,6 +1,12 @@
 import React from "react";
 import "./primarybutton.css";
 
-export const PrimaryButton = ({ children }) => {
-  return <button class="primarybutton">{children}</button>;
-};
+function PrimaryButton(props) {
+  return (
+    <button class="primarybutton" onClick={() => props.handleClick()}>
+      {props.text}
+    </button>
+  );
+}
+
+export default PrimaryButton;

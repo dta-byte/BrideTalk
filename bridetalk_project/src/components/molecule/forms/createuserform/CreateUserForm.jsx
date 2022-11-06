@@ -1,7 +1,5 @@
 import {
   MainHeadline,
-  PrimaryButton,
-  CancelButton,
   EnterText,
   EnterEmail,
   EnterPassword,
@@ -9,9 +7,9 @@ import {
 } from "../../../atoms";
 import "./createuserform.css";
 
-import TestButton from "../../../atoms/buttons/TestButton";
+import PrimaryButton from "../../../atoms/buttons/PrimaryButton";
+import CancelButton from "../../../atoms/buttons/CancelButton";
 import { useNavigate } from "react-router-dom";
-import TestBack from "../../../atoms/buttons/TestBack";
 export const CreateUserForm = () => {
   let navigate = useNavigate();
 
@@ -22,6 +20,11 @@ export const CreateUserForm = () => {
 
   const toLoginPage = () => {
     let path = "/login";
+    navigate(path);
+  };
+
+  const goBack = () => {
+    let path = navigate(-1);
     navigate(path);
   };
 
@@ -55,8 +58,11 @@ export const CreateUserForm = () => {
         <EnterPassword password="Confirm Password"></EnterPassword>
         <DropdownLocation question="Which locations are you interested in?"></DropdownLocation>
         {/* <CancelButton>{"Go back"}</CancelButton> */}
-        <TestBack text={"Go back"} handleClick={toLoginPage}></TestBack>
-        <TestButton text={"Sign me up"} handleClick={toFrontPage}></TestButton>
+        <CancelButton text={"Go back"} handleClick={goBack}></CancelButton>
+        <PrimaryButton
+          text={"Sign me up"}
+          handleClick={toFrontPage}
+        ></PrimaryButton>
       </div>
     </div>
   );

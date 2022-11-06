@@ -1,6 +1,5 @@
 import React from "react";
 import "./cancelbutton.css";
-import { useNavigate} from "react-router-dom";
 
 function TestBack(props){ 
   return <button class="cancelbutton" onClick={()=>props.handleClick()}>{props.text}</button>;
