@@ -3,14 +3,14 @@
     src: url(" https://github.com/rsms/inter");
   }
 
+  
 .flex-container {
     display: flex;
+    
 }
 
-
-
 .flex-child:first-child {
-    margin-left: 100px;
+    margin-left: 108px;
     margin-right: 10px;
 } 
 
