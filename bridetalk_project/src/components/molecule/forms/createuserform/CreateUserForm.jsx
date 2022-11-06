@@ -10,15 +10,27 @@ import {
 import "./createuserform.css";
 
 import TestButton from "../../../atoms/buttons/TestButton";
+import { useNavigate } from "react-router-dom";
+import TestBack from "../../../atoms/buttons/TestBack";
 export const CreateUserForm = () => {
-  function handeClick() {
-    console.log("Button has been clickec");
-  }
+  let navigate = useNavigate();
+
+  const toFrontPage = () => {
+    let path = "/";
+    navigate(path);
+  };
+
+  const toLoginPage = () => {
+    let path = "/login";
+    navigate(path);
+  };
+
   return (
     <div>
       <div className="form">
         <MainHeadline headline="Sign up to Bride Talk"></MainHeadline>
         <div
+          handleClick={toLoginPage}
           className="question"
           style={{
             paddingBottom: "15px",
@@ -42,8 +54,9 @@ export const CreateUserForm = () => {
         <EnterPassword password="Password"></EnterPassword>
         <EnterPassword password="Confirm Password"></EnterPassword>
         <DropdownLocation question="Which locations are you interested in?"></DropdownLocation>
-        <CancelButton>{"Go back"}</CancelButton>
-        <TestButton text={"Sign me up"} handleClick={handeClick}></TestButton>
+        {/* <CancelButton>{"Go back"}</CancelButton> */}
+        <TestBack text={"Go back"} handleClick={toLoginPage}></TestBack>
+        <TestButton text={"Sign me up"} handleClick={toFrontPage}></TestButton>
       </div>
     </div>
   );
