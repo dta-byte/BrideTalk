@@ -1,17 +1,14 @@
 
 import { MainHeadline } from "./headlines/MainHeadLine";
-import { CancelButton } from "./buttons/CancelButton";
 import { EnterText } from "./fillinbox/EnterText";
 import {EnterEmail} from "./fillinbox/EnterEmail"
 import { EnterPassword } from "./fillinbox/EnterPassword";
-import { Dropdown } from "./fillinbox/Dropdown";
-
+import { DropdownLocation } from "./fillinbox/DropdownLocation";
 export { MainHeadline }
-export { CancelButton }
 export {EnterText}
 export {EnterEmail}
 export {EnterPassword}
-export {Dropdown}
+export {DropdownLocation}
 
 
 

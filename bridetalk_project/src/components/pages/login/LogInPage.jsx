@@ -1,10 +1,6 @@
-import {
-  MainHeadline,
-  EnterPassword,
-  EnterEmail,
-} from "../../atoms";
+import { MainHeadline, EnterPassword, EnterEmail } from "../../atoms";
 import "./loginpage.css";
-
+import { Text } from "react";
 import PrimaryButton from "../../atoms/buttons/PrimaryButton";
 
 export const LoginPage = () => {
@@ -16,7 +12,8 @@ export const LoginPage = () => {
     <div className="login-container">
       <MainHeadline headline="Log in"></MainHeadline>
       <h4 type="text">
-        Not a user? Create a user <a href="http://localhost:3000/create-user">here</a>
+        Not a user? Create a user{" "}
+        <a href="http://localhost:3000/create-user">here</a>
       </h4>
 
       <div className="login-fields-container">
@@ -30,7 +27,10 @@ export const LoginPage = () => {
         </div>
       </div>
 
-      <PrimaryButton text={"Let me chat"} handleClick={handleClick}></PrimaryButton>
+      <PrimaryButton
+        text={"Let me chat"}
+        handleClick={handleClick}
+      ></PrimaryButton>
     </div>
   );
 };

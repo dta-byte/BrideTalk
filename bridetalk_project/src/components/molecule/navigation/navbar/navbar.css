@@ -1,27 +1,48 @@
-/* Add a black background color to the top navigation */
+/* Background color */
 .topnav {
-    background-color:  hsl(346, 58%, 98%);
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: hsl(0, 11%, 0%);
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: hsl(346, 52%, 77%);
-    color: hsl(0, 11%, 0%);
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: hsl(346, 52%, 77%);
-    color: hsl(0, 11%, 0%);
-  }
+  /* Transparent background color */
+  background-color: hsla(346, 58%, 98%, 0.9);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: hsl(0, 11%, 0%);
+  text-align: center;
+}
+
+.topnav-right{
+  float: right;
+  text-align: center;
+}
+/* The logo parent element */
+.logo-image {
+  height: 150px;
+  width: 215px;
+  overflow: visible;
+}
+/* The logo img */
+.logo-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.profile{
+  float: right;
+  padding-top: 50px;
+}
+
+.menu{
+  float: right;
+  padding-right: 100px;
+  padding-left: 30px;
+  padding-top: 50px;
+}
+
+.profile-icon > * {
+  fill:hsl(0, 0%, 20%)
+}
+.menu-icon > * {
+  fill:hsl(0, 0%, 20%)
+}
