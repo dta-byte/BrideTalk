@@ -6,8 +6,19 @@
 .form{
         background-color: hsl(346, 58%, 98%);
         border-radius: 5px;
-        width: 105%;
-        margin: 20px auto;
+        width: 140%;
+        margin: 30px auto;
         border-radius: 40px;
     
+}
+
+.question{
+    text-align: center;
+   }
+   
+.login{
+    color:hsl(0, 0%, 0%)
+}
+.login:hover{
+    color:hsl(345, 39%, 67%)
 }
