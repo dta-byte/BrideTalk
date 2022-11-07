@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { MainHeadline, PrimaryButton } from "../../atoms";
+import { MainHeadline } from "../../atoms";
 
 import "./homepage.css";
 
@@ -9,7 +9,12 @@ export const HomePage = () => {
     const toLoginPage = () => {
         let path = "/login";
         navigate(path);
-      };
+    };
+
+    const toSignInPage = () => {
+        let path = "/create-user";
+        navigate(path);
+    };
 
     return (
         <>
@@ -17,20 +22,23 @@ export const HomePage = () => {
 
             {/* Container starts*/}
             <div className="container">
-                
-                {/* Buttons */}
-                <div className="container-right">
-                <PrimaryButton text={"Log in"} handleClick={toLoginPage}>
 
-          </PrimaryButton>
+                {/* Buttons */}
+                <div className="column-right">
+
+                    <button class="login-button" onClick={toLoginPage}> Log in</button>
+                    <button class="signin-button" onClick={toSignInPage}> Sign in</button>
+
                 </div>
+
                 {/* Caroussel */}
-                <div className="container-left">
-                eded
+                <div className="column-left">
+             
+                Caroussel to come!
                 </div>
                 {/* Contianer ends */}
             </div>
-          
+
         </>
 
     )

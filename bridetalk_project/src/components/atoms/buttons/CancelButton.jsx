@@ -1,7 +1,7 @@
 import React from "react";
 import "./cancelbutton.css";
 
-function CancelButton(props) {
+export const CancelButton = (props) => {
   return (
     <button class="cancelbutton" onClick={() => props.handleClick()}>
       {props.text}
@@ -9,4 +9,4 @@ function CancelButton(props) {
   );
 }
 
-export default CancelButton;
+

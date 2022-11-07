@@ -18,7 +18,7 @@ export const MasterLayout = () => {
 
         <div className="img">
         <Navbar></Navbar>
-            <Routes>
+            <Routes classname="routes">
             {/* Public route for HomePage */}
             <Route path="/" element={<HomePage />}></Route>
 
