@@ -1,12 +1,45 @@
-import PrimaryButton from "../../atoms/buttons/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 import { MainHeadline } from "../../atoms";
+
 import "./homepage.css";
 
 export const HomePage = () => {
-  return (
-    <div>
-      <MainHeadline headline="Home Page"></MainHeadline>
-      <PrimaryButton>{"Knappe navn"}</PrimaryButton>
-    </div>
-  );
-};
+    let navigate = useNavigate();
+
+    const toLoginPage = () => {
+        let path = "/login";
+        navigate(path);
+    };
+
+    const toSignInPage = () => {
+        let path = "/create-user";
+        navigate(path);
+    };
+
+    return (
+        <>
+            <MainHeadline headline="Home Page"></MainHeadline>
+
+            {/* Container starts*/}
+            <div className="container">
+
+                {/* Buttons */}
+                <div className="column-right">
+
+                    <button class="login-button" onClick={toLoginPage}> Log in</button>
+                    <button class="signin-button" onClick={toSignInPage}> Sign in</button>
+
+                </div>
+
+                {/* Caroussel */}
+                <div className="column-left">
+             
+                Caroussel to come!
+                </div>
+                {/* Contianer ends */}
+            </div>
+
+        </>
+
+    )
+} 

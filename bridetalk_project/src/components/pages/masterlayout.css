@@ -1,3 +1,5 @@
+
+
 .img {
 background-image: url('../../../public/images/image\ 2.jpg');
  /* background-repeat: no-repeat; */
@@ -14,4 +16,8 @@ background-image: url('../../../public/images/image\ 2.jpg');
   position: fixed;
   top: 0;
   left: 0;
+}
+
+.routes{
+  font-family: Inter-bold;
 }
