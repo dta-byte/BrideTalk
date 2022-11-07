@@ -5,15 +5,19 @@
 
 
 .primarybutton{
-  background-color: hsl(345, 39%, 67%);
-  padding-left: 2.5%;
-  padding-right:2.5%;
-  padding-top: 0.8%;
-  padding-bottom: 0.8%;
-  border-radius: 8px;
+  background-color: hsl(346, 52%, 77%);
+  text-align: center;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  border-radius: 6px;
   font-family: "Inter";
-  border-color: hsl(345, 39%, 67%);
+  border-color: hsl(346, 52%, 77%);
   color: hsl(0, 11%, 0%);
-  font-size: 12px;
+  font-size: 8px;
   font-weight: bold;   
+  width: 90px;
+}
+
+.primarybutton:hover{
+  background-color: hsl(346, 52%, 72%);
 }

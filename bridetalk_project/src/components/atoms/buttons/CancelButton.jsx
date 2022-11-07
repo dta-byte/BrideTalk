@@ -1,6 +1,12 @@
 import React from "react";
 import "./cancelbutton.css";
 
-export const CancelButton = ({ children }) => {
-  return <button class="cancelbutton">{children}</button>;
-};
+function CancelButton(props) {
+  return (
+    <button class="cancelbutton" onClick={() => props.handleClick()}>
+      {props.text}
+    </button>
+  );
+}
+
+export default CancelButton;
