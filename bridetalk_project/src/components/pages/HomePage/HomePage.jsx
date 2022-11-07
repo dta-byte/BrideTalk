@@ -1,7 +1,16 @@
-import { MainHeadline } from "../../atoms";
+import { useNavigate } from "react-router-dom";
+import { MainHeadline, PrimaryButton } from "../../atoms";
+
 import "./homepage.css";
 
 export const HomePage = () => {
+    let navigate = useNavigate();
+
+    const toLoginPage = () => {
+        let path = "/login";
+        navigate(path);
+      };
+
     return (
         <>
             <MainHeadline headline="Home Page"></MainHeadline>
@@ -11,7 +20,9 @@ export const HomePage = () => {
                 
                 {/* Buttons */}
                 <div className="container-right">
-                ede
+                <PrimaryButton text={"Log in"} handleClick={toLoginPage}>
+
+          </PrimaryButton>
                 </div>
                 {/* Caroussel */}
                 <div className="container-left">

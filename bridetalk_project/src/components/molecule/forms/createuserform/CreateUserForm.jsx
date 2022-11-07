@@ -5,9 +5,10 @@ import {
   EnterPassword,
   DropdownLocation,
 } from "../../../atoms";
-import "./createuserform.css";
 
-import PrimaryButton from "../../../atoms/buttons/PrimaryButton";
+import "./createuserform.css";
+import { PrimaryButton } from "../../../atoms";
+
 import CancelButton from "../../../atoms/buttons/CancelButton";
 import { useNavigate } from "react-router-dom";
 export const CreateUserForm = () => {

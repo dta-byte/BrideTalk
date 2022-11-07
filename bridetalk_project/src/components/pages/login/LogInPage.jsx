@@ -1,7 +1,5 @@
-import { MainHeadline, EnterPassword, EnterEmail } from "../../atoms";
+import { MainHeadline, EnterPassword, EnterEmail, PrimaryButton } from "../../atoms";
 import "./loginpage.css";
-import { Text } from "react";
-import PrimaryButton from "../../atoms/buttons/PrimaryButton";
 
 export const LoginPage = () => {
   function handleClick() {
