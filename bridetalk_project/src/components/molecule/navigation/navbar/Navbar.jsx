@@ -14,7 +14,7 @@ export const Navbar = () => {
           {/* Logo leads back to homepage */}
           <Link to="/">
             <a className="navbar-brand">
-              <div class="logo-image">
+              <div className="logo-image">
                 <img src="../images/logo_black.png"></img>
               </div>
             </a>
@@ -22,17 +22,17 @@ export const Navbar = () => {
         </div>
 
         {/* Right side of navigation bar */}
-        <div class="topnav-right">
+        <div className="topnav-right">
             {/* Profile icon */}
           <Link to="/login">
-            <div class="profile">
+            <div className="profile">
               <BsPersonCircle className="profile-icon" size={42}/>
             </div>
 
           </Link>
             {/* Menu icon */}
             <Link to="/main-page">
-            <div class="menu">
+            <div className="menu">
               <BiMenu className="menu-icon" size={42}/>
               </div>
             </Link>

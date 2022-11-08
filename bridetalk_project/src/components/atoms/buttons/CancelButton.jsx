@@ -3,7 +3,7 @@ import "./cancelbutton.css";
 
 export const CancelButton = (props) => {
   return (
-    <button class="cancelbutton" onClick={() => props.handleClick()}>
+    <button className="cancelbutton" onClick={() => props.handleClick()}>
       {props.text}
     </button>
   );

@@ -18,12 +18,12 @@ export const HomePage = () => {
 
   return (
     <>
-      <Headline1 headline="Home Page"></Headline1>
 
       {/* Container starts*/}
       <div className="container">
         {/* Buttons */}
         <div className="column-right">
+      <Headline1 headline="Welcome to a universe for future brides!"></Headline1>
           <button class="login-button" onClick={toLoginPage}>
             {" "}
             Log in

@@ -3,7 +3,7 @@ import "./primarybutton.css";
 
 export const PrimaryButton = (props) => {
   return (
-    <button class="primarybutton" onClick={() => props.handleClick()}>
+    <button className="primarybutton" onClick={() => props.handleClick()}>
       {props.text}
     </button>
   );
