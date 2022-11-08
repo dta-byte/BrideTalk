@@ -7,8 +7,8 @@
 .cancelbutton{
     background-color: hsl(0, 0%, 85%);
    text-align: center;
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   border-radius: 6px;
     border-radius: 6px;
     font-family: "Inter";
@@ -19,7 +19,7 @@
     margin-top: 25px;
     margin-right: 5px;
     margin-left: 30%;
-    width: 90px;
+    width: 110px;
 }
 .cancelbutton:hover{
     background-color: hsl(0, 0%, 80%);
