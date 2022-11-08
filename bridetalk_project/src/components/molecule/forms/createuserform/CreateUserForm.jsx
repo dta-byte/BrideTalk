@@ -1,11 +1,11 @@
 import {
-  MainHeadline,
+  Headline1,
   EnterText,
   EnterEmail,
   EnterPassword,
-  DropdownLocation, 
-  PrimaryButton, 
-  CancelButton
+  DropdownLocation,
+  PrimaryButton,
+  CancelButton,
 } from "../../../atoms";
 
 import "./createuserform.css";
@@ -33,7 +33,7 @@ export const CreateUserForm = () => {
   return (
     <div>
       <div className="form">
-        <MainHeadline headline="Sign up to Bride Talk"></MainHeadline>
+        <Headline1 headline="Sign up to Bride Talk"></Headline1>
         <div
           handleClick={toLoginPage}
           className="question"
@@ -50,8 +50,7 @@ export const CreateUserForm = () => {
               textDecoration: "underline",
             }}
           >
-           <Link to="/login"> Log in here </Link> 
-          
+            <Link to="/login"> Log in here </Link>
           </span>
         </div>
         <EnterText text="First Name "></EnterText>

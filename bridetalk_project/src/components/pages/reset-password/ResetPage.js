@@ -1,5 +1,5 @@
 import {
-  MainHeadline,
+  Headline1,
   PrimaryButton,
   EnterEmail,
   CancelButton,
@@ -15,7 +15,7 @@ export const ResetPage = () => {
 
   return (
     <div className="reset-container">
-      <MainHeadline headline="Reset Your Password"></MainHeadline>
+      <Headline1 headline="Reset Your Password"></Headline1>
       <h4 type="text">
         Lost your password? Please enter your email address. You Will receive a
         link to create a new password via email.
