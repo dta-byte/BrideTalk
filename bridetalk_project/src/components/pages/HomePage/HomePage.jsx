@@ -11,7 +11,7 @@ export const HomePage = () => {
     navigate(path);
   };
 
-  const toSignInPage = () => {
+  const toSignUpPage = () => {
     let path = "/sign-up";
     navigate(path);
   };
@@ -28,7 +28,7 @@ export const HomePage = () => {
             {" "}
             Log in
           </button>
-          <button class="signin-button" onClick={toSignInPage}>
+          <button class="signin-button" onClick={toSignUpPage}>
             {" "}
             Sign up
           </button>
@@ -38,7 +38,7 @@ export const HomePage = () => {
         <div className="column-left">
         <BodyText text="Carousel to come!"></BodyText>
        </div>
-        {/* Contianer ends */}
+        {/* Container ends */}
       </div>
     </>
   );
