@@ -30,7 +30,7 @@ export const HomePage = () => {
           </button>
           <button class="signin-button" onClick={toSignInPage}>
             {" "}
-            Sign in
+            Sign up
           </button>
         </div>
 
