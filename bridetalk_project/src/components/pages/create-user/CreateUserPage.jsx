@@ -2,12 +2,12 @@ import { CreateUserForm } from "../../molecule";
 import "./createuserpage.css";
 export const CreateUserPage = () => {
   return (
-    <div class="flex-container">
-      <div class="flex-child 1">
+    <div className="flex-container">
+      <div className="flex-child 1">
         <CreateUserForm></CreateUserForm>
       </div>
 
-      <div class="flex-child2">
+      <div className="flex-child2">
         <div className="info">
           <p>Connect with other future brides.</p>
           <p>
