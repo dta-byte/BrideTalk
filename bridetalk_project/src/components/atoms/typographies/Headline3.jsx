@@ -1,13 +1,14 @@
 import React from "react";
+import "./headline3.css";
 
-export const MainHeadline = (props) => {
+export const Headline3 = (props) => {
   const { headline } = props;
 
   return (
     <>
       <div className="headline"></div>
 
-      <h1 className="text">{headline}</h1>
+      <div className="text">{headline}</div>
     </>
   );
 };

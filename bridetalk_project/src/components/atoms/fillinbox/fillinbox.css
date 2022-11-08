@@ -1,0 +1,39 @@
+.form {
+  background-color: hsl(346, 58%, 98%);
+  border-radius: 40px;
+  width: 400px;
+  margin: 20px auto;
+  padding: 18px;
+  color: hsl(0, 0%, 20%);
+}
+
+
+.form-body{
+  padding: 5px 10px;
+  margin-left: 24%;
+}
+    
+.form__label{
+  width: 80%;
+  color:hsl(0, 0%, 20%);
+  line-height: 1.2;
+}
+.form__input{
+  width: 65%;
+  height: 23px;
+  border-radius: 10px;
+  border:solid;
+  border-color: hsl(346, 54%, 88%); 
+  padding-left: 5px; 
+}
+
+.form__input:hover{
+    border-color: hsl(345, 39%, 67%) 
+}
+
+
+input:focus{
+  outline-color: hsl(345, 39%, 67%) !important
+}
+
+

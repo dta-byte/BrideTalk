@@ -1,10 +1,10 @@
-import React from 'react'
-import './primarybutton.css'
+import React from "react";
+import "./primarybutton.css";
 
-export const PrimaryButton = ({ children }) => {
-    return (
-        <button class="primarybutton">
-            {children}
-        </button>
-    );
+export const PrimaryButton = (props) => {
+  return (
+    <button className="primarybutton" onClick={() => props.handleClick()}>
+      {props.text}
+    </button>
+  );
 };

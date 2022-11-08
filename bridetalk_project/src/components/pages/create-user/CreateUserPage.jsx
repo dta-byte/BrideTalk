@@ -1,10 +1,26 @@
-import { MainHeadline } from "../../atoms"
+import { CreateUserForm } from "../../molecule";
+import "./createuserpage.css";
 export const CreateUserPage = () => {
-    return (
-        <div>
-        <MainHeadline headline="Sign in page!"></MainHeadline>
-
+  return (
+    <div className="flex-container">
+      <div className="flex-child 1">
+        <CreateUserForm></CreateUserForm>
       </div>
-          
-    )
-} 
+
+      <div className="flex-child2">
+        <div className="info">
+          <p>Connect with other future brides.</p>
+          <p>
+            Bride Talk is a platform that allows you to find group chats about
+            specific wedding topics.{" "}
+          </p>
+          <p>
+            You can chose to connect with people in a specific area to make sure
+            their recommendations are useful for you.
+          </p>
+          <p>Create a free profile and start chatting</p>
+        </div>
+      </div>
+    </div>
+  );
+};

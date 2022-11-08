@@ -1,0 +1,48 @@
+/* Background color */
+.topnav {
+  /* Transparent background color */
+  background-color: hsla(346, 58%, 98%, 0.9);
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: hsl(0, 11%, 0%);
+  text-align: center;
+}
+
+.topnav-right{
+  float: right;
+  text-align: center;
+}
+/* The logo parent element */
+.logo-image {
+  height: 150px;
+  width: 215px;
+  overflow: visible;
+}
+/* The logo img */
+.logo-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.profile{
+  float: right;
+  padding-top: 50px;
+}
+
+.menu{
+  float: right;
+  padding-right: 100px;
+  padding-left: 30px;
+  padding-top: 50px;
+}
+
+.profile-icon > * {
+  fill:hsl(0, 0%, 20%)
+}
+.menu-icon > * {
+  fill:hsl(0, 0%, 20%)
+}

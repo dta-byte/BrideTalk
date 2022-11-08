@@ -1,0 +1,26 @@
+.footer {
+  display: flex;
+  position: fixed;
+  background-color: hsl(346, 58%, 98%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  /* Add the right font */
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif */
+}
+
+.middle-text {
+  margin: auto;
+}
+.right-text {
+  margin: auto;
+}
+
+.left-text {
+  margin: auto;
+}

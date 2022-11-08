@@ -1,18 +1,25 @@
 @font-face {
-    font-family: "Inter";
-    src: url(" https://github.com/rsms/inter");
-  }
+  font-family: "Inter";
+  src: url(" https://github.com/rsms/inter");
+}
 
- 
 
 .primarybutton{
-    background-color: hsl(345, 39%, 67%);
-    padding: 2%;
-    border-radius: 25px;
-    font-family: "Inter";
-    border-color: hsl(345, 39%, 67%);
-    color: hsl(0, 11%, 0%);
-    font-size: 16px;
-    font-weight: bold;
-    
+  background-color: hsl(346, 52%, 77%);
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 6px;
+  padding-right: 0px;
+  padding-left: 0px;
+  font-family: "Inter";
+  border-color: hsl(346, 52%, 77%);
+  color: hsl(0, 11%, 0%);
+  font-size: 10px;
+  font-weight: bold;   
+  width: 110px;
+}
+
+.primarybutton:hover{
+  background-color: hsl(346, 52%, 72%);
 }
