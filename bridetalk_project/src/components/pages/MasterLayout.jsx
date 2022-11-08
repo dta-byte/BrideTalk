@@ -3,11 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./homepage/HomePage";
 import { LoginPage } from "./login/LogInPage";
 import { CreateUserPage } from "./create-user/CreateUserPage";
-import { Footer } from "../molecule/navigation/footer/Footer";
 import { ResetPage } from "./reset-password/ResetPage";
+ import { Footer, Navbar } from "../molecule";
 
 import "./masterlayout.css"
-import { Navbar } from "../molecule/navigation/navbar/Navbar";
 
 
 export const MasterLayout = () => {
@@ -15,9 +14,9 @@ export const MasterLayout = () => {
         <>
         
         <BrowserRouter>
-
         <div className="img">
-        <Navbar></Navbar>
+
+        <Navbar/>
             <Routes classname="routes">
             {/* Public route for HomePage */}
             <Route path="/" element={<HomePage />}></Route>
@@ -28,11 +27,11 @@ export const MasterLayout = () => {
             {/* Public route for Create User page */}
             <Route path="/sign-up" element={<CreateUserPage />}></Route> 
 
-            {/* Public route for Create User page */}
+            {/* Public route for reset page */}
             <Route path="/Reset" element={<ResetPage />}></Route> 
 
             </Routes>
-            <Footer></Footer>
+        <Footer/>
             </div>
         </BrowserRouter>
         </>
