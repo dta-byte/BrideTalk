@@ -26,7 +26,7 @@ export const MasterLayout = () => {
             <Route path="/login" element={<LoginPage />}></Route> 
 
             {/* Public route for Create User page */}
-            <Route path="/create-user" element={<CreateUserPage />}></Route> 
+            <Route path="/sign-up" element={<CreateUserPage />}></Route> 
 
             {/* Public route for Create User page */}
             <Route path="/Reset" element={<ResetPage />}></Route> 

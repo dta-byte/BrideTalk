@@ -12,7 +12,7 @@ export const HomePage = () => {
     };
 
     const toSignInPage = () => {
-        let path = "/create-user";
+        let path = "/sign-up";
         navigate(path);
     };
 

@@ -11,7 +11,7 @@ export const LoginPage = () => {
       <MainHeadline headline="Log in"></MainHeadline>
       <h4 type="text">
         Not a user? Create a user{" "}
-        <a href="http://localhost:3000/create-user">here</a>
+        <Link to="/sign-up"> here</Link>
       </h4>
 
       <div className="login-fields-container">
@@ -20,7 +20,7 @@ export const LoginPage = () => {
 
         <div className="forgot-password">
           <h4 type="text">
-            <a href="http://localhost:3000/reset">Forgot password?</a>
+          <Link to="/reset"> Forgot password?</Link>
           </h4>
         </div>
       </div>

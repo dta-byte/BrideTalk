@@ -9,7 +9,7 @@ import {
 } from "../../../atoms";
 
 import "./createuserform.css";
-
+import { Link } from "react-router-dom";
 
 import { useNavigate } from "react-router-dom";
 export const CreateUserForm = () => {
@@ -50,7 +50,8 @@ export const CreateUserForm = () => {
               textDecoration: "underline",
             }}
           >
-            <a href="/login">Log in here</a>
+           <Link to="/login"> Log in here </Link> 
+          
           </span>
         </div>
         <EnterText text="First Name "></EnterText>
