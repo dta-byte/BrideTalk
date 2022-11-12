@@ -20,10 +20,12 @@ export const HomePage = () => {
     <>
 
       {/* Container starts*/}
-      <div className="container">
+      <div className="homepage-container">
         {/* Buttons */}
-        <div className="column-right">
+        <div className="homepage-column-right">
       <Headline1 headline="Welcome to a universe for future brides!"></Headline1>
+      <div className="buttons-container">
+
           <button class="login-button" onClick={toLoginPage}>
             {" "}
             Log in
@@ -32,10 +34,11 @@ export const HomePage = () => {
             {" "}
             Sign up
           </button>
+      </div>
         </div>
 
         {/* Caroussel */}
-        <div className="column-left">
+        <div className="homepage-column-left">
         <BodyText text="Carousel to come!"></BodyText>
        </div>
         {/* Container ends */}

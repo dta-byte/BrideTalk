@@ -13,22 +13,23 @@ export const LoginPage = () => {
   }
 
   return (
-    <div className="login-container">
+    <div className="login-form-container">
       <Headline1 headline="Log in"></Headline1>
-      <h4 type="text">
-        Not a user? Create a user <Link to="/sign-up"> here</Link>
-      </h4>
 
-      <div className="login-fields-container">
+      <div className="link-to-signup">
+        Not a user? Create a user <Link to="/sign-up"> here</Link>
+      </div>
+
+      <div className="login-input-fields">
         <EnterEmail email="Email "></EnterEmail>
         <EnterPassword password="Password"></EnterPassword>
 
-        <div className="forgot-password">
-          <h4 type="text">
-            <Link to="/reset"> Forgot password?</Link>
-          </h4>
-        </div>
       </div>
+        <div className="link-forgot-password">
+
+            <Link to="/reset"> Forgot password?</Link>
+
+        </div>
 
       <PrimaryButton
         text={"Let me chat"}

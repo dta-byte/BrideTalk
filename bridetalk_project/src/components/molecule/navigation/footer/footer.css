@@ -1,7 +1,7 @@
-.footer {
+.footer-container {
   display: flex;
   position: fixed;
-  background-color: hsl(346, 58%, 98%);
+  background-color: hsla(346, 58%, 98%, 0.9);
   bottom: 0;
   left: 0;
   right: 0;
@@ -9,18 +9,10 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  /* Add the right font */
-  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif */
 }
 
-.middle-text {
-  margin: auto;
-}
-.right-text {
-  margin: auto;
+.footer-text{
+  column-count: 3;
+  column-gap: 400px;
 }
 
-.left-text {
-  margin: auto;
-}

@@ -1,27 +1,41 @@
-.login-container {
+/* The entire form */
+.login-form-container {
   width: 30%;
   background-color: hsl(346, 58%, 98%);
   color: hsl(0, 11%, 0%);
   height: 80%;
-  padding: 20px 10px 40px 10px;
+  padding: 40px 10px 20px 10px;
   border-radius: 35px;
   display: block;
-  text-align: center;
   margin: 60px auto;
+  text-align: center;
 }
 
-.login-fields-container {
+/* Link to sign up */
+.link-to-signup {
+  margin: 15px 0 15px 0;
+}
+
+/* The input fields */
+.login-input-fields {
   text-align: start;
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.forgot-password {
-  margin-left: 20%;
+/* Link to forgot password */
+.link-forgot-password {
+  font-weight: bold;
   margin-bottom: 40px;
 }
 
+/* Change color for Link */
 a {
-  color: black;
+  color: hsl(0, 11%, 0%);
+}
+
+/* Hover to link */
+a:hover {
+  color: hsl(345, 39%, 67%);
 }

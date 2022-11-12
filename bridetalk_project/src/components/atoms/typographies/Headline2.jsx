@@ -8,7 +8,7 @@ export const Headline2 = (props) => {
     <>
       <div className="headline"></div>
 
-      <div className="text">{headline}</div>
+      <div className="headline2-text">{headline}</div>
     </>
   );
 };

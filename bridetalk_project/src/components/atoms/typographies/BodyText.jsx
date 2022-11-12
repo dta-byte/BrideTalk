@@ -6,9 +6,7 @@ export const BodyText = (props) => {
 
   return (
     <>
-      <div className="headline"></div>
-
-      <div className="text">{ text }</div>
+      <div className="body-text">{ text }</div>
     </>
   );
 };

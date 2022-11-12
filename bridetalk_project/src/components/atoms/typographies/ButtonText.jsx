@@ -6,8 +6,6 @@ export const ButtonText = (props) => {
 
   return (
     <>
-      <div className="headline"></div>
-
       <div className="button-text">{text}</div>
     </>
   );

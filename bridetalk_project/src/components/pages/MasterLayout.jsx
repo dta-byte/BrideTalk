@@ -8,12 +8,14 @@ import { Footer, Navbar } from "../molecule";
 
 import "./masterlayout.css"
 
+// MasterLayout renders different (master) pages in DOM
+
 export const MasterLayout = () => {
     return (
         <>
         
         <BrowserRouter>
-        <div className="img">
+        <div className="background-img">
 
         <Navbar/>
             <Routes classname="routes">
