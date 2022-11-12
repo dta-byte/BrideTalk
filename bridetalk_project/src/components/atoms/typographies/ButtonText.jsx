@@ -8,7 +8,7 @@ export const ButtonText = (props) => {
     <>
       <div className="headline"></div>
 
-      <div className="text">{text}</div>
+      <div className="button-text">{text}</div>
     </>
   );
 };
