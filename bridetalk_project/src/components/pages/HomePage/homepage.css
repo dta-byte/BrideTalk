@@ -1,4 +1,4 @@
-.container {
+.homepage-container {
   background-color: hsl(346, 58%, 98%);
   margin-right: 30px;
   margin-left: 30px;
@@ -14,18 +14,19 @@ margin-bottom: 100px;
   height: 100%;
 }
 
-.column-right {
+.homepage-column-right {
   padding-top: 10px;
-  padding-left: 100px;
-  padding-right: 100px;
   color: hsl(0, 11%, 0%);
   display: inline-block;
 }
 
+.buttons-container{
+  padding: 30px;
+}
 .signin-button {
   background-color: hsl(346, 52%, 77%);
   border-color: hsl(346, 52%, 77%);
-  font-size: 28px;
+  font-size: 20px;
   padding: 30px;
   border-radius: 20px;
 
@@ -38,10 +39,9 @@ margin-bottom: 100px;
 .login-button {
   background-color: hsl(289, 29%, 90%);
   border-color: hsl(289, 29%, 90%);
-  font-size: 28px;
+  font-size: 20px;
   padding: 30px;
   border-radius: 20px;
-
   margin-right: 50px;
   margin-left: 80px;
 }
@@ -50,7 +50,7 @@ margin-bottom: 100px;
   background-color: hsl(289, 29%, 85%);
 }
 
-.column-left {
+.homepage-column-left {
   justify-content: center;
   text-align: center;
   padding-top: 90px;

@@ -25,15 +25,15 @@ export const Navbar = () => {
         <div className="topnav-right">
             {/* Profile icon */}
           <Link to="/login">
-            <div className="profile">
-              <BsPersonCircle className="profile-icon" size={42}/>
+            <div className="profile-icon-column">
+              <BsPersonCircle className="profile-icon" size={30}/>
             </div>
 
           </Link>
             {/* Menu icon */}
             <Link to="/main-page">
-            <div className="menu">
-              <BiMenu className="menu-icon" size={42}/>
+            <div className="menu-icon-column">
+              <BiMenu className="menu-icon" size={34}/>
               </div>
             </Link>
         </div>

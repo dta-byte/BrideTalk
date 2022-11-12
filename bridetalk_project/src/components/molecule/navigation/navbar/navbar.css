@@ -3,6 +3,7 @@
   /* Transparent background color */
   background-color: hsla(346, 58%, 98%, 0.9);
   overflow: hidden;
+  height: 80px;
 }
 
 /* Style the links inside the navigation bar */
@@ -12,15 +13,11 @@
   text-align: center;
 }
 
-.topnav-right{
-  float: right;
-  text-align: center;
-}
 /* The logo parent element */
 .logo-image {
-  height: 150px;
-  width: 215px;
-  overflow: visible;
+  height: 80px;
+  width: 150px;
+  /* overflow: visible; */
 }
 /* The logo img */
 .logo-image img {
@@ -28,21 +25,27 @@
   width: 100%;
 }
 
-.profile{
+.topnav-right{
   float: right;
-  padding-top: 50px;
+  text-align: center;
 }
 
-.menu{
+.profile-icon-column{
   float: right;
-  padding-right: 100px;
-  padding-left: 30px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .profile-icon > * {
   fill:hsl(0, 0%, 20%)
 }
+
+.menu-icon-column{
+  float: right;
+  padding-right: 30px;
+  padding-left: 25px;
+  padding-top: 30px;
+}
+
 .menu-icon > * {
   fill:hsl(0, 0%, 20%)
 }

@@ -6,7 +6,6 @@ import {
   DropdownLocation,
   PrimaryButton,
   CancelButton,
-  BodyText,
 } from "../../../atoms";
 
 import "./createuserform.css";
@@ -21,11 +20,6 @@ export const CreateUserForm = () => {
     navigate(path);
   };
 
-  const toLoginPage = () => {
-    let path = "/login";
-    navigate(path);
-  };
-
   const goBack = () => {
     let path = navigate(-1);
     navigate(path);
@@ -36,7 +30,7 @@ export const CreateUserForm = () => {
       <div className="create-user-form">
         <Headline1 headline="Sign up to Bride Talk"></Headline1>
         <div className="link-to-login">
-        Already a user? <Link to="/login"> Log in here </Link> 
+          Already a user? <Link to="/login"> Log in here </Link>
         </div>
         <EnterText text="First Name "></EnterText>
         <EnterText text="Last Name "></EnterText>

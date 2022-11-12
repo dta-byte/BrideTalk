@@ -15,7 +15,7 @@ export const MasterLayout = () => {
         <>
         
         <BrowserRouter>
-        <div className="img">
+        <div className="background-img">
 
         <Navbar/>
             <Routes classname="routes">

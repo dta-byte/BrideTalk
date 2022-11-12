@@ -6,9 +6,7 @@ export const ButtonText = (props) => {
 
   return (
     <>
-      <div className="headline"></div>
-
-      <div className="text">{text}</div>
+      <div className="button-text">{text}</div>
     </>
   );
 };
