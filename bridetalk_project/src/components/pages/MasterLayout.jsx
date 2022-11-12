@@ -8,6 +8,8 @@ import { Footer, Navbar } from "../molecule";
 
 import "./masterlayout.css"
 
+// MasterLayout renders different (master) pages in DOM
+
 export const MasterLayout = () => {
     return (
         <>

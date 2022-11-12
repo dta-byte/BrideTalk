@@ -19,5 +19,5 @@ background-image: url('../../../public/images/image\ 2.jpg');
 }
 
 .routes{
-  font-family: Inter-bold;
+  font-family: 'Inter', sans-serif;
 }

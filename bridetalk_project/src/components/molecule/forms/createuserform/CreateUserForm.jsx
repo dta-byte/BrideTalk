@@ -6,6 +6,7 @@ import {
   DropdownLocation,
   PrimaryButton,
   CancelButton,
+  BodyText,
 } from "../../../atoms";
 
 import "./createuserform.css";
@@ -32,26 +33,10 @@ export const CreateUserForm = () => {
 
   return (
     <div>
-      <div className="form">
+      <div className="create-user-form">
         <Headline1 headline="Sign up to Bride Talk"></Headline1>
-        <div
-          handleClick={toLoginPage}
-          className="question"
-          style={{
-            paddingBottom: "15px",
-            paddingTop: "0px",
-          }}
-        >
-          Already a user?{" "}
-          <span
-            className="login"
-            style={{
-              fontWeight: "bold",
-              textDecoration: "underline",
-            }}
-          >
-            <Link to="/login"> Log in here </Link>
-          </span>
+        <div className="link-to-login">
+        Already a user? <Link to="/login"> Log in here </Link> 
         </div>
         <EnterText text="First Name "></EnterText>
         <EnterText text="Last Name "></EnterText>
