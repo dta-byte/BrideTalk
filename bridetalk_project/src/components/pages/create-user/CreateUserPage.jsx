@@ -1,14 +1,15 @@
 import { CreateUserForm } from "../../molecule";
 import "./createuserpage.css";
+
 export const CreateUserPage = () => {
   return (
-    <div className="flex-container">
-      <div className="flex-child 1">
+    <div className="flex-container-createuserpage">
+      <div className="flex-child1-createuserpage">
         <CreateUserForm></CreateUserForm>
       </div>
 
-      <div className="flex-child2">
-        <div className="info">
+      <div className="flex-child2-createuserpage">
+        <div>
           <p>Connect with other future brides.</p>
           <p>
             Bride Talk is a platform that allows you to find group chats about

@@ -4,26 +4,39 @@
   }
 
   
-.flex-container {
-    display: flex;
+.flex-container-createuserpage {
+    display: flex;  
+    flex-direction: row;
+    justify-content:center;
+    gap: 350px; 
+    margin: 1%;
+    margin-right: 5%;
+    margin-left: 10%;
     
 }
 
-.flex-child:first-child {
-    margin-left: 108px;
-    margin-right: 10px;
-} 
+.flex-child1-createuserpage{
+    flex: 1 2 auto;
+}
 
-.info{
+  .flex-child2-createuserpage{
+    flex: 2 4 auto;
     background-color:hsl(346, 58%, 98%) ;
     text-align: left;
     border-radius: 40px;
-    width: 55%;
-    line-height: 1.8;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right:25px;
     padding-left:40px;
-    margin-left: 270px;
-    margin-top: 120px;
+    width: 60%;
+    line-height: 1.8;
+    height: fit-content;
+    margin-top: 10%;
+} 
+
+@media screen and (max-width:990px) {
+    .flex-container-createuserpage { flex-wrap: wrap; width:30%; margin-left: 1.5%;}
+    .flex-child1-createuserpage{ width: 10%;}
+    
+    
 }
