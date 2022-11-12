@@ -1,6 +1,6 @@
 
 
-.background-img {
+.img {
 background-image: url('../../../public/images/image\ 2.jpg');
  /* background-repeat: no-repeat; */
   
@@ -18,6 +18,6 @@ background-image: url('../../../public/images/image\ 2.jpg');
   left: 0;
 }
 
-body{
-  font-family: 'Inter', sans-serif;
+.routes{
+  font-family: Inter-bold;
 }
