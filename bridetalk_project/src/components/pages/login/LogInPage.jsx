@@ -2,7 +2,7 @@ import {
   Headline1,
   EnterPassword,
   EnterEmail,
-  PrimaryButton,
+  Button,
 } from "../../atoms";
 import { Link } from "react-router-dom";
 import "./loginpage.css";
@@ -23,18 +23,14 @@ export const LoginPage = () => {
       <div className="login-input-fields">
         <EnterEmail email="Email "></EnterEmail>
         <EnterPassword password="Password"></EnterPassword>
-
       </div>
         <div className="link-forgot-password">
-
             <Link to="/reset"> Forgot password?</Link>
-
         </div>
-
-      <PrimaryButton
+      <Button
         text={"Let me chat"}
         handleClick={handleClick}
-      ></PrimaryButton>
+      />
     </div>
   );
 };

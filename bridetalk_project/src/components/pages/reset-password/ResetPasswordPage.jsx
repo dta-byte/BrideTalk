@@ -1,14 +1,12 @@
 import {
   Headline1,
-  PrimaryButton,
   EnterEmail,
-  CancelButton,
 } from "../../atoms";
-import "./resetPage.css";
+
+import "./resetpasswordpage.css";
 
 
-
-export const ResetPage = () => {
+export const ResetPasswordPage = () => {
   function handleClick() {
     console.log("Button has been clicked");
   }
@@ -25,21 +23,7 @@ export const ResetPage = () => {
         <EnterEmail email="Email "></EnterEmail>
       </div>
 
-      <button onclick="handleClick()">Reset password</button>
-
-      {/* Denne knap "virker", men er grim
-      <div className="reset-email-button">
-        <TestButton id="mybutton"
-          text={"Reset password"}
-          handleClick={handleClick}
-        ></TestButton>
-      </div>
-
-      /* Go-back knap
-      <div className="Go-back">
-        <CancelButton>{"Go back"}</CancelButton>
-      </div>
-      */}
+      <button className="reset-psw-button" onclick="handleClick()">Reset password</button>
     </div>
   );
 };

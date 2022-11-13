@@ -8,7 +8,7 @@ export const DropdownLocation = (props) => {
     <div className="dropdown">
       <label>{question}</label>
       <div className="custom-select" class="custom-select">
-        <select name="select" id="select">
+        <select className="select-location">
           <option hidden selected>
             Choose location
           </option>

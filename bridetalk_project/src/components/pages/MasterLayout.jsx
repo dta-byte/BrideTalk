@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage } from "./homepage/HomePage";
 import { LoginPage } from "./login/LogInPage";
 import { CreateUserPage } from "./create-user/CreateUserPage";
-import { ResetPage } from "./reset-password/ResetPage";
+import { ResetPasswordPage } from "./reset-password/ResetPasswordPage"
 import { Footer, Navbar } from "../molecule";
 
 import "./masterlayout.css"
@@ -29,7 +29,7 @@ export const MasterLayout = () => {
             <Route path="/sign-up" element={<CreateUserPage />}></Route> 
 
             {/* Public route for reset page */}
-            <Route path="/Reset" element={<ResetPage />}></Route> 
+            <Route path="/reset" element={<ResetPasswordPage />}></Route> 
 
             </Routes>
         <Footer/>

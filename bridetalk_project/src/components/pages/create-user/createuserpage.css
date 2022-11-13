@@ -1,10 +1,4 @@
-@font-face {
-    font-family: "Inter";
-    src: url(" https://github.com/rsms/inter");
-  }
-
-  
-.flex-container-createuserpage {
+  .flex-container-createuserpage {
     display: flex;  
     flex-direction: row;
     justify-content:center;

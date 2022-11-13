@@ -4,8 +4,7 @@ import {
   EnterEmail,
   EnterPassword,
   DropdownLocation,
-  PrimaryButton,
-  CancelButton,
+  Button,
 } from "../../../atoms";
 
 import "./createuserform.css";
@@ -38,12 +37,18 @@ export const CreateUserForm = () => {
         <EnterPassword password="Password"></EnterPassword>
         <EnterPassword password="Confirm Password"></EnterPassword>
         <DropdownLocation question="Which locations are you interested in?"></DropdownLocation>
-        {/* <CancelButton>{"Go back"}</CancelButton> */}
-        <CancelButton text={"Go back"} handleClick={goBack}></CancelButton>
-        <PrimaryButton
+
+        <Button 
+          color={"hsl(0, 0%, 85%)"} 
+          text={"Go back"} 
+          handleClick={goBack}/>
+          
+        <Button 
+          color={"hsl(346, 52%, 77%)"}
           text={"Sign me up"}
           handleClick={toFrontPage}
-        ></PrimaryButton>
+        />
+
       </div>
     </div>
   );
