@@ -12,14 +12,15 @@
   height: 28px;
   border-radius: 10px;
   border: solid;
-  border-color: hsl(346, 54%, 88%);
+  border-color: var(--global-primary-3);
   padding-left: 5px;
 }
 
 .select-location:focus {
-  outline-color: hsl(345, 39%, 67%) !important;
+  outline-color: var(--global-primary-1)
+  !important;
 }
 
 .select-location:hover {
-  border-color: hsl(345, 39%, 67%);
+  border-color: var(--global-primary-1);
 }

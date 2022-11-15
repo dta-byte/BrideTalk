@@ -1,7 +1,7 @@
 /* The entire form */
 .login-form-container {
   width: 30%;
-  background-color: hsl(346, 58%, 98%);
+  background-color: var(--global-primary-5);
   color: hsl(0, 11%, 0%);
   height: 80%;
   padding: 40px 10px 20px 10px;
