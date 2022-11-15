@@ -1,6 +1,6 @@
 import {
   Headline1,
-  EnterEmail,
+  InputField,
 } from "../../atoms";
 
 import "./resetpasswordpage.css";
@@ -20,7 +20,7 @@ export const ResetPasswordPage = () => {
       </h4>
 
       <div className="email">
-        <EnterEmail email="Email "></EnterEmail>
+        <InputField email="Email "/>
       </div>
 
       <button className="reset-psw-button" onclick="handleClick()">Reset password</button>

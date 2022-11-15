@@ -1,4 +1,4 @@
-import { CreateUserForm } from "../../molecule";
+import { CreateUserForm } from "../../../../molecule";
 import "./createuserpage.css";
 
 export const CreateUserPage = () => {

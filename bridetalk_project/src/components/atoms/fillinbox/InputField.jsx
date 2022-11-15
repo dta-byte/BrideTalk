@@ -1,8 +1,8 @@
 import React from "react";
 import "./fillinbox.css";
 
-export const EnterText = (props) => {
-  const { text } = props;
+export const InputField = (props) => {
+  const { text, onChangeOut, type } = props;
 
   return (
     <div className="form-body">
@@ -13,9 +13,10 @@ export const EnterText = (props) => {
         </label>
         <input
           className="form__input"
-          type="text"
+          type={type}
           id="text"
           placeholder={text}
+          onChange={onChangeOut}
         />
       </div>
     </div>
