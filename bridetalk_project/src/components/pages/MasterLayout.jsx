@@ -1,40 +1,49 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { HomePage } from "./homepage/HomePage";
-import { LoginPage } from "./login/LogInPage";
-import { CreateUserPage } from "./create-user/CreateUserPage";
-import { ResetPasswordPage } from "./reset-password/ResetPasswordPage"
+import { HomePage, LoginPage, CreateUserPage, ResetPasswordPage } from ".";
 import { Footer, Navbar } from "../molecule";
 
 import "./masterlayout.css"
 
-// MasterLayout renders different (master) pages in DOM
+import { PersonComponent } from "./PersonComponent";
 
+// MasterLayout renders different (master) pages in DOM
 export const MasterLayout = () => {
     return (
         <>
-        
-        <BrowserRouter>
-        <div className="background-img">
 
-        <Navbar/>
-            <Routes classname="routes">
-            {/* Public route for HomePage */}
-            <Route path="/" element={<HomePage />}></Route>
+            <BrowserRouter>
+                <div className="background-img">
 
-            {/* Public route for LogIn page */}
-            <Route path="/login" element={<LoginPage />}></Route> 
+                    <Navbar />
+                   
+                    <Routes>
+                        {/* Private route */}
+                        {/* <Route
+                            path="/chat"
+                            element={
+                                <AuthWrapper>
+                                    <ChatPage />
+                                </AuthWrapper>
+                            }
+                        /> */}
+                        
+                        {/* Public route for HomePage */}
+                        <Route path="/" element={<HomePage />} />
 
-            {/* Public route for Create User page */}
-            <Route path="/sign-up" element={<CreateUserPage />}></Route> 
+                        {/* Public route for LogIn page */}
+                        <Route path="/login" element={<LoginPage />} />
 
-            {/* Public route for reset page */}
-            <Route path="/reset" element={<ResetPasswordPage />}></Route> 
+                        {/* Public route for Create User page */}
+                        <Route path="/sign-up" element={<CreateUserPage />} />
 
-            </Routes>
-        <Footer/>
-            </div>
-        </BrowserRouter>
+                        {/* Public route for reset page */}
+                        <Route path="/reset" element={<ResetPasswordPage />} />
+                        <Route path="/person" element={<PersonComponent />} />
+
+                    </Routes>
+                    <Footer />
+                </div>
+            </BrowserRouter>
         </>
     )
 }
