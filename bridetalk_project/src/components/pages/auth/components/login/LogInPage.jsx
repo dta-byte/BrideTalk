@@ -3,7 +3,7 @@ import {
   InputField,
   Button,
 } from "../../../../atoms";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./loginpage.css";
 import Parse from 'parse';
