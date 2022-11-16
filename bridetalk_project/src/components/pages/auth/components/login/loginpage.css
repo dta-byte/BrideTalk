@@ -9,11 +9,21 @@
   display: block;
   margin: 60px auto;
   text-align: center;
+
+}
+
+.log-in-headline {
+  font: var(--inter-h1);
+  color: red;
+  font-size: var(--inter-h1);
+
 }
 
 /* Link to sign up */
 .link-to-signup {
   margin: 15px 0 15px 0;
+
+ 
 }
 
 /* The input fields */
@@ -28,6 +38,7 @@
 .link-forgot-password {
   font-weight: bold;
   margin-bottom: 40px;
+
 }
 
 /* Change color for Link */

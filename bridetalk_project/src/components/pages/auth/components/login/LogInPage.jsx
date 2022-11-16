@@ -73,7 +73,8 @@ export const LoginPage = () => {
 
     { currentUser === null &&
     <div className="login-form-container">
-      <Headline1 headline="Log in" />
+
+      <div className="log-in-headline"> Log in </div>
 
       <div className="link-to-signup">
         Not a user? Create a user <Link to="/sign-up"> here</Link>
