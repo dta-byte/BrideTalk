@@ -22,18 +22,30 @@ export const CreateUserForm = () => {
   const [lastName, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPasword] = useState("");
+  const [location, setLocation] = useState("")
 
+  //Todo: If user does not input a valid e-mail the user should not be created/save, and a alert should be send. 
+  
   const addUser = async function() {
       const userNameValue = username;
       const passWordValue = password;
 
+   
     try {
       // create a new Parse User instance and since the signUp method returns a Promise, we need to call it using await
-      console.log(userNameValue)
       const createdUser = await Parse.User.signUp(userNameValue, passWordValue);
-     
+
+      createdUser.set('username', username)
+      createdUser.set('firstname', firstName)
+      createdUser.set('lastname', lastName)
+      createdUser.set('email', email)
+      createdUser.set('password', password)
+      createdUser.set('location', location)
+
       alert("Succes! User "+ createdUser.getUsername() + " was created");
+      createdUser.save();
       return true;
+
     } catch (error) {
       console.log('Error saving new User: ', error);
       return false;
@@ -90,7 +102,7 @@ export const CreateUserForm = () => {
           onChangeOut={(event) => {
             setPasword(event.target.value)}} />
 
-        <DropdownLocation question="Which locations are you interested in?" />
+        <DropdownLocation question="Which locations are you interested in?" onChangeOut={setLocation}/>
 
         <div className="buttons-row">
 

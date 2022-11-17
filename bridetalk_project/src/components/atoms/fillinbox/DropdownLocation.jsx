@@ -2,11 +2,11 @@ import React from "react";
 import "./dropdownlocation.css";
 
 export const DropdownLocation = (props) => {
-  const { question } = props;
+  const { question, onChangeOut } = props;
 
   return (
     <div className="dropdown">
-      <label>{question}</label>
+      <label onChange={onChangeOut}>{question}</label>
       <div className="custom-select" class="custom-select">
         <select className="select-location">
           <option hidden selected>
