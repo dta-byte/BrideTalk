@@ -1,12 +1,11 @@
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import {
-  Headline1,
   InputField,
   DropdownLocation,
   Button,
 } from "../../../atoms";
 import "./createuserform.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 import Parse from 'parse'
 
@@ -43,8 +42,10 @@ export const CreateUserForm = () => {
 
   return (
     <div>
-      <div className="create-user-form">
-        <Headline1 headline="Sign up to Bride Talk"></Headline1>
+      <div className="create-user-form-container">
+        <div className="sign-up-headline">
+          Sign up to Bride Talk
+          </div>
         <div className="link-to-login">
           Already a user? <Link to="/login"> Log in here </Link>
         </div>

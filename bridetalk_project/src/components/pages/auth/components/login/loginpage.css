@@ -2,7 +2,6 @@
 .login-form-container {
   width: 30%;
   background-color: var(--global-primary-5);
-  color: hsl(0, 11%, 0%);
   height: 80%;
   padding: 40px 10px 20px 10px;
   border-radius: 35px;
@@ -12,8 +11,7 @@
 }
 
 .log-in-headline {
-  font-size: var(--font-size-h1);
-  font-weight: bold;
+  font: var(--inter-1);
   color: var(--global-black-1);
 }
 
@@ -21,6 +19,7 @@
 /* Link to sign up */
 .link-to-signup {
   margin: 15px 0 15px 0;
+  font: var(--inter-normal-text);
 }
 
 /* The input fields */
@@ -29,12 +28,14 @@
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
+  font: var(--inter-normal-text);
 }
 
 /* Link to forgot password */
 .link-forgot-password {
   font-weight: bold;
   margin-bottom: 40px;
+  font: var(--inter-normal-text);
 }
 
 /* Change color for Link */

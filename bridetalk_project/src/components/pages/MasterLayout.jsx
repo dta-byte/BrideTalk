@@ -4,7 +4,6 @@ import { Footer, Navbar } from "../molecule";
 
 import "./masterlayout.css"
 
-import { PersonComponent } from "./PersonComponent";
 
 // MasterLayout renders different (master) pages in DOM
 export const MasterLayout = () => {
@@ -38,7 +37,7 @@ export const MasterLayout = () => {
 
                         {/* Public route for reset page */}
                         <Route path="/reset" element={<ResetPasswordPage />} />
-                        <Route path="/person" element={<PersonComponent />} />
+                        
 
                     </Routes>
                     <Footer />

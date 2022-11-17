@@ -1,4 +1,4 @@
-.create-user-form {
+.create-user-form-container {
   background-color: var(--global-primary-5);
   border-radius: 5px;
   width: 140%;
@@ -6,9 +6,16 @@
   border-radius: 40px;
 }
 
+.sign-up-headline{
+  text-align: center;
+  font: var(--inter-1);
+  /* color: var(--global-black-1); */
+}
+
 .link-to-login {
   text-align: center;
   margin: 15px 0 15px 0;
+  font:var(--inter-normal-text)
 }
 
 .buttons-row{
