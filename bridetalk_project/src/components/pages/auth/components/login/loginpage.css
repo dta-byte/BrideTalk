@@ -1,12 +1,12 @@
 /* The entire form */
 .login-form-container {
-  width: 30%;
+  width: 40%;
   background-color: var(--global-primary-5);
-  height: 80%;
-  padding: 40px 10px 20px 10px;
+  height: 810%;
+  padding: 40px 10px 40px 10px;
   border-radius: 35px;
   display: block;
-  margin: 60px auto;
+  margin: 100px auto;
   text-align: center;
 }
 
@@ -34,7 +34,8 @@
 /* Link to forgot password */
 .link-forgot-password {
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  margin-top: 20px;
   font: var(--inter-normal-text);
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./fillinbox.css";
+import "./inputfield.css";
 
 export const InputField = (props) => {
   const { text, onChangeOut, type } = props;
@@ -11,6 +11,7 @@ export const InputField = (props) => {
           {text}
           <div></div>
         </label>
+        
         <input
           className="form__input"
           type={type}

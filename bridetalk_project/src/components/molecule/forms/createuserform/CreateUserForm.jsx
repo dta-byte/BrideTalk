@@ -70,26 +70,26 @@ export const CreateUserForm = () => {
           } } />
 
         <InputField 
-          text="First Name " 
+          text="First name " 
           value={firstName} 
           onChangeOut={(event) => {
             setFname(event.target.value)}} />
 
         <InputField 
-          text="Last Name " 
+          text="Last name " 
           value={lastName}
           onChangeOut={(event) => {
             setLname(event.target.value)}} />
 
         <InputField 
-          text="Email " 
+          text="E-mail " 
           value={email} 
           type="email"
           onChangeOut={(event) => {
             setEmail(event.target.value)}} />
 
         <InputField 
-          text="Password "
+          text="Password"
           value={password}
           type="password"
           onChangeOut={(event) => { 
