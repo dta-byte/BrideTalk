@@ -6,9 +6,7 @@ import "./resetpasswordpage.css";
 
 
 export const ResetPasswordPage = () => {
-  function handleClick() {
-    console.log("Button has been clicked");
-  }
+
 
   return (
     <div className="reset-container">
@@ -22,7 +20,7 @@ export const ResetPasswordPage = () => {
         <InputField email="Email "/>
       </div>
 
-      <button className="reset-psw-button" onclick="handleClick()">Reset password</button>
+      <button className="reset-psw-button"> Reset password </button>
     </div>
   );
 };

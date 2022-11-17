@@ -1,13 +1,9 @@
-
-
 .background-img {
-background-image: url('../../../public/images/image\ 2.jpg');
-/*background-image: url('../../../public/images/Flower2.png'); */
- /* background-repeat: no-repeat; */
+  background-image: url('../../../public/images/Flower2.png');
   
   /* Set rules to fill background */
   min-height: 100%;
-  min-width: 1024px;
+  min-width: 100px;
 
   /* Proportionate scaling */
   width: 100%;
