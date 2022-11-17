@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonText } from "../typographies/ButtonText";
+
 import "./button.css";
 // The color of the button is by default set to the primary color. 
 
@@ -15,7 +15,7 @@ export const Button = ({ text, handleClick, color = "hsl(346, 52%, 77%)" }) => {
       style={{ backgroundColor: color }} 
       className="button-component" 
       onClick={() => handleClick()}>
-      <ButtonText text={text} />
+      <div classname="butten-text">{text}</div>
     </button>
   );
 };

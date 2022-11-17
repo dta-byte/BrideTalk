@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { BodyText, Headline1 } from "../../atoms";
+
 
 import "./homepage.css";
 
@@ -23,7 +23,7 @@ export const HomePage = () => {
       <div className="homepage-container">
         {/* Buttons */}
         <div className="homepage-column-right">
-      <Headline1 headline="Welcome to a universe for future brides!"></Headline1>
+      <div className="homepage-headline">Welcome to a universe for future brides!</div>
       <div className="buttons-container">
 
           <button class="login-button" onClick={toLoginPage}>
@@ -39,7 +39,7 @@ export const HomePage = () => {
 
         {/* Caroussel */}
         <div className="homepage-column-left">
-        <BodyText text="Carousel to come!"></BodyText>
+        <div classname="caroussel">Carousel to come!</div>
        </div>
         {/* Container ends */}
       </div>

@@ -1,5 +1,4 @@
 import {
-  Headline1,
   InputField,
 } from "../../atoms";
 
@@ -13,7 +12,7 @@ export const ResetPasswordPage = () => {
 
   return (
     <div className="reset-container">
-      <Headline1 headline="Reset Your Password"></Headline1>
+      <div headline="headline-reset-password"/>
       <h4 type="text">
         Lost your password? Please enter your email address. You Will receive a
         link to create a new password via email.

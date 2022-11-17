@@ -1,12 +1,13 @@
+import Parse from 'parse';
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
-  Headline1,
   InputField,
   Button,
 } from "../../../../atoms";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+
 import "./loginpage.css";
-import Parse from 'parse';
+
 
 export const LoginPage = () => {
   let navigate = useNavigate();
@@ -73,7 +74,8 @@ export const LoginPage = () => {
 
     { currentUser === null &&
     <div className="login-form-container">
-      <Headline1 headline="Log in" />
+
+      <div className="log-in-headline"> Log in </div>
 
       <div className="link-to-signup">
         Not a user? Create a user <Link to="/sign-up"> here</Link>
