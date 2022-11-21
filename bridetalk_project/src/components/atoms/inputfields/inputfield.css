@@ -9,13 +9,13 @@
 
 .form-body{
   padding: 10px 10px;
-  margin-left: 24%;
+  margin-left: 6%;
+  margin-right: 6%;
 }
     
 .form__label{
   width: 80%;
   color:var(--global-black-2);
-  line-height: 1.2;
   font: var(--inter-normal-text);
 
   /* Text being exactly above the text in the input field */
@@ -23,16 +23,16 @@
 }
 
 .form__input{
-  width: 65%;
-  height: 23px;
+  width: 100%;
+  height: 28px;
   border-radius: 10px;
   border:solid;
   border-color: var(--global-primary-3);
   padding-left: 5px; 
   font: var(--inter-normal-text);
-
+  color: var(--global-black-3);
   /* Space between the label an input */
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .form__input:hover{

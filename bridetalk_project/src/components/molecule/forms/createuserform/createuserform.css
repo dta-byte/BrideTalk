@@ -21,14 +21,18 @@
 .buttons-row{
   margin-top: 50px;
   margin-bottom: 30px;
-  margin-left: 80px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  display: flex;
+  gap: 10%;
+  margin-left: 110px;
+  margin-right: 110px
+
 }
 
-.button-back{
+/* .button-back{
   padding-right: 10px;
-}
+} */
 
 
 /* Change color for Link */
