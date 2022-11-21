@@ -24,6 +24,10 @@ export const CreateUserForm = () => {
     navigate(path);
   };
 
+  const goSomewhere = (pathVar) => {
+    navigate(pathVar);
+  };
+
   return (
     <div>
       <div className="create-user-form">
@@ -38,17 +42,17 @@ export const CreateUserForm = () => {
         <EnterPassword password="Confirm Password"></EnterPassword>
         <DropdownLocation question="Which locations are you interested in?"></DropdownLocation>
 
-        <Button 
-          color={"hsl(0, 0%, 85%)"} 
-          text={"Go back"} 
-          handleClick={goBack}/>
-          
-        <Button 
-          color={"hsl(346, 52%, 77%)"}
-          text={"Sign me up"}
-          handleClick={toFrontPage}
+        <Button
+          color={"hsl(0, 0%, 85%)"}
+          text={"Go back"}
+          handleClick={() => goSomewhere(navigate(-1))}
         />
 
+        <Button
+          color={"hsl(346, 52%, 77%)"}
+          text={"Sign me up"}
+          handleClick={() => goSomewhere("/")}
+        />
       </div>
     </div>
   );

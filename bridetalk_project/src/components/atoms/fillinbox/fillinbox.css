@@ -20,11 +20,12 @@
 }
 .form__input{
   width: 65%;
-  height: 23px;
+  height: 28px;
   border-radius: 10px;
   border:solid;
   border-color: hsl(346, 54%, 88%); 
   padding-left: 5px; 
+  line-height: 1.5;
 }
 
 .form__input:hover{

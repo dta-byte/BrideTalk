@@ -1,9 +1,4 @@
-import {
-  Headline1,
-  EnterPassword,
-  EnterEmail,
-  Button,
-} from "../../atoms";
+import { Headline1, EnterPassword, EnterEmail, Button } from "../../atoms";
 import { Link } from "react-router-dom";
 import "./loginpage.css";
 
@@ -24,13 +19,10 @@ export const LoginPage = () => {
         <EnterEmail email="Email "></EnterEmail>
         <EnterPassword password="Password"></EnterPassword>
       </div>
-        <div className="link-forgot-password">
-            <Link to="/reset"> Forgot password?</Link>
-        </div>
-      <Button
-        text={"Let me chat"}
-        handleClick={handleClick}
-      />
+      <div className="link-forgot-password">
+        <Link to="/reset"> Forgot password?</Link>
+      </div>
+      <Button text={"Let me chat"} handleClick={handleClick} />
     </div>
   );
 };

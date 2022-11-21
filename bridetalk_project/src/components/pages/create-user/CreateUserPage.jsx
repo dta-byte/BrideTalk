@@ -7,7 +7,6 @@ export const CreateUserPage = () => {
       <div className="flex-child1-createuserpage">
         <CreateUserForm></CreateUserForm>
       </div>
-
       <div className="flex-child2-createuserpage">
         <div>
           <p>Connect with other future brides.</p>

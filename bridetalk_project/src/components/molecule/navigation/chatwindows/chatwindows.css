@@ -1,0 +1,16 @@
+.flex-container-chatwindows {
+    display: flex;  
+    flex-direction: column;
+    background-color: white;
+    height: fit-content;
+
+}
+
+.flex-child1-chatwindows{
+    height: fit-content;
+    border-color: black;
+    border-style: solid;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+}

@@ -1,0 +1,43 @@
+.flex-container-chatpage {
+    border-style: double;
+    border-color: crimson;
+    display: flex;  
+    flex-direction: row;
+    margin-top:6%;
+    margin-right: 3%;
+    margin-left: 3%;
+    
+}
+
+.flex-child1-chatpage{
+    border-color: black;
+    
+  
+   
+}
+
+.flex-child2-chatpage {
+border-style:solid;
+border-top: 0ch;
+border-bottom: 0;
+border-color: black;
+padding-right: 150px;
+padding-left: 150px;
+padding-top: 2%;
+background-color:hsl(346, 58%, 98%) ;
+text-align: left;
+}
+   
+.flex-child3-chatpage {
+    border-style:solid;
+    border-top: 0ch;
+    border-bottom: 0;
+    border-left: 0;
+    border-color: black;
+    padding-right: 340px;
+    padding-left: 340px;
+    padding-top: 2%;
+    background-color:hsl(346, 58%, 98%) ;
+    text-align: left;
+    }
+       
