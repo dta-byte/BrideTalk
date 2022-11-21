@@ -13,14 +13,13 @@
     --global-secondary-3: hsla(289, 28%, 80%);
     --global-secondary-2: hsla(288, 20%, 70%);
     --global-secondary-1: hsla(287, 14%, 60%);
-
   
     /* Black scale: */
     --global-black-5: hsla(0, 0%, 50%);
     --global-black-4: hsla(0, 0%, 40%);
     --global-black-3: hsla(0, 0%, 30%);
     --global-black-2: hsla(0, 0%, 20%);
-    --global-black-1: hsla(0, 0%, 0%);
+    --global-black-1: hsla(0, 11%, 0%);
     
     /* Grey scale  */
     --global-grey-5: hsla(0, 0%, 90%);

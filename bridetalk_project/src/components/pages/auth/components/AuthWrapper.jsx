@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Parse from "parse";
 
 export const AuthWrapper = ({ children }) => {
@@ -9,6 +9,6 @@ export const AuthWrapper = ({ children }) => {
       return children;
     }
   }
-  return <Navigate to={"/login"} />;
+  return <Link to={"/login"} />;
 };
 

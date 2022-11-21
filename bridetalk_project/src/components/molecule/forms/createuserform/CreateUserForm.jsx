@@ -12,14 +12,11 @@ import Parse from 'parse'
 export const CreateUserForm = () => {
   let navigate = useNavigate();
 
-  const goBack = () => {
-    let path = navigate(-1);
+  const navigateTo = (path) => {
     navigate(path);
   };
 
   const [username, setUsername] = useState("")
-  const [firstName, setFname] = useState("");
-  const [lastName, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPasword] = useState("");
   const [location, setLocation] = useState("")
@@ -36,13 +33,12 @@ export const CreateUserForm = () => {
       const createdUser = await Parse.User.signUp(userNameValue, passWordValue);
 
       createdUser.set('username', username)
-      createdUser.set('firstname', firstName)
-      createdUser.set('lastname', lastName)
       createdUser.set('email', email)
       createdUser.set('password', password)
       createdUser.set('location', location)
 
       alert("Succes! User "+ createdUser.getUsername() + " was created");
+      
       createdUser.save();
       return true;
 
@@ -68,18 +64,6 @@ export const CreateUserForm = () => {
             setUsername(event.target.value)
             // console.log(event.target.value)
           } } />
-
-        <InputField 
-          text="First name " 
-          value={firstName} 
-          onChangeOut={(event) => {
-            setFname(event.target.value)}} />
-
-        <InputField 
-          text="Last name " 
-          value={lastName}
-          onChangeOut={(event) => {
-            setLname(event.target.value)}} />
 
         <InputField 
           text="E-mail " 
@@ -110,7 +94,7 @@ export const CreateUserForm = () => {
           className="button-back"
             color={"var(--global-grey-4)"}
             text={"Go back"}
-            handleClick={goBack} />
+            handleClick={() => navigateTo(-1)} />
 
           <Button
             color={"var(--global-primary-2)"}

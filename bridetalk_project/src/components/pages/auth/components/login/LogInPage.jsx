@@ -112,7 +112,7 @@ export const LoginPage = () => {
     </div>
     }
 
-    {/* TODO: Der skal laves CSS på dette. Men det er det, som vises, når en user logger in */}
+    {/* TODO: Must create CSS and HTML on this part */}
     {currentUser !== null &&
         (<div className="container">
           <h2 className="heading">{'User Screen'}</h2>

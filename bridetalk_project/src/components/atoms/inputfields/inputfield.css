@@ -21,6 +21,7 @@
   /* Text being exactly above the text in the input field */
   margin-left: 6px;
 }
+
 .form__input{
   width: 65%;
   height: 23px;
@@ -29,7 +30,7 @@
   border-color: var(--global-primary-3);
   padding-left: 5px; 
   font: var(--inter-normal-text);
-  
+
   /* Space between the label an input */
   margin-top: 4px;
 }

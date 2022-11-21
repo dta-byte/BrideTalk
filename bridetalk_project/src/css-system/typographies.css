@@ -14,14 +14,15 @@
   --font-weight-buttons: bold; */
 
   /* Design system fonts: */
+  /* elephant */
   --inter-1: 
     var(--font-size-1) 
     var(--font-family-inter);
-
+  /* horse */
   --inter-2: 
     var(--font-size-2)
     var(--font-family-inter);
-
+  /* dog */
   --inter-3: 
     var(--font-size-3)
     var(--font-family-inter);

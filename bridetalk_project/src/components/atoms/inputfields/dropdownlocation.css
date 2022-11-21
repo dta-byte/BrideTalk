@@ -6,9 +6,11 @@
   line-height: 1.2;
   margin-bottom: 16px;
   font: var(--inter-normal-text);
+  color: var(--global-black-2);
 }
 
 .select-location {
+  color: var(--global-black-3);
   width: 60%;
   height: 28px;
   border-radius: 10px;

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import { BiMenu } from "react-icons/bi";
+
+
 import "./navbar.css";
 
 /*Functional component that creates the navigation bar.*/

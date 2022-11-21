@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HomePage, LoginPage, CreateUserPage, ResetPasswordPage } from ".";
 import { Footer, Navbar } from "../molecule";
+import { ChatSetup } from "./Chat/ChatSetUp";
 
 import "./masterlayout.css"
-
 
 // MasterLayout renders different (master) pages in DOM
 export const MasterLayout = () => {
@@ -14,7 +14,7 @@ export const MasterLayout = () => {
                 <div className="background-img">
 
                     <Navbar />
-                   
+
                     <Routes>
                         {/* Private route */}
                         {/* <Route
@@ -24,8 +24,8 @@ export const MasterLayout = () => {
                                     <ChatPage />
                                 </AuthWrapper>
                             }
-                        /> */}
-                        
+                        />
+                         */}
                         {/* Public route for HomePage */}
                         <Route path="/" element={<HomePage />} />
 
@@ -36,8 +36,12 @@ export const MasterLayout = () => {
                         <Route path="/sign-up" element={<CreateUserPage />} />
 
                         {/* Public route for reset page */}
-                        <Route path="/reset" element={<ResetPasswordPage />} />
-                        
+                        <Route 
+                        path="/reset" element={<ResetPasswordPage />} />
+
+                         <Route 
+                         path="/chat" 
+                         element={<ChatSetup/>}/>
 
                     </Routes>
                     <Footer />

@@ -1,6 +1,4 @@
-import {
-  InputField,
-} from "../../atoms";
+import { InputField } from "../../atoms";
 
 import "./resetpasswordpage.css";
 

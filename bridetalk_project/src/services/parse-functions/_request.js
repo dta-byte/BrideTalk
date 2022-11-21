@@ -1,7 +1,5 @@
 import Parse from 'parse'
 
-
-
 // Reading User objects
 
 export const readUsers = async function () {
@@ -39,7 +37,7 @@ export const updateUserPassword = async function (userID, password) {
 };
 
 //   Deleting a User
-export const deleteUSer = async function (userID) {
+export const deleteUser = async function (userID) {
     // Create a new User parse object instance and set user id
     const User = new Parse.Object('User');
     User.set('userID', userID);
