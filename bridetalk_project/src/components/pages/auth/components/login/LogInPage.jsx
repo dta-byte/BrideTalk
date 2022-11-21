@@ -77,8 +77,8 @@ export const LoginPage = () => {
 
       <div className="log-in-headline"> Log in </div>
 
-      <div className="link-to-signup">
-        Not a user? Create a user <Link to="/sign-up"> here</Link>
+      <div className="link-to-signup"> Not a user? Create a user
+         <Link to="/sign-up"> here</Link>
       </div>
 
 

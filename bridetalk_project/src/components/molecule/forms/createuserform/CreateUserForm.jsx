@@ -55,7 +55,7 @@ export const CreateUserForm = () => {
           Sign up to Bride Talk
           </div>
         <div className="link-to-login">
-          Already a user? <Link to="/login"> Log in here </Link>
+          Already a user? Log in <Link  to="/login"> here </Link>
         </div>
         <InputField
           text="Username " 
