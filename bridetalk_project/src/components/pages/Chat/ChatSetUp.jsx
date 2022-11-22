@@ -15,12 +15,14 @@ export const ChatSetup = () => {
   const startLiveChat = async () => {
     const senderUserName = senderUserInput;
     const receiverUserName = receiverUserInput;
+    console.log("this is the reciever username: ", receiverUserName)
+    console.log("this is the sender username: ", senderUserName)
 
     // Check if user informed both Users
     if (senderUserName === null || receiverUserName === null) {
-      alert("Please inform both sender and receiver Users!");
+      alert("Please inform both sender and receiver users!");
 
-      console.log(senderUserName + receiverUserName + " is null")
+      console.log(senderUserName, receiverUserName, " is null")
 
       return false;
     }
@@ -29,21 +31,21 @@ export const ChatSetup = () => {
     let senderUserObject = null;
     try {
       const senderParseQuery = new Parse.Query("User");
-      senderParseQuery.equalTo("name", senderUserName);
+      senderParseQuery.equalTo("username", senderUserName);
       const senderParseQueryResult = await senderParseQuery.first();
+      console.log("HVAD ER DETTE?", senderParseQueryResult)
 
       if (
         senderParseQueryResult !== undefined &&
         senderParseQueryResult !== null
-        
       ) {
         senderUserObject = senderParseQueryResult;
-        console.log(senderUserObject + "does exist ")
+        console.log(senderUserObject + " SENDER does exist ")
       } else {
         senderUserObject = new Parse.Object("User");
-        senderUserObject.set("name", senderUserName);
+        senderUserObject.set("username", senderUserName);
         senderUserObject = await senderUserObject.save();
-        console.log(senderUserObject + "new user ")
+        console.log(senderUserObject + " SENDER IS A NEW new user ")
       }
     } catch (error) {
       alert(error);
@@ -56,15 +58,19 @@ export const ChatSetup = () => {
       const receiverParseQuery = new Parse.Query("User");
       receiverParseQuery.equalTo("username", receiverUserName);
       const receiverParseQueryResult = await receiverParseQuery.first();
+      console.log("HVAD ER DETTE? RECIEVER", receiverParseQueryResult)
+
       if (
         receiverParseQueryResult !== undefined &&
         receiverParseQueryResult !== null
       ) {
         receiverUserObject = receiverParseQueryResult;
+        console.log(receiverUserObject + " RECIEVER does exist ")
       } else {
         receiverUserObject = new Parse.Object("User");
         receiverUserObject.set("username", receiverUserName);
         receiverUserObject = await receiverUserObject.save();
+        console.log(receiverUserObject + " RECIEVER IS A new user ")
       }
     } catch (error) {
       alert(error);
@@ -79,37 +85,26 @@ export const ChatSetup = () => {
 
   return (
     <div>
-      <div className="header">
-
-        <p className="header_text_bold">{"React on Back4App"}</p>
-        <p className="header_text">{"Live query chat app"}</p>
-      </div>
-      <div className="container">
+      <div className="container-bacground">
         {senderUserId === null && receiverUserId === null && (
           <div>
             <InputField
-            //   className="form_input"
+              type="text"
               value={senderUserInput}
               onChangeOut={(event) => setSenderUserInput(event.target.value)}
-              text={"Sender (Your) User"}
-            //   size="large"
+              text={"Sender"}
             />
             <InputField
-            //   className="form_input"
+              type="text"
               value={receiverUserInput}
-              onChange={(event) => setReceiverUserInput(event.target.value)}
-              text={"Receiver (Their) User"}
-            //   size="large"
+              onChangeOut={(event) => setReceiverUserInput(event.target.value)}
+              text={"Receiver"}
             />
             <Button
-              className="form_button"
               text={"Start chatting!"}
               color={"var(--global-primary-2)"}
-              handleClick={startLiveChat }
-            
-            >
-              Start live chat
-            </Button>
+              handleClick={() => startLiveChat() }
+              />
           </div>
         )}
         {senderUserId !== null && receiverUserId !== null && (

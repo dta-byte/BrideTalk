@@ -16,7 +16,7 @@ export const InputField = (props) => {
           className="form__input"
           type={type}
           id="text"
-          placeholder={text}
+          // placeholder={text}
           onChange={onChangeOut}
         />
       </div>

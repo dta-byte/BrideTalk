@@ -1,20 +1,42 @@
 import { useNavigate } from "react-router-dom";
-
+// import { useHistory } from "react-router-dom";
+// import { useState, useEffect } from "react";
+// import Parse from "parse";
 
 import "./homepage.css";
+// import { ChatSetup } from "../Chat/ChatSetUp";
 
 export const HomePage = () => {
   let navigate = useNavigate();
 
-  const toLoginPage = () => {
-    let path = "/login";
+  const navigateTo = (path) => {
     navigate(path);
-  };
+  }
 
-  const toSignUpPage = () => {
-    let path = "/sign-up";
-    navigate(path);
-  };
+  // // State variables holding input values and flags
+  // const [currentUser, setCurrentUser] = useState(null);
+
+  //   // This effect hook runs at every render and checks if there is a
+  // // logged in user, redirecting to Log-in screen if needed
+  // useEffect(() => {
+  //   const checkCurrentUser = async () => {
+  //     try {
+  //       const user = await Parse.User.currentAsync();
+  //       if (user === null || user === undefined) {
+  //         console.log("No user is logged in, go to homepage")
+  //         navigate("/");
+  //       } else {
+  //         if (currentUser === null) {
+  //           setCurrentUser(user);
+  //         }
+  //       }
+  //       return true;
+  //     } catch (error) {}
+  //     return false;
+  //   };
+  //   checkCurrentUser();
+  // });
+
 
   return (
     <>
@@ -26,11 +48,11 @@ export const HomePage = () => {
       <div className="homepage-headline">Welcome to a universe for future brides!</div>
       <div className="buttons-container">
 
-          <button class="login-button" onClick={toLoginPage}>
+          <button className="login-button" onClick={() => navigateTo("/login")}>
             {" "}
             Log in
           </button>
-          <button class="signin-button" onClick={toSignUpPage}>
+          <button className="signin-button" onClick={() => navigateTo("/sign-up")}>
             {" "}
             Sign up
           </button>
@@ -38,8 +60,9 @@ export const HomePage = () => {
         </div>
 
         {/* Caroussel */}
+      
         <div className="homepage-column-left">
-        <div classname="caroussel">Carousel to come!</div>
+        <div className="caroussel">Carousel to come!</div>
        </div>
         {/* Container ends */}
       </div>

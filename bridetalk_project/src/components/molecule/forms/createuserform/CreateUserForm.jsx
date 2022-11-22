@@ -30,16 +30,18 @@ export const CreateUserForm = () => {
    
     try {
       // create a new Parse User instance and since the signUp method returns a Promise, we need to call it using await
+
       const createdUser = await Parse.User.signUp(userNameValue, passWordValue);
+      // const createdUser = new Parse.Object("_User");
 
       createdUser.set('username', username)
       createdUser.set('email', email)
       createdUser.set('password', password)
       createdUser.set('location', location)
 
-      alert("Succes! User "+ createdUser.getUsername() + " was created");
+      alert("Succes! User "+ createdUser + " was created");
       
-      createdUser.save();
+      await createdUser.save();
       return true;
 
     } catch (error) {

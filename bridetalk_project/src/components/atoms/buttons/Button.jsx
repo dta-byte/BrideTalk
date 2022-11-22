@@ -15,7 +15,7 @@ export const Button = ({ text, handleClick, color = "hsl(346, 52%, 77%)" }) => {
       style={{ backgroundColor: color }} 
       className="button-component" 
       onClick={() => handleClick()}>
-      <div classname="butten-text">{text}</div>
+      <div className="butten-text">{text}</div>
     </button>
   );
 };

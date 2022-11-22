@@ -4,6 +4,7 @@ import Parse from "parse";
 import { useParseQuery } from "@parse/react";
 
 export const LiveChat = (props) => {
+console.log(props)
   // State variable to hold message text input
   const [messageInput, setMessageInput] = useState("");
 
@@ -38,6 +39,7 @@ export const LiveChat = (props) => {
   const sendMessage = async () => {
     try {
       const messageText = messageInput;
+      console.log(messageText + " this is the messagetext")
 
       // Get sender and receiver User Parse objects
       const senderUserObjectQuery = new Parse.Query("User");
@@ -45,22 +47,26 @@ export const LiveChat = (props) => {
       senderUserObjectQuery.equalTo("objectId", props.senderUserId);
 
       let senderUserObject = await senderUserObjectQuery.first();
-
+      console.log("this is senderuserobject ", senderUserObject)
+     
+      // creates the query 
       const receiverUserObjectQuery = new Parse.Query("User");
-
+      
       receiverUserObjectQuery.equalTo("objectId", props.receiverUserId);
-
+      // query runs
       let receiverUserObject = await receiverUserObjectQuery.first();
+      console.log("this is receiverUserObject ", receiverUserObject)
 
       // Create new Message object and save it
       let Message = new Parse.Object("Message");
       Message.set("text", messageText);
-      Message.set("sender", senderUserObject);
+      Message.set("senderObject", senderUserObject);
       Message.set("receiver", receiverUserObject);
       Message.save();
-        console.log(messageText)
+
       // Clear input
-      setMessageInput("");
+      setMessageInput();
+   
     } catch (error) {
       alert(error);
     }
@@ -74,7 +80,7 @@ export const LiveChat = (props) => {
   return (
     <div>
       <div className="flex_between">
-        <h2 class="list_heading">{`${props.senderUserName} sending, ${props.receiverUserName} receiving!`}</h2>
+        <h2 className="list_heading">{`${props.senderUserName} sending, ${props.receiverUserName} receiving!`}</h2>
 
           <Button
             handleClick={reload}
@@ -102,7 +108,7 @@ export const LiveChat = (props) => {
                   {formatDateToTime(result.get("createdAt"))}
                 </p>
                 <p className="message_name">
-                  {result.get("sender").get("name")}
+                  {result.get("sender").get("username")}
                 </p>
               </div>
             ))}
@@ -115,13 +121,12 @@ export const LiveChat = (props) => {
           value={messageInput}
           onChangeOut={(event) => setMessageInput(event.target.value)}
           text={"Your message..."}
-     
         />
         <Button
         text={"Send message"}
           className="form_button"
           color={"var(--global-primary-2)"}
-          handleClick={(event) => sendMessage(event.target.value)}
+          handleClick={sendMessage}
         />
          
 

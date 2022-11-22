@@ -100,7 +100,7 @@ export const LoginPage = () => {
           }}
         />
       </div>
-
+ 
       <div className="link-forgot-password">
         <Link to="/reset"> Forgot password?</Link>
       </div>
