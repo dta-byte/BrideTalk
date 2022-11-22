@@ -16,3 +16,4 @@ export const MainChatPage = () => {
     </div>
   );
 };
+//mainchatpagecomponent
