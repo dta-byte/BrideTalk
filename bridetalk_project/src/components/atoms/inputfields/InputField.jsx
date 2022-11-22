@@ -11,7 +11,7 @@ export const InputField = (props) => {
           {text}
           <div></div>
         </label>
-        
+
         <input
           className="form__input"
           type={type}

@@ -2,8 +2,8 @@ import "./livechatcomponent.css";
 
 export const LiveChatComponent = () => {
   return (
-    <div Classname="test">
-      <p>LiveChatComponent</p>
+    <div className="messagename">
+      <p type="text">Name</p>
     </div>
   );
 };

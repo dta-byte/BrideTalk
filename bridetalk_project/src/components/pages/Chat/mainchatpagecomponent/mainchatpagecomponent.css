@@ -1,3 +1,39 @@
-.test {
-    color: pink;
+.flex-container-chatpage {
+    border-style: double;
+    border-color: crimson;
+    display: flex;  
+    flex-direction: row;
+    margin-top:4%;
+    margin-right: 3%;
+    margin-left: 3%;
+    background-color:hsl(346, 58%, 98%) ;
 }
+
+
+.flex-child1-chatpage{
+    border-color: black;
+}
+
+.flex-child2-chatpage {
+border-style:solid;
+border-top: 0ch;
+border-bottom: 0;
+border-color: black;
+flex-grow: 1;
+}
+   
+.flex-child3-chatpage {
+    border-style:solid;
+    border-top: 0ch;
+    border-bottom: 0;
+    border-left: 0;
+    border-color: black;
+    flex-grow: 2;
+    }
+       
+
+    @media screen and (max-width:1000px) {
+        .flex-container-chatpage{}
+        .flex-child3-chatpage{flex-grow: 4;}
+        
+    }

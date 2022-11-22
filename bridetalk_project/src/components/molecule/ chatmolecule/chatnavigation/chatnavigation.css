@@ -1,3 +1,28 @@
-.test {
-    color: pink;
+.flex-container-chatnavigation {
+    display: flex;  
+    flex-direction: column;
+    background-color:  grey;
+    height: fit-content;
+
+}
+.flex-chat-icon {
+    border-style: double;
+    border-color: black;
+    border-top:0cm;
+    border-left:0cm;
+    border-right: 0cm;
+}
+.chat-icon{
+  padding: 50px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: grey;
+  
+}
+
+.groupchat-icon{
+    padding: 50px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-color: grey;
 }
