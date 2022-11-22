@@ -1,4 +1,13 @@
-.messagename{
-    text-align: left;
-    margin-left: 10px;
-}
+.livechat-headline{
+    font: var(--inter-1);
+    margin-left: 6%;
+    margin-top:10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .flexbox-container-livechat {
+    display: flex;  
+    flex-direction: column;
+    gap: 420px;
+  }

@@ -1,13 +1,13 @@
 .flex-container-chatnavigation {
     display: flex;  
     flex-direction: column;
-    background-color:  grey;
+    background-color:var(--global-grey-5);
     height: fit-content;
 
 }
 .flex-chat-icon {
     border-style: double;
-    border-color: black;
+    border-color: var(--global-black-1);
     border-top:0cm;
     border-left:0cm;
     border-right: 0cm;
@@ -16,7 +16,7 @@
   padding: 50px;
   padding-top: 70px;
   padding-bottom: 70px;
-  background-color: grey;
+  background-color:var(--global-grey-5);
   
 }
 
@@ -24,5 +24,5 @@
     padding: 50px;
     padding-top: 70px;
     padding-bottom: 70px;
-    background-color: grey;
+    background-color: var(--global-grey-5);
 }

@@ -1,4 +1,25 @@
-.chatlist{
-   text-align: left;
-   margin-left: 10px;
-}
+.thread-headline{
+   font: var(--inter-1);
+   margin-left: 7%;
+   margin-top:10px;
+   margin-bottom: 10px;
+   font-weight: bold;
+
+ }
+
+ .flexbox-treadview-top{
+   display: flex;  
+  
+ }
+ .thread-headline {
+   flex-grow: 10;
+ }
+
+ .flex-newchat-icon {
+border: 0px;
+flex-grow: 1;
+margin-top: 8px;
+
+ }
+
+

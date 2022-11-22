@@ -11,4 +11,3 @@ export const AuthWrapper = ({ children }) => {
   }
   return <Link to={"/login"} />;
 };
-
