@@ -1,14 +1,16 @@
 import "./chatwindows.css";
+import { BsChatDots } from "react-icons/bs";
+import { GrGroup } from "react-icons/gr";
 
 export const ChatWindows = () => {
   return (
     <div className="flex-container-chatwindows">
-      <div className="flex-child1-chatwindows">
-        <img src="../images/chaticon.jpeg"></img>
+      <div className="flex-chat-icon">
+        <BsChatDots className="chat-icon" size={150} />
       </div>
 
-      <div className="flex-child2-chatwindows">
-        <img src="../images/groupchat.png"></img>
+      <div className="flex-groupchat-icon-">
+        <GrGroup className="chat-icon" size={150} />
       </div>
     </div>
   );

@@ -1,16 +1,21 @@
 .flex-container-chatwindows {
     display: flex;  
     flex-direction: column;
-    background-color: white;
+    background-color:  grey;
     height: fit-content;
 
 }
-
-.flex-child1-chatwindows{
-    height: fit-content;
+.flex-chat-icon {
+    border-style: double;
+   border-top:0cm;
+   border-left:0cm;
+   border-right: 0cm;
     border-color: black;
-    border-style: solid;
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
 }
+.chat-icon{
+  padding: 50px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  background-color: grey;
+}
+
