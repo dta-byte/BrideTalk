@@ -5,6 +5,7 @@ import {
   CreateUserPage,
   ResetPasswordPage,
   MainChatPageComponent,
+  JoinGroupOverviewPage,
 } from ".";
 import { Footer, Navbar } from "../molecule";
 import { ChatSetup } from "./Chat/ChatSetUp";
@@ -45,6 +46,8 @@ export const MasterLayout = () => {
             <Route path="/chat" element={<ChatSetup />} />
 
             <Route path="/chat1" element={<MainChatPageComponent />} />
+
+            <Route path="/findgroups" element={<JoinGroupOverviewPage />} />
           </Routes>
           <Footer />
         </div>

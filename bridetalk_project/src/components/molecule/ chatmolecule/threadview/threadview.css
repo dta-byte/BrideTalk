@@ -1,3 +1,25 @@
-.test {
-    color: pink;
-}
+.thread-headline{
+  font: var(--inter-1);
+  margin-left: 2%;
+  margin-top:12px;
+  margin-bottom: 12px;
+  font-weight: bold;
+
+ }
+
+ .flexbox-treadview-top{
+   display: flex;  
+  
+ }
+ .thread-headline {
+   flex-grow: 10;
+ }
+
+ .flex-newchat-icon {
+border: 0px;
+flex-grow: 1;
+margin-top: 8px;
+
+ }
+
+

@@ -11,6 +11,7 @@
   padding: 10px 10px;
   margin-left: 6%;
   margin-right: 6%;
+  display: flex;
 }
     
 .form__label{
@@ -29,6 +30,7 @@
   border:solid;
   border-color: var(--global-primary-3);
   padding-left: 5px; 
+  padding-right: 5px;
   font: var(--inter-normal-text);
   color: var(--global-black-3);
   /* Space between the label an input */
