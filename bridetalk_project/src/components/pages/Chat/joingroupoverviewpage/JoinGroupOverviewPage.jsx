@@ -11,7 +11,7 @@ export const JoinGroupOverviewPage = () => {
       </div>
       <div className="flex-child2-groupchatpage">
         <JoinGroupChatComponent> </JoinGroupChatComponent>
-        
+
         <div className="group-goBack-button">
           <Button color={"var(--global-grey-4)"} text={"Go back"} />
         </div>

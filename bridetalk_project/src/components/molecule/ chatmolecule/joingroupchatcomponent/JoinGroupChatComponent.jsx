@@ -13,17 +13,30 @@ export const JoinGroupChatComponent = () => {
         }}
       ></div>
       <div>
+        
         <div className="container1-groupthemebox">
-          <GroupThemeBox></GroupThemeBox>
-          <GroupThemeBox></GroupThemeBox>
-          <GroupThemeBox></GroupThemeBox>
+          <GroupThemeBox text={"Hair"} ></GroupThemeBox>
+          <GroupThemeBox text={"Music"}></GroupThemeBox>
+          <GroupThemeBox text={"Dresses"}></GroupThemeBox>
+         
         </div>
         <div className="container2-groupthemebox">
-          <GroupThemeBox></GroupThemeBox>
-          <GroupThemeBox></GroupThemeBox>
-          <GroupThemeBox></GroupThemeBox>
+          <GroupThemeBox text={"Catering"} ></GroupThemeBox>
+          <GroupThemeBox text={"Flowers"}></GroupThemeBox>
+          <GroupThemeBox text={"Rings"}></GroupThemeBox>
         </div>
       </div>
     </div>
   );
 };
+
+/*
+<div classname="grid-container-groupthemebox">
+        <GroupThemeBox text={"Hair"}></GroupThemeBox>
+        <GroupThemeBox text={"Music"}></GroupThemeBox>
+        <GroupThemeBox text={"Dresses"}></GroupThemeBox>
+        <GroupThemeBox text={"Catering"}></GroupThemeBox>
+        <GroupThemeBox text={"Flowers"}></GroupThemeBox>
+        <GroupThemeBox text={"Rings"}></GroupThemeBox>
+      </div>
+      */

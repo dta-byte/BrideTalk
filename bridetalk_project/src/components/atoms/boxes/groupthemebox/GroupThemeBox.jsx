@@ -1,5 +1,4 @@
 import "./groupthemebox.css";
-import { Button } from "../../buttons/Button";
 import React, { useState } from "react";
 
 export const GroupThemeBox = (props) => {
@@ -14,18 +13,18 @@ export const GroupThemeBox = (props) => {
   return (
     <div Classname="theme-box-container">
       <div className="theme-box">
-        <p>Theme {text}</p>
+        <div className="theme-text">{text}</div>
 
         <button
           class="join-group-button"
           onClick={handleClick}
           style={{
             backgroundColor: active
-              ? "var(--global-secondary-5)"
-              : "var(--global-secondary-3)",
+              ? "var(--global-secondary-3)"
+              : "var(--global-secondary-5)",
           }}
         >
-          Join group
+          {active ? "Go to chat" : "Join group"}
         </button>
       </div>
     </div>
