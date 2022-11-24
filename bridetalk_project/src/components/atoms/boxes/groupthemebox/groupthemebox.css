@@ -1,3 +1,24 @@
-.test {
-    color: pink;
+.theme-box {
+  box-sizing: border-box;
+  width: 167px;
+  height: 137px;
+  background-color: var(--global-primary-3);
+  border: 1px solid var(--global-black-1);
+  border-radius: 18px;
+  color: var(--global-black-4);
+  text-align: center;
+  color: var(--global-black-2);
+  font: var(--inter-2);
+  padding-top: 15%;
+}
+
+.join-group-button {
+  border: none;
+  border-radius: 90px;
+  font: var(--inter-buttons);
+  text-align: center;
+  width: 99px;
+  height: 29px;
+  margin-top: 8%;
+  margin-left: 22%;
 }
