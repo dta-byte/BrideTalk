@@ -1,9 +1,14 @@
 import "./messageboxcomponent.css";
 
-export const MessageBoxComponent = () => {
+export const MessageBoxComponent = (props) => {
+    const {text, backgroundColor} = props;
+
   return (
-    <div Classname="test">
-      <p>MessageBoxComponent</p>
+    <div Classname="message-box-container">
+      <div className="message-box" >{backgroundColor}
+      <div className="message-text">{text}</div>
+      </div>
     </div>
+
   );
 };
