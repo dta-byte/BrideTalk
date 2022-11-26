@@ -1,37 +1,44 @@
 .flex-container-groupchatpage {
-    display: flex;  
-    flex-direction: row;
-    margin-top:4%;
-    margin-bottom:4%;
-    margin-right: 3%;
-    margin-left: 3%;
-    background-color: var(--global-primary-5);
+  display: flex;
+  flex-direction: row;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  margin-right: 3%;
+  margin-left: 3%;
+  background-color: var(--global-primary-5);
 }
 
-
-.flex-child1-groupchatpage{
-    border-color: var(--global-black-1);
+.flex-child1-groupchatpage {
+  border-color: var(--global-black-1);
 }
 
 .flex-child2-groupchatpage {
-border-style:solid;
-border-top: 0ch;
-border-bottom: 0;
-border-color: var(--global-black-1);
-flex-grow: 1;
-}
-   
-.flex-child3-groupchatpage {
-    border-style:solid;
-  border: 0;
-    border-color: var(--global-black-1);
-    flex-grow: 2;
-    }
-       
+  border-style: solid;
+  border-top: 0ch;
+  border-bottom: 0;
+  border-color: var(--global-black-1);
+  flex-grow: 1;
 
-    @media screen and (max-width:1000px) {
-        .flex-container-groupchatpage{}
-        .flex-child3-groupchatpage{flex-grow: 4;}
-        
-    }
+}
+
+.flex-child3-groupchatpage {
+  border-style: solid;
+  border: 0;
+  border-color: var(--global-black-1);
+  flex-grow: 2;
   
+ 
+}
+
+.group-goBack-button {
+    margin-top: 3%;
+    margin-left: 80%;
+}
+
+@media screen and (max-width: 1000px) {
+  .flex-container-groupchatpage {
+  }
+  .flex-child3-groupchatpage {
+    flex-grow: 4;
+  }
+}

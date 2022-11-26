@@ -8,8 +8,8 @@
     --global-primary-1: hsla(345, 39%, 67%);
   
     /* Secondary scale: */
-    --global-secondary-5: hsla(290, 25%, 95%);
-    --global-secondary-4: hsla(289, 29%, 90%);
+    --global-secondary-5: hsla(290, 25%, 90%);
+    --global-secondary-4: hsla(289, 29%, 85%);
     --global-secondary-3: hsla(289, 28%, 80%);
     --global-secondary-2: hsla(288, 20%, 70%);
     --global-secondary-1: hsla(287, 14%, 60%);

@@ -6,11 +6,12 @@
   padding-right: 0px;
   padding-left: 0px;
   color: var(--global-black-1);
-  font: var(--inter-buttons);  
+  font: var(--inter-buttons); 
   width: 110px;
   font-weight: bolder;
   border: 2px solid var(--global-primary-3);
   transition-duration: 0.4s;
+  border: none;
 }
 
 .button-component :hover{
