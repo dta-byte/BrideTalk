@@ -1,25 +1,26 @@
-.thread-headline{
+.thread-headline {
   font: var(--inter-1);
   margin-left: 2%;
-  margin-top:12px;
+  margin-top: 12px;
   margin-bottom: 12px;
   font-weight: bold;
+}
 
- }
+.flexbox-treadview-top {
+  display: flex;
+}
+.thread-headline {
+  flex-grow: 10;
+}
 
- .flexbox-treadview-top{
-   display: flex;  
-  
- }
- .thread-headline {
-   flex-grow: 10;
- }
+.flex-newchat-icon {
+  border: 0px;
+  flex-grow: 1;
+  margin-top: 8px;
+}
 
- .flex-newchat-icon {
-border: 0px;
-flex-grow: 1;
-margin-top: 8px;
-
- }
-
-
+.line-under-text {
+  height: 1.5px;
+  background-color: black;
+  justify-content: center;
+}
