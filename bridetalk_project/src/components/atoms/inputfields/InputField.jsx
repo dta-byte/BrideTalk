@@ -5,14 +5,14 @@ export const InputField = (props) => {
   const { text, onChangeOut, type } = props;
 
   return (
-    <div className="form-body">
-      <label className="form__label" for="text">
+    <div className="input-form">
+      <label className="inputlabel-form" for="text">
         {text}
-        <div></div>
+        <div> </div>
       </label>
 
       <input
-        className="form__input"
+        className="userinput-form"
         type={type}
         id="text"
         // placeholder={text}
