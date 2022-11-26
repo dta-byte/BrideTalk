@@ -12,6 +12,7 @@
 }
 
 .footer-text{
+  font: var(--inter-normal-text);
   column-count: 3;
   column-gap: 400px;
 }
