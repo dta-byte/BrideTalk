@@ -28,3 +28,10 @@ a {
 a:hover {
   color:  var(--global-primary-1);
 }
+
+.inputfields-createuserform-container{
+  padding: 10px 10px;
+  padding-left: 0;
+  margin-left: 20%;
+  margin-right: 20%;
+}

@@ -1,5 +1,9 @@
 import "./livechatcomponent.css";
+
 import { InputField, MessageBoxComponent } from "../../../atoms";
+
+import { FiSend } from "react-icons/fi";
+
 export const LiveChatComponent = () => {
   return (
     <div className="flexbox-container-livechat">
@@ -25,7 +29,16 @@ export const LiveChatComponent = () => {
         ></MessageBoxComponent>
       </div>
       <div className="flexchild2-livechat">
-        <InputField value="Aa" type="email" />
+        <div className="flexchild1-messagetextinput">
+          <InputField
+            className="messagetextinput"
+            value="Aa"
+            type="text"
+          ></InputField>
+        </div>
+        <div className="flexchild2-sendmessage-icon">
+          <FiSend className="sendmessage-icon" size={15} />
+        </div>
       </div>
     </div>
   );
