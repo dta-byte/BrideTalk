@@ -37,6 +37,15 @@ export const LiveChatComponent = (props) => {
       enableLiveQuery: true, // Enables live query for real-time update (default: true)
     });
 
+    const [currentUser, setCurrentUser] = useState(null);
+
+    // Function that will return current user and also update current username
+    const getCurrentUser = async function () {
+      const currentUser = await Parse.User.current();
+      // Update state variable holding current user
+      setCurrentUser(currentUser);
+      return currentUser;
+    };
   // Message sender handler
   const sendMessage = async () => {
     try {
@@ -44,12 +53,14 @@ export const LiveChatComponent = (props) => {
       console.log(messageText + " this is the messagetext")
 
       // Get sender and receiver User Parse objects
-      const senderUserObjectQuery = new Parse.Query("User");
+      // const senderUserObjectQuery = new Parse.Query("User");
+      // const senderUserObjectQuery = getCurrentUser();
 
-      senderUserObjectQuery.equalTo("objectId", props.senderUserId);
+      // senderUserObjectQuery.equalTo("objectId", props.senderUserId);
 
-      let senderUserObject = await senderUserObjectQuery.first();
-      console.log("this is senderuserobject ", senderUserObject)
+      let senderUserObject = await getCurrentUser();
+
+      console.log("this is senderuserobject username: ", senderUserObject.getUsername(), " and this is the senderuserobject id: ", senderUserObject.id)
 
       // creates the query 
       const receiverUserObjectQuery = new Parse.Query("User");
@@ -62,7 +73,7 @@ export const LiveChatComponent = (props) => {
       // Create new Message object and save it
       let Message = new Parse.Object("Message");
       Message.set("text", messageText);
-      Message.set("senderObject", senderUserObject);
+      Message.set("sender", senderUserObject);
       Message.set("receiver", receiverUserObject);
       Message.save();
 
@@ -70,6 +81,7 @@ export const LiveChatComponent = (props) => {
       setMessageInput();
 
     } catch (error) {
+
       alert(error);
     }
   };
@@ -81,7 +93,7 @@ export const LiveChatComponent = (props) => {
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
-        <div className="livechat-headline">{`${props.senderUserName} sending, ${props.receiverUserName} receiving!`}</div>
+        <div className="livechat-headline">{`${props.receiverUserName}!`}</div>
         <div
           style={{
             height: "1px",
@@ -91,7 +103,7 @@ export const LiveChatComponent = (props) => {
             justifyContent: "center",
           }}
         />
-        <MessageBoxComponent 
+        <MessageBoxComponent
           text={"Hey"}/>
         <MessageBoxComponent
           text={"Your message has been sent"}/>
@@ -102,16 +114,17 @@ export const LiveChatComponent = (props) => {
         <div className="flexchild1-messagetextinput">
           <InputField
             className="messagetextinput"
-            value="Aa"
+            text={"Your message..."}
             type="text"
-          ></InputField>
+            value={messageInput}
+            onChangeOut={(event) => setMessageInput(event.target.value)}
+          />
         </div>
         <div className="flexchild2-sendmessage-icon">
-        <Button
-          handleClick={sendMessage}>
+          <Button handleClick={sendMessage}>
 
-          <FiSend className="sendmessage-icon" size={15} />
-        </Button>
+            <FiSend className="sendmessage-icon" size={15} />
+          </Button>
         </div>
       </div>
     </div>

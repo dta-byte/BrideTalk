@@ -1,4 +1,4 @@
-export const LiveChat = (props) => {
+export const ThreadBox = (props) => {
     return (
         <div></div>
     )
