@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Button, InputField } from "../../atoms";
 import Parse from "parse";
-import { LiveChat } from "./LiveChat";
+import { LiveChatComponent } from "../../molecule";
 
 export const ChatSetup = () => {
   // State variables holding input values and results
@@ -108,7 +108,7 @@ export const ChatSetup = () => {
           </div>
         )}
         {senderUserId !== null && receiverUserId !== null && (
-          <LiveChat
+          <LiveChatComponent
             senderUserName={senderUserInput}
             senderUserId={senderUserId}
             receiverUserName={receiverUserInput}

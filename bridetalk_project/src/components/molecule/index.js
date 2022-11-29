@@ -10,5 +10,5 @@ export { Navbar };
 export { CreateUserForm}
 export {ChatNavigation}
 export {JoinGroupChatComponent}
-export {LiveChatComponent}
+export { LiveChatComponent }
 export {ThreadView}
