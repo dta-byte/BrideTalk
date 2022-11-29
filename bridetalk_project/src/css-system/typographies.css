@@ -1,0 +1,37 @@
+:root {
+  /* Font family: */
+  --font-family-inter: "Inter", sans-serif;
+
+  /* Font size: */
+  --font-size-1: 2.25rem;
+  --font-size-2: 1.2rem;
+  --font-size-3: 0.70rem;
+  --font-size-buttons: 0.91rem;
+  --font-size-normal-text: 1rem;
+
+  /* Font weight: */
+  /* --font-weight-1: bold;
+  --font-weight-buttons: bold; */
+
+  /* Design system fonts: */
+  /* elephant */
+  --inter-1: 
+    var(--font-size-1) 
+    var(--font-family-inter);
+  /* horse */
+  --inter-2: 
+    var(--font-size-2)
+    var(--font-family-inter);
+  /* dog */
+  --inter-3: 
+    var(--font-size-3)
+    var(--font-family-inter);
+
+  --inter-normal-text: 
+    var(--font-size-normal-text)
+    var(--font-family-inter); 
+
+  --inter-buttons: 
+    var(--font-size-buttons) 
+    var(--font-family-inter) 
+}

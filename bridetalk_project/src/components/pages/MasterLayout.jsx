@@ -1,38 +1,57 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import { HomePage } from "./homepage/HomePage";
-import { LoginPage } from "./login/LogInPage";
-import { CreateUserPage } from "./create-user/CreateUserPage";
-import { ResetPage } from "./reset-password/ResetPage";
+import {
+  HomePage,
+  LoginPage,
+  CreateUserPage,
+  ResetPasswordPage,
+  MainChatPageComponent,
+  JoinGroupOverviewPage,
+} from ".";
 import { Footer, Navbar } from "../molecule";
+import { ChatSetup } from "./Chat/ChatSetUp";
 
-import "./masterlayout.css"
+import "./masterlayout.css";
 
+// MasterLayout renders different (master) pages in DOM
 export const MasterLayout = () => {
-    return (
-        <>
-        
-        <BrowserRouter>
-        <div className="img">
+  return (
+    <>
+      <BrowserRouter>
+        <div className="background-img">
+          <Navbar />
 
-        <Navbar/>
-            <Routes classname="routes">
+          <Routes>
+            {/* Private route */}
+            {/* <Route
+                            path="/chat"
+                            element={
+                                <AuthWrapper>
+                                    <ChatPage />
+                                </AuthWrapper>
+                            }
+                        />
+                         */}
             {/* Public route for HomePage */}
-            <Route path="/" element={<HomePage />}></Route>
+            <Route path="/" element={<HomePage />} />
 
             {/* Public route for LogIn page */}
-            <Route path="/login" element={<LoginPage />}></Route> 
+            <Route path="/login" element={<LoginPage />} />
 
             {/* Public route for Create User page */}
-            <Route path="/sign-up" element={<CreateUserPage />}></Route> 
+            <Route path="/sign-up" element={<CreateUserPage />} />
 
             {/* Public route for reset page */}
-            <Route path="/Reset" element={<ResetPage />}></Route> 
+            <Route path="/reset" element={<ResetPasswordPage />} />
 
-            </Routes>
-        <Footer/>
-            </div>
-        </BrowserRouter>
-        </>
-    )
-}
+            <Route path="/chat" element={<ChatSetup />} />
+
+            <Route path="/chat1" element={<MainChatPageComponent />} />
+
+            <Route path="/findgroups" element={<JoinGroupOverviewPage />} />
+          </Routes>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </>
+  );
+};

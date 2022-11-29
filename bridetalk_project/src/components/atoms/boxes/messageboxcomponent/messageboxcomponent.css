@@ -1,0 +1,23 @@
+.message-box-container {
+}
+
+.message-box {
+  background-color: var(--global-primary-3);
+  border: 4px solid var(--global-black-1);
+  border-radius: 18px;
+  color: var(--global-black-1);
+  font: var(--inter-2);
+  width: fit-content;
+  max-width: 300px;
+  height: fit-content;
+  padding: 8px 20px;
+  margin-top: 5px;
+  object-position: right;
+  object-fit: right;
+ 
+  
+  
+ 
+  
+ 
+}

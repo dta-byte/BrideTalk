@@ -1,70 +1,113 @@
-import {
-  Headline1,
-  EnterText,
-  EnterEmail,
-  EnterPassword,
-  DropdownLocation,
-  PrimaryButton,
-  CancelButton,
-} from "../../../atoms";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { InputField, DropdownLocation, Button } from "../../../atoms";
 import "./createuserform.css";
-import { Link } from "react-router-dom";
 
-import { useNavigate } from "react-router-dom";
+import Parse from "parse";
+
 export const CreateUserForm = () => {
   let navigate = useNavigate();
 
-  const toFrontPage = () => {
-    let path = "/";
+  const navigateTo = (path) => {
     navigate(path);
   };
 
-  const toLoginPage = () => {
-    let path = "/login";
-    navigate(path);
-  };
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPasword] = useState("");
+  const [location, setLocation] = useState("");
 
-  const goBack = () => {
-    let path = navigate(-1);
-    navigate(path);
+  //Todo: If user does not input a valid e-mail the user should not be created/save, and a alert should be send.
+
+  const addUser = async function () {
+    const userNameValue = username;
+    const passWordValue = password;
+
+    try {
+      // create a new Parse User instance and since the signUp method returns a Promise, we need to call it using await
+
+      const createdUser = await Parse.User.signUp(userNameValue, passWordValue);
+      // const createdUser = new Parse.Object("_User");
+
+      createdUser.set("username", username);
+      createdUser.set("email", email);
+      createdUser.set("password", password);
+      createdUser.set("location", location);
+
+      alert("Succes! User " + createdUser + " was created");
+
+      await createdUser.save();
+      return true;
+    } catch (error) {
+      console.log("Error saving new User: ", error);
+      return false;
+    }
   };
 
   return (
     <div>
-      <div className="form">
-        <Headline1 headline="Sign up to Bride Talk"></Headline1>
-        <div
-          handleClick={toLoginPage}
-          className="question"
-          style={{
-            paddingBottom: "15px",
-            paddingTop: "0px",
-          }}
-        >
-          Already a user?{" "}
-          <span
-            className="login"
-            style={{
-              fontWeight: "bold",
-              textDecoration: "underline",
-            }}
-          >
-            <Link to="/login"> Log in here </Link>
-          </span>
+      <div className="create-user-form-container">
+        <div className="sign-up-headline">Sign up to Bride Talk</div>
+        <div className="link-to-login">
+          Already a user? Log in <Link to="/login"> here </Link>
         </div>
-        <EnterText text="First Name "></EnterText>
-        <EnterText text="Last Name "></EnterText>
-        <EnterEmail email="Email "></EnterEmail>
-        <EnterPassword password="Password"></EnterPassword>
-        <EnterPassword password="Confirm Password"></EnterPassword>
-        <DropdownLocation question="Which locations are you interested in?"></DropdownLocation>
-        {/* <CancelButton>{"Go back"}</CancelButton> */}
-        <CancelButton text={"Go back"} handleClick={goBack}></CancelButton>
-        <PrimaryButton
-          text={"Sign me up"}
-          handleClick={toFrontPage}
-        ></PrimaryButton>
+        <div className="inputfields-createuserform-container">
+          <InputField
+            text="Username "
+            value={username}
+            onChangeOut={(event) => {
+              setUsername(event.target.value);
+              // console.log(event.target.value)
+            }}
+          />
+
+          <InputField
+            text="E-mail "
+            value={email}
+            type="email"
+            onChangeOut={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+
+          <InputField
+            text="Password"
+            value={password}
+            type="password"
+            onChangeOut={(event) => {
+              setPasword(event.target.value);
+            }}
+          />
+
+          <InputField
+            text="Confirm Password "
+            value={password}
+            type="password"
+            onChangeOut={(event) => {
+              setPasword(event.target.value);
+            }}
+          />
+        </div>
+
+        <DropdownLocation
+          question="Which locations are you interested in?"
+          onChangeOut={setLocation}
+        />
+
+        <div className="buttons-row">
+          <Button
+            className="button-back"
+            color={"var(--global-grey-4)"}
+            text={"Go back"}
+            handleClick={() => navigateTo(-1)}
+          />
+
+          <Button
+            color={"var(--global-primary-2)"}
+            text={"Sign me up"}
+            handleClick={() => addUser(username, password)}
+          />
+        </div>
       </div>
     </div>
   );
