@@ -29,6 +29,10 @@
   margin-top: 10px;
   margin-bottom: 10px;
   font: var(--inter-normal-text);
+  padding: 10px 10px;
+  padding-left: 0;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 /* Link to forgot password */
@@ -48,3 +52,4 @@ a {
 a:hover {
   color: hsl(345, 39%, 67%);
 }
+

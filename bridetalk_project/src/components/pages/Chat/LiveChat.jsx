@@ -4,7 +4,7 @@ import Parse from "parse";
 import { useParseQuery } from "@parse/react";
 
 export const LiveChat = (props) => {
-console.log(props)
+  console.log(props)
   // State variable to hold message text input
   const [messageInput, setMessageInput] = useState("");
 
@@ -48,10 +48,10 @@ console.log(props)
 
       let senderUserObject = await senderUserObjectQuery.first();
       console.log("this is senderuserobject ", senderUserObject)
-     
+
       // creates the query 
       const receiverUserObjectQuery = new Parse.Query("User");
-      
+
       receiverUserObjectQuery.equalTo("objectId", props.receiverUserId);
       // query runs
       let receiverUserObject = await receiverUserObjectQuery.first();
@@ -66,7 +66,7 @@ console.log(props)
 
       // Clear input
       setMessageInput();
-   
+
     } catch (error) {
       alert(error);
     }
@@ -82,13 +82,13 @@ console.log(props)
       <div className="flex_between">
         <h2 className="list_heading">{`${props.senderUserName} sending, ${props.receiverUserName} receiving!`}</h2>
 
-          <Button
-            handleClick={reload}
-            className="button-back"
-            color={"var(--global-grey-4)"}
-            text={"Reload"}
-            // icon={<SyncOutlined />}
-          />
+        <Button
+          handleClick={reload}
+          className="button-back"
+          color={"var(--global-grey-4)"}
+          text={"Reload"}
+        // icon={<SyncOutlined />}
+        />
       </div>
       {results && (
         <div className="messages">
@@ -123,12 +123,11 @@ console.log(props)
           text={"Your message..."}
         />
         <Button
-        text={"Send message"}
+          text={"Send message"}
           className="form_button"
           color={"var(--global-primary-2)"}
           handleClick={sendMessage}
         />
-         
 
       </div>
       <div>
