@@ -3,7 +3,7 @@ import { DropdownLocation } from "./inputfields/DropdownLocation";
 import { Button } from "./buttons/Button"
 import { GroupThemeBox } from "./boxes/groupthemebox/GroupThemeBox";
 import { MessageBoxComponent } from "./boxes/messageboxcomponent/MessageBoxComponent";
-import { ThreadBox } from "./boxes/threadbox/ThreadBox"
+import { ThreadBox } from "./boxes/threadbox/ThreadBox";
 
 export { ThreadBox }
 export { Button }

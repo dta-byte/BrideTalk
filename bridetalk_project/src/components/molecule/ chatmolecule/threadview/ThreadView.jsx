@@ -1,5 +1,16 @@
 import "./threadview.css";
 import { IoIosCreate } from "react-icons/io";
+<<<<<<< HEAD
+import { ThreadBox } from "../../../atoms";
+
+export const ThreadView = () => {
+
+  const changeMessageOverview = () => {
+    alert('Clicked!')
+    // get the username(s) change the headline and find all the messages, when the user clicks the thread. 
+  }
+
+=======
 import Parse from "parse"
 import { useState } from "react";
 import { ThreadBox } from "../../../atoms"
@@ -38,6 +49,7 @@ export const ThreadView = () => {
         return false;
     };
 };
+>>>>>>> chat-functionalities
   return (
     <div>
       <div className="flexbox-treadview-top">
@@ -46,6 +58,20 @@ export const ThreadView = () => {
           <IoIosCreate className="io-icon" size={45} />
         </div>
       </div>
+<<<<<<< HEAD
+      <div className="line-under-text" />
+        <div classname="threads-list">
+          <ThreadBox
+            text="Emma, Jose"
+            handleClick={() => changeMessageOverview()} />
+          <ThreadBox 
+            text="Emma, Jose" 
+            handleClick={() => changeMessageOverview()} />
+          <ThreadBox 
+            text="Emma, Jose" 
+            handleClick={() => changeMessageOverview()} />
+        </div>
+=======
       <div
         style={{
           height: "1.5px",
@@ -54,6 +80,7 @@ export const ThreadView = () => {
         }}
       />
       <ThreadBox></ThreadBox>
+>>>>>>> chat-functionalities
     </div>
   );
 };
