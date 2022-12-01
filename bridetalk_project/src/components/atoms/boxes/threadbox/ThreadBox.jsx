@@ -3,6 +3,8 @@ import "./threadbox.css"
 export const ThreadBox = (props) => {
     const { text, handleClick } = props
 
+    
+
     return (
         <div 
             className="thread-container" 

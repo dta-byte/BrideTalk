@@ -73,7 +73,7 @@ export const LiveChatComponent = (props) => {
       // Create new Message object and save it
       let Message = new Parse.Object("Message");
       Message.set("text", messageText);
-      Message.set("sender", senderUserObject);
+      Message.set("senderObject", senderUserObject);
       Message.set("receiver", receiverUserObject);
       Message.save();
 
