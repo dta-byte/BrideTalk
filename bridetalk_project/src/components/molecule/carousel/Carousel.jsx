@@ -56,7 +56,6 @@ export const Carousel = (props) => {
         <Button
           handleClick={() => {
             updateIndex(activeIndex + 1);
-            <HiOutlineUserGroup className="chat-icon" size={15} />;
           }}
           text={">"}
         ></Button>

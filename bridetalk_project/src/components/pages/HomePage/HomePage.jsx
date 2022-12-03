@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { Carousel } from "../../molecule";
 import { CarouselItem } from "../../atoms";
+import carouselHair from "./Hair.jpg";
+import carouselPhotographer from "./Photographer.jpg";
+import carouselVenue from "./Venue.jpg";
 // import { useHistory } from "react-router-dom";
 // import { useState, useEffect } from "react";
 // import Parse from "parse";
@@ -68,12 +71,19 @@ export const HomePage = () => {
 
         {/* Caroussel */}
 
-        <div className="homepage-column-right"></div>
-        <Carousel>
-          <CarouselItem>Wedding venues near you</CarouselItem>
-          <CarouselItem>Best tips on hair</CarouselItem>
-          <CarouselItem>Fun bands</CarouselItem>
-        </Carousel>
+        <div className="homepage-column-right">
+          <div className="carousel-headline">
+            We got you covered in your area!
+          </div>
+          <Carousel>
+            <CarouselItem
+              className="carouselHair"
+              image={carouselHair}
+            ></CarouselItem>
+            <CarouselItem image={carouselPhotographer}></CarouselItem>
+            <CarouselItem image={carouselVenue}></CarouselItem>
+          </Carousel>
+        </div>
         {/* Container ends */}
       </div>
     </>

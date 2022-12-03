@@ -10,6 +10,8 @@
     display: flex;  
     flex-direction: column;
     flex-grow: 1;
+
+  
   
   }
   .flexchild1-livechat{
@@ -18,12 +20,14 @@
   }
   .flexchild2-livechat{
 flex-grow: 3;
+padding-bottom: 2px;
+padding-left:5px;
+overflow-y: auto;
   }
 
   .flexchild3-livechat{
     display: flex;
-    flex-direction:row;
-  
+    flex-direction:row;  
   }
 
   .flexgrandchild1-messagetextinput{
@@ -46,4 +50,7 @@ margin-right: 28px;
     justify-content: center;
   }
 
- 
+ .messagetextinput {
+  height: auto;
+
+ }

@@ -25,6 +25,15 @@ export const LiveChatComponent = () => {
         <MessageBoxComponent
           text={"Your loooooooooooooooooong message has been sent"}
         ></MessageBoxComponent>
+        <MessageBoxComponent
+          text={"Your loooooooooooooooooong message has been sent"}
+        ></MessageBoxComponent>
+        <MessageBoxComponent
+          text={"Your loooooooooooooooooong message has been sent"}
+        ></MessageBoxComponent>
+        <MessageBoxComponent
+          text={"Your loooooooooooooooooong message has been sent"}
+        ></MessageBoxComponent>
       </div>
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">

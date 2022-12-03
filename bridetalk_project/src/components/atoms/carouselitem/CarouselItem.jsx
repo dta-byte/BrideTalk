@@ -1,13 +1,12 @@
 import "./carouselitem.css";
-
 export const CarouselItem = (props) => {
-  const { children, width, backgroundImage } = props;
+  const { width, image } = props;
   return (
-    <div
+    <img
+      src={image}
+      alt="Alt"
       className="carousel-item"
-      style={{ width: width, backgroundImage: backgroundImage }}
-    >
-      {children}
-    </div>
+      style={{ width: width }}
+    ></img>
   );
 };
