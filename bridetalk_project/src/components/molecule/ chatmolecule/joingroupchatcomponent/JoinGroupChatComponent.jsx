@@ -1,7 +1,23 @@
-import { GroupThemeBox } from "../../../atoms";
+import { Button, GroupThemeBox } from "../../../atoms";
 import "./joingroupchatcomponent.css";
 
 export const JoinGroupChatComponent = () => {
+  let groupsArr = [[]];
+
+  function addGroup(name) {
+    groupsArr.push(<GroupThemeBox text={name}></GroupThemeBox>);
+  }
+
+  addGroup("Hair");
+  addGroup("Music");
+  addGroup("Dresses");
+  addGroup("Catering");
+  addGroup("Flowers");
+  addGroup("Rings");
+  addGroup("xxx");
+
+  console.log(groupsArr);
+
   return (
     <div>
       <div className="joingroupchat-headline">Join group chats</div>
@@ -12,31 +28,10 @@ export const JoinGroupChatComponent = () => {
           justifyContent: "center",
         }}
       ></div>
+
       <div>
-        
-        <div className="container1-groupthemebox">
-          <GroupThemeBox text={"Hair"} ></GroupThemeBox>
-          <GroupThemeBox text={"Music"}></GroupThemeBox>
-          <GroupThemeBox text={"Dresses"}></GroupThemeBox>
-         
-        </div>
-        <div className="container2-groupthemebox">
-          <GroupThemeBox text={"Catering"} ></GroupThemeBox>
-          <GroupThemeBox text={"Flowers"}></GroupThemeBox>
-          <GroupThemeBox text={"Rings"}></GroupThemeBox>
-        </div>
+        <div className="grid-container-groupthemebox">{groupsArr}</div>
       </div>
     </div>
   );
 };
-
-/*
-<div classname="grid-container-groupthemebox">
-        <GroupThemeBox text={"Hair"}></GroupThemeBox>
-        <GroupThemeBox text={"Music"}></GroupThemeBox>
-        <GroupThemeBox text={"Dresses"}></GroupThemeBox>
-        <GroupThemeBox text={"Catering"}></GroupThemeBox>
-        <GroupThemeBox text={"Flowers"}></GroupThemeBox>
-        <GroupThemeBox text={"Rings"}></GroupThemeBox>
-      </div>
-      */
