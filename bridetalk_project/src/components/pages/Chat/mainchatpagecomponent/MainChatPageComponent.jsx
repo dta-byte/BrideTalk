@@ -14,9 +14,8 @@ export const MainChatPageComponent = () => {
       <div className="flex-child2-chatpage">
         <ThreadView></ThreadView>
       </div>
-      <div className="flex-child3-chatpage">
-        <LiveChatComponent></LiveChatComponent>
-      </div>
+
+      <LiveChatComponent className="flex-child3-chatpage"></LiveChatComponent>
     </div>
   );
 };
