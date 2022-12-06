@@ -10,13 +10,7 @@ export const ThreadView = () => {
           <IoIosCreate className="io-icon" size={45} />
         </div>
       </div>
-      <div
-        style={{
-          height: "1.5px",
-          backgroundColor: "black",
-          justifyContent: "center",
-        }}
-      />
+      <div className="threadview-line" />
     </div>
   );
 };
