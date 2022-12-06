@@ -11,10 +11,10 @@
 
 .chat-icon{
   padding: 50px;
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   color: var(--global-black-2);
-  font-size: 150px;
+  font-size: 130px;
 }
 
 
@@ -23,7 +23,7 @@
     padding-top: 70px;
     padding-bottom: 70px;
     color: var(--global-black-2);
-    font-size: 150px;
+    font-size: 130px;
    
 }
 
