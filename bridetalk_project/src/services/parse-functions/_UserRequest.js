@@ -15,6 +15,24 @@ export const addUser = async (formData) => {
         throw error;
     }
 };
+ 
+
+
+// export const getReciever = async (reciever) => {
+//   try {
+//     const receiverUserObjectQuery = new Parse.Query("User");
+
+//     receiverUserObjectQuery.equalTo("objectId", reciever);
+//     // query runs
+//     const receiverUserObject = await receiverUserObjectQuery.first();
+//     console.log(receiverUserObject , "get reciever");
+//     console.log("this is receiverUserObject ", receiverUserObject)
+      
+//       return reciever;
+//   } catch (error) {
+//       throw error;
+//   }
+// };
 
 export const login = async  (userData) => {
     try {
@@ -34,73 +52,21 @@ export const login = async  (userData) => {
   };
 
 
-// const doUserLogOut = async function () {
-  //   try {
-  //     await Parse.User.logOut();
-  //     // To verify that current user is now empty, currentAsync can be used
-  //     const currentUser = await Parse.User.current();
-  //     if (currentUser === null) {
-  //       alert('Success! No user is logged in anymore!');
-  //     }
-  //     // Update state variable holding current user
-  //     getCurrentUser();
-  //     return true;
-  //   } catch (error) {
-  //     alert(`Error! ${error.message}`);
-  //     return false;
-  //   }
-  // };
+export const logout = async (userData) => {
+    try {
+      await Parse.User.logOut();
+      // To verify that current user is now empty, currentAsync can be used
+      const currentUser = Parse.User.current();
+      if (currentUser === null) {
+        alert('Success! No user is logged in anymore!');
+      }
+      // Update state variable holding current user
+      userData = await Parse.User.current();
+      return true;
+    } catch (error) {
+      throw error;
+    }
+  };
 
-// Reading User objects
 
-// export const readUsers = async function () {
-//     // Reading parse objects is done by using Parse.Query
-//     const parseQuery = new Parse.Query('User');
-//     try {
-//         let users = await parseQuery.find();
-//         // Be aware that empty or invalid queries return as an empty array
-//         return true;
-//     } catch (error) {
-//         // Error can be caused by lack of Internet connection
-//         alert(`Error! ${error.message}`);
-//         return false;
-//     };
-// };
-
-// //   Update User password
-// export const updateUserPassword = async function (userID, password) {
-//     // Create a User parse object instance and set userID
-//     let User = new Parse.Object('User');
-//     User.set('userID', userID);
-//     // Set new done value and save Parse Object changes
-//     User.set('password', password);
-//     try {
-//         await User.save();
-//         // Success
-//         alert('Success! USer updated!');
-//         return true;
-
-//     } catch (error) {
-//         // Error can be caused by lack of Internet connection
-//         alert(`Error! ${error.message}`);
-//         return false;
-//     };
-// };
-
-// //   Deleting a User
-// export const deleteUser = async function (userID) {
-//     // Create a new User parse object instance and set user id
-//     const User = new Parse.Object('User');
-//     User.set('userID', userID);
-//     // .destroy should be called to delete a parse object
-//     try {
-//         await User.destroy();
-//         alert("Success! User: " + User + " is deleted!");
-//         return true;
-
-//     } catch (error) {
-//         // Error can be caused by lack of Internet connection
-//         alert(`Error ${error.message}`);
-//         return false;
-//     };
-// };
+  

@@ -37,37 +37,37 @@ export const AuthProvider = ({ children }) => {
  * @param {*} param0 
  * @returns 
  */
-export const AuthInit = ({children}) => {
+// export const AuthInit = ({children}) => {
 
-    const { setCurrentUser } = useAuth();
-    const didRequest = useRef(false)
-    // TODO: Check on init om der er en authenticated bruger allerede
+//     const { setCurrentUser } = useAuth();
+//     const didRequest = useRef(false)
+//     // TODO: Check on init om der er en authenticated bruger allerede
 
-    useEffect( () => {
+//     useEffect( () => {
 
-        if (!didRequest.current) {
+//         if (!didRequest.current) {
            
-            if (Parse.User.current() !== null) {
+//             if (Parse.User.current() !== null) {
 
-                const isAuthenticated = Parse.User.current().getSessionToken();
-                const authCondition = isAuthenticated !== undefined;
-                console.log("AuthWrapper: The current user is: ", isAuthenticated)
-                if (authCondition) {
-                    Parse.User.current().then( (currentUser) => {
-                        setCurrentUser(currentUser);
-                    })
-                }
-              }
+//                 const isAuthenticated = Parse.User.current().getSessionToken();
+//                 const authCondition = isAuthenticated !== undefined;
+//                 console.log("AuthWrapper: The current user is: ", isAuthenticated)
+//                 if (authCondition) {
+//                     Parse.User.current().then( (currentUser) => {
+//                         setCurrentUser(currentUser);
+//                     })
+//                 }
+//               }
 
-            didRequest.current = true;
-        }
+//             didRequest.current = true;
+//         }
 
-    }, [])
+//     }, [])
 
-    // hvis der findes en bruger
-    // setCurrentUser(userObj)
+//     // hvis der findes en bruger
+//     // setCurrentUser(userObj)
 
-    return (
-        <>{children}</>
-    )
-}
+//     return (
+//         <>{children}</>
+//     )
+// }

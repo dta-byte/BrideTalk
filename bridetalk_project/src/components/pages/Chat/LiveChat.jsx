@@ -46,23 +46,32 @@ export const LiveChat = (props) => {
 
       senderUserObjectQuery.equalTo("objectId", props.senderUserId);
 
-      let senderUserObject = await senderUserObjectQuery.first();
+      const senderUserObject = await senderUserObjectQuery.first();
       console.log("this is senderuserobject ", senderUserObject)
 
       // creates the query 
       const receiverUserObjectQuery = new Parse.Query("User");
 
       receiverUserObjectQuery.equalTo("objectId", props.receiverUserId);
+
       // query runs
-      let receiverUserObject = await receiverUserObjectQuery.first();
+      const receiverUserObject = await receiverUserObjectQuery.first();
       console.log("this is receiverUserObject ", receiverUserObject)
 
       // Create new Message object and save it
-      let Message = new Parse.Object("Message");
+      const Message = new Parse.Object("Message");
       Message.set("text", messageText);
       Message.set("senderObject", senderUserObject);
       Message.set("receiver", receiverUserObject);
       Message.save();
+      
+      // recieve the messageId to add uit to threads. 
+      const messageId = Message.get("objectId")
+
+      let Threads = new Parse.Object("Threads")
+      Threads.set("senderObject", senderUserObject)
+      Threads.set("reciever", senderUserObject)
+      Threads.set("TID", messageId)
 
       // Clear input
       setMessageInput();

@@ -4,18 +4,20 @@ import {
   ThreadView,
   LiveChatComponent,
 } from "../../../molecule";
+import { useAuth } from "../../auth/core/Auth";
 
 export const MainChatPageComponent = () => {
+  // const { currentUser } = useAuth();
   return (
     <div className="flex-container-chatpage">
       <div className="flex-child1-chatpage">
-        <ChatNavigation></ChatNavigation>
+        <ChatNavigation/>
       </div>
       <div className="flex-child2-chatpage">
-        <ThreadView></ThreadView>
+        <ThreadView/>
       </div>
       <div className="flex-child3-chatpage">
-        <LiveChatComponent></LiveChatComponent>
+        <LiveChatComponent/>
       </div>
     </div>
   );

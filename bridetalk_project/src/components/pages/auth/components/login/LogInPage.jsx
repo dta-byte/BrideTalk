@@ -14,16 +14,14 @@ export const LoginPage = () => {
   let navigate = useNavigate();
 
   const { currentUser, setCurrentUser } = useAuth();
-
   const [user, setUser] = useState({});
 
   const doLogin = async () => {
     try {
       await login(user);
       setCurrentUser(await Parse.User.current())
-      
-      navigate('/chat')
 
+      navigate('/chat')
       alert(
         `Success! You are now logged in and ready to chat`
       );
@@ -33,21 +31,13 @@ export const LoginPage = () => {
     }
   }
 
-
-
-
   return (
     <>
-
       <div className="login-form-container">
-
         <div className="log-in-headline"> Log in </div>
-
         <div className="link-to-signup"> Not a user? Create a user
           <Link to="/sign-up"> here</Link>
         </div>
-
-
 
         <div className="login-input-fields">
           <InputField
