@@ -3,6 +3,9 @@
     flex-direction: column;
     background-color:var(--global-grey-5);
     height: fit-content;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+
 
 }
 
@@ -21,6 +24,7 @@
     padding-bottom: 70px;
     color: var(--global-black-2);
     font-size: 150px;
+   
 }
 
 @media only screen and (max-width: 1000px)
@@ -30,6 +34,7 @@
         padding-top: 80px;
         padding-bottom: 80px;
         font-size: 100px;
+     
     }
     .groupchat-icon{
         padding: 10px;
@@ -39,14 +44,23 @@
     }
 }
 
+.flex-child1-chatnavigation{
+    border-top-left-radius: 18px;
+}
+
+.flex-child2-chatnavigation{
+    border-bottom-left-radius: 18px;
+}
 
 .flex-child1-chatnavigation :hover{
     background-color: var(--global-grey-3);
     flex-shrink: 3;
+    border-top-left-radius: 18px;
 }
 
 .flex-child2-chatnavigation :hover{
     background-color: var(--global-grey-3);
     flex-shrink: 3;
+    border-bottom-left-radius: 18px;
 }
 

@@ -29,7 +29,7 @@ export const JoinGroupChatComponent = () => {
         }}
       ></div>
 
-      <div>
+      <div className>
         <div className="grid-container-groupthemebox">{groupsArr}</div>
       </div>
     </div>
