@@ -111,11 +111,11 @@ export const LiveChatComponent = (props) => {
       </div>
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">
-          <InputField
+          <textarea
             className="messagetextinput"
-            value="Aa"
             type="text"
-          ></InputField>
+
+          ></textarea>
         </div>
 
         <div className="flexgrandchild2-sendmessage-icon">
