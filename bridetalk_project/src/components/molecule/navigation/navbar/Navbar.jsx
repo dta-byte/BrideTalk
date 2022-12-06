@@ -21,11 +21,11 @@ export const Navbar = () => {
         <div className="topnav-left">
           {/* Logo leads back to homepage */}
           <Link to="/">
-            <a className="navbar-brand">
+            <div className="navbar-brand">
               <div className="logo-image">
                 <img src="../images/logo_black.png"></img>
               </div>
-            </a>
+            </div>
           </Link>
         </div>
 
@@ -34,7 +34,7 @@ export const Navbar = () => {
           <div className="nav-container">
             <button
               type="button"
-              class="nav-profile-button"
+              className="nav-profile-button"
               onClick={handleClick}
             >
               <div className="profile-icon-column2">
@@ -42,7 +42,7 @@ export const Navbar = () => {
               </div>
             </button>
             <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
-              <div class="nav-dropdown">
+              <div className="nav-dropdown">
                 <ul>
                   <li>Edit profile</li>
                   <li>Help</li>
@@ -57,17 +57,3 @@ export const Navbar = () => {
   );
 };
 
-/*    
-Profile icon
-<Link to="/login">
-<div className="profile-icon-column">
-  <BsPersonCircle className="profile-icon" size={30} />
-</div>
-</Link>
-Menu icon 
-<Link to="/main-page">
-<div className="menu-icon-column">
-  <BiMenu className="menu-icon" size={34} />
-</div>
-</Link>
-*/

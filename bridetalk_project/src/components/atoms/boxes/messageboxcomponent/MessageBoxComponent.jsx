@@ -5,7 +5,7 @@ export const MessageBoxComponent = (props) => {
 
   return (
     <div>
-      <div Classname="message-box-container">
+      <div className="message-box-container">
         <div className="message-box">
           {backgroundColor}
           <div className="message-text">{text}</div>
