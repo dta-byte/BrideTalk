@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import Parse from "parse";
 
 const AuthContext = createContext(undefined);
@@ -11,7 +11,7 @@ export const useAuth = () => {
  * Context component
  * 
  * Eneste ansvar er at holde globale states for auth information som f.eks. currentuser samt sætter staten. 
- * 
+ *
  * AuthProvider ligger i roden af programmet og kan derfor tilgåes overalt i systemet. 
  * 
  * @param {

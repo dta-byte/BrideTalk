@@ -1,5 +1,52 @@
 import Parse from 'parse'
 
+// Todo: funktion der opretter ny tråd mellem current user og en reciever. 
+export const addThread = async (currentUser, receiver, chatName) => { 
+  try {
+    //Current user 
+    const currentUser = Parse.User.current();
+
+    //create query to class user 
+    const receiverObjectQuery = new Parse.Query("User")
+    receiverObjectQuery.equalTo("username", receiver)
+    const receiverUserObject = await receiverObjectQuery.first();
+
+    const newThread = new Parse.Object('Threads');
+    newThread.set('thread', chatName )
+    newThread.set('sender', currentUser)
+    newThread.set('receiver', receiverUserObject)
+
+    return await newThread.save();
+  } catch (error) {
+      throw error;
+  }
+ };
+
+
+
+export const getUserThreads = async () => { 
+  const threadObjects = new Parse.Query('Thread');
+  const currentUser = Parse.User.current();
+  threadObjects.equalTo("sender", currentUser);
+
+  try {
+    const threadResults = await threadObjects.find();
+      for( const object of threadResults ) {
+        const thread = object.get('objectId');
+        const sender = object.get('sender');
+        const receiver = object.get('receiver');
+
+        console.log(thread);
+        console.log(sender);
+        console.log(receiver);
+      }
+      console.log(threadResults);
+    return threadResults;
+  } catch (error) {
+    throw error;
+  }
+ }
+
 export const getUsersThreadsForCurrentUser = async (currentUser) => {
     
     try {

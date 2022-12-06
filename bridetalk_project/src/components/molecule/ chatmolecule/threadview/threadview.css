@@ -24,3 +24,7 @@
   background-color: black;
   justify-content: center;
 }
+
+.threads-list {
+  background-color: red;
+}

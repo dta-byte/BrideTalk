@@ -11,6 +11,7 @@ export const addUser = async (formData) => {
         newUser.set("location", formData.location);
 
         return await newUser.save();
+        
     } catch (error) {
         throw error;
     }
