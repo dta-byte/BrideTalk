@@ -11,7 +11,7 @@ export const GroupThemeBox = (props) => {
   };
 
   return (
-    <div Classname="theme-box-container">
+    <div classname="theme-box-container">
       <div className="theme-box">
         <div className="theme-text">{text}</div>
 
