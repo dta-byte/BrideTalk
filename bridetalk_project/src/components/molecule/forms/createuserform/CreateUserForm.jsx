@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { InputField, DropdownLocation, Button } from "../../../atoms";
+import { PopUp } from "../../popUp/PopUp";
+
 import "./createuserform.css";
 
 import Parse from "parse";
@@ -11,6 +13,8 @@ export const CreateUserForm = () => {
   const navigateTo = (path) => {
     navigate(path);
   };
+
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -107,6 +111,16 @@ export const CreateUserForm = () => {
             text={"Sign me up"}
             handleClick={() => addUser(username, password)}
           />
+
+          <Button
+            color={"var(--global-primary-2)"}
+            text={"popup"}
+            handleClick={() => setButtonPopup(true)}
+          />
+
+          <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <p> Heeeey popUp</p>
+          </PopUp>
         </div>
       </div>
     </div>
