@@ -1,8 +1,9 @@
 import "./carousel.css";
 import React, { useState, useEffect } from "react";
 import { Button } from "../../atoms";
-import { HiOutlineUserGroup } from "react-icons/hi";
-import { Link } from "react-router-dom";
+
+import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io"
+
 export const Carousel = (props) => {
   const { children } = props;
   const [activeIndex, setActiveIndex] = useState(0);
@@ -46,19 +47,21 @@ export const Carousel = (props) => {
         })}
       </div>
       <div className="indicators">
-        <Button
-          handleClick={() => {
-            updateIndex(activeIndex - 1);
+        <IoIosArrowRoundBack
+          size={37} 
+          color={"var(--global-secondary-1)"}
+          onClick={() => {
+            updateIndex(activeIndex -1);
           }}
-          text={"<"}
-        ></Button>
+        />
 
-        <Button
-          handleClick={() => {
-            updateIndex(activeIndex + 1);
+        <IoIosArrowRoundForward
+          size={37} 
+          color={"var(--global-secondary-1)"}
+          onClick={() => {
+            updateIndex(activeIndex +1);
           }}
-          text={">"}
-        ></Button>
+        />
       </div>
     </div>
   );
