@@ -111,7 +111,7 @@ export const CreateUserForm = () => {
                 <p> Congrats!</p>
               </div>
               <div className="createUser-popUp-text">
-                <p> Your account has been created succesfully! </p>
+                <p> Your account has been created successfully! </p>
               </div>
             </div>
           </PopUp>
