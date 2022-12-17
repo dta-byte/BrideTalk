@@ -45,7 +45,7 @@
 
 .livechat-line {
   height: 1.5px;
-  background-color: black;
+  background-color: var(--global-black-3);
   justify-content: center;
 }
 

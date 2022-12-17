@@ -21,13 +21,7 @@ export const JoinGroupChatComponent = () => {
   return (
     <div>
       <div className="joingroupchat-headline">Join group chats</div>
-      <div
-        style={{
-          height: "1.5px",
-          backgroundColor: "black",
-          justifyContent: "center",
-        }}
-      ></div>
+      <div className="joingroupchat-divider-line" />
 
       <div className>
         <div className="grid-container-groupthemebox">{groupsArr}</div>

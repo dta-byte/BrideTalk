@@ -6,7 +6,7 @@ import {
   ResetPasswordPage,
   MainChatPageComponent,
   JoinGroupOverviewPage,
-  AuthWrapper
+  AuthWrapper,
 } from ".";
 import { Footer, Navbar } from "../molecule";
 import { useAuth } from "./auth/core/Auth";
@@ -16,7 +16,6 @@ import "./masterlayout.css";
 
 // MasterLayout renders different (master) pages in DOM
 export const MasterLayout = () => {
-
   const { currentUser } = useAuth();
 
   return (
@@ -26,15 +25,11 @@ export const MasterLayout = () => {
           <Navbar />
 
           <Routes>
-          {
-            currentUser &&
-            /* Private route */
-            <Route
-            path="/chat"
-            element={<MainChatPageComponent />}
-             />
-          }
-                          
+            {currentUser && (
+              /* Private route */
+              <Route path="/chat" element={<MainChatPageComponent />} />
+            )}
+
             {/* Public route for HomePage */}
             <Route path="/" element={<HomePage />} />
 
