@@ -13,7 +13,7 @@ export const ChatNavigation = () => {
         className="flex-child1-chatnavigation"
         style={{
           backgroundColor:
-            pathname === "/chat1"
+            pathname === "/chat"
               ? "var(--global-grey-3)"
               : "var(--global-grey-5)",
         }}
