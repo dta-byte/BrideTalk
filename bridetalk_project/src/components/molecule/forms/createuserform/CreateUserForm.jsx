@@ -28,7 +28,6 @@ export const CreateUserForm = () => {
   const toAddUser = async () => {
     try {
       await addUser(user);
-      alert("Congratz! You have created a user! :)");
       setButtonPopup(true);
 
     } catch (error) {
@@ -101,13 +100,6 @@ export const CreateUserForm = () => {
             text={"Sign me up"}
             handleClick={toAddUser}
           
-          />
-
-          <Button
-            color={"var(--global-primary-2)"}
-            text={"popup"}
-            handleClick={() => setButtonPopup(true)}
-           
           />
 
           <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
