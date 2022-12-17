@@ -1,14 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { InputField, DropdownLocation, Button } from "../../../atoms";
+import { addUser } from "../../../../services/parse-functions";
 import { PopUp } from "../../popUp/PopUp";
-
 import "./createuserform.css";
 
-import Parse from "parse";
 
 export const CreateUserForm = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+    location: ""
+  });
 
   const navigateTo = (path) => {
     navigate(path);
@@ -16,35 +22,20 @@ export const CreateUserForm = () => {
 
   const [buttonPopup, setButtonPopup] = useState(false);
 
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPasword] = useState("");
-  const [location, setLocation] = useState("");
+
 
   //Todo: If user does not input a valid e-mail the user should not be created/save, and a alert should be send.
 
-  const addUser = async function () {
-    const userNameValue = username;
-    const passWordValue = password;
 
+
+  const toAddUser = async () => {
     try {
-      // create a new Parse User instance and since the signUp method returns a Promise, we need to call it using await
+      await addUser(user);
+      alert('Congratz! You have created a user! :)')
 
-      const createdUser = await Parse.User.signUp(userNameValue, passWordValue);
-      // const createdUser = new Parse.Object("_User");
-
-      createdUser.set("username", username);
-      createdUser.set("email", email);
-      createdUser.set("password", password);
-      createdUser.set("location", location);
-
-      alert("Succes! User " + createdUser + " was created");
-
-      await createdUser.save();
-      return true;
     } catch (error) {
-      console.log("Error saving new User: ", error);
-      return false;
+      console.error("Error saving new user: ", error);
+      alert("Could not add user :(");
     }
   };
 
@@ -58,44 +49,35 @@ export const CreateUserForm = () => {
         <div className="inputfields-createuserform-container">
           <InputField
             text="Username "
-            value={username}
-            onChangeOut={(event) => {
-              setUsername(event.target.value);
-              // console.log(event.target.value)
-            }}
+            value={user.username}
+            onChangeOut={(event) => setUser({ ...user, username: event.target.value })}
           />
 
           <InputField
             text="E-mail "
-            value={email}
+            value={user.email}
             type="email"
-            onChangeOut={(event) => {
-              setEmail(event.target.value);
-            }}
+            onChangeOut={(event) => setUser({ ...user, email: event.target.value })}
           />
 
           <InputField
             text="Password"
-            value={password}
+            value={user.password}
             type="password"
-            onChangeOut={(event) => {
-              setPasword(event.target.value);
-            }}
+            onChangeOut={(event) => setUser({ ...user, password: event.target.value })}
           />
 
           <InputField
             text="Confirm Password "
-            value={password}
+            value={user.password}
             type="password"
-            onChangeOut={(event) => {
-              setPasword(event.target.value);
-            }}
+            onChangeOut={(event) => setUser({ ...user, password: event.target.value })}
           />
         </div>
 
         <DropdownLocation
           question="Which locations are you interested in?"
-          onChangeOut={setLocation}
+          onChangeOut={(event) => setUser({ ...user, location: event.target.value })}
         />
 
         <div className="buttons-row">
@@ -103,13 +85,13 @@ export const CreateUserForm = () => {
             className="button-back"
             color={"var(--global-grey-4)"}
             text={"Go back"}
-            handleClick={() => navigateTo(-1)}
+            handleClick={() => navigate(-1)}
           />
 
           <Button
             color={"var(--global-primary-2)"}
             text={"Sign me up"}
-            handleClick={() => addUser(username, password)}
+            handleClick={toAddUser}
           />
 
           <Button

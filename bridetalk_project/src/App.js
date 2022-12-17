@@ -4,6 +4,8 @@ import "./css-system/colors.css"
 import "./css-system/typographies.css"
 
 import { initializeParse} from "@parse/react";
+import { AuthProvider } from "./components/pages";
+// import { AuthInit } from "./components/pages/auth/core/Auth";
 
 // Parse initialization configuration 
 const PARSE_APPLICATION_ID = 'CjaXK1cK9RHctfrx5TstNTyXuUniIZ94YXnv3sKb';
@@ -25,7 +27,11 @@ function App() {
   // initializeParse(); 
   return (
     <>
-    <MasterLayout/>
+    <AuthProvider>
+      {/* <AuthInit> */}
+        <MasterLayout/>
+      {/* </AuthInit> */}
+    </AuthProvider>
     </>
   );
 }

@@ -7,7 +7,7 @@ export const DropdownLocation = (props) => {
   return (
     <div className="dropdown">
       <label className="dropdown__label" onChange={onChangeOut}>{question}</label>
-
+  
       <select className="select-location">
 
         <option hidden selected>

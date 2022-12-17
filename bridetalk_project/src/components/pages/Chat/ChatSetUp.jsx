@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-
 import { Button, InputField } from "../../atoms";
-import Parse from "parse";
 import { LiveChatComponent } from "../../molecule";
+import Parse from "parse";
 
 export const ChatSetup = () => {
   // State variables holding input values and results
