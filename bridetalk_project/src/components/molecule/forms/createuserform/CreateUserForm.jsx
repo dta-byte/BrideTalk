@@ -3,8 +3,8 @@ import { useState } from "react";
 import { InputField, DropdownLocation, Button } from "../../../atoms";
 import { addUser } from "../../../../services/parse-functions";
 import { PopUp } from "../../popUp/PopUp";
+import { BsCheckCircle } from "react-icons/bs";
 import "./createuserform.css";
-
 
 export const CreateUserForm = () => {
   const navigate = useNavigate();
@@ -13,25 +13,23 @@ export const CreateUserForm = () => {
     username: "",
     email: "",
     password: "",
-    location: ""
+    location: "",
   });
 
   const navigateTo = (path) => {
     navigate(path);
   };
 
+
   const [buttonPopup, setButtonPopup] = useState(false);
 
-
-
   //Todo: If user does not input a valid e-mail the user should not be created/save, and a alert should be send.
-
-
 
   const toAddUser = async () => {
     try {
       await addUser(user);
-      alert('Congratz! You have created a user! :)')
+      alert("Congratz! You have created a user! :)");
+      setButtonPopup(true);
 
     } catch (error) {
       console.error("Error saving new user: ", error);
@@ -50,34 +48,44 @@ export const CreateUserForm = () => {
           <InputField
             text="Username "
             value={user.username}
-            onChangeOut={(event) => setUser({ ...user, username: event.target.value })}
+            onChangeOut={(event) =>
+              setUser({ ...user, username: event.target.value })
+            }
           />
 
           <InputField
             text="E-mail "
             value={user.email}
             type="email"
-            onChangeOut={(event) => setUser({ ...user, email: event.target.value })}
+            onChangeOut={(event) =>
+              setUser({ ...user, email: event.target.value })
+            }
           />
 
           <InputField
             text="Password"
             value={user.password}
             type="password"
-            onChangeOut={(event) => setUser({ ...user, password: event.target.value })}
+            onChangeOut={(event) =>
+              setUser({ ...user, password: event.target.value })
+            }
           />
 
           <InputField
             text="Confirm Password "
             value={user.password}
             type="password"
-            onChangeOut={(event) => setUser({ ...user, password: event.target.value })}
+            onChangeOut={(event) =>
+              setUser({ ...user, password: event.target.value })
+            }
           />
         </div>
 
         <DropdownLocation
           question="Which locations are you interested in?"
-          onChangeOut={(event) => setUser({ ...user, location: event.target.value })}
+          onChangeOut={(event) =>
+            setUser({ ...user, location: event.target.value })
+          }
         />
 
         <div className="buttons-row">
@@ -92,23 +100,27 @@ export const CreateUserForm = () => {
             color={"var(--global-primary-2)"}
             text={"Sign me up"}
             handleClick={toAddUser}
+          
           />
 
           <Button
             color={"var(--global-primary-2)"}
             text={"popup"}
             handleClick={() => setButtonPopup(true)}
+           
           />
 
           <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
-            <p> Noget text</p>
+            <div className="createUser-popUp-container">
+              <BsCheckCircle className="Check-Cirkle-icon" size={65} />
 
-            <Button
-            color={"var(--global-primary-2)"}
-            text={"Sign me up"}
-            handleClick={() => addUser(user.username, user.password)}
-          />
-
+              <div className="createUser-popUp-headline">
+                <p> Congrats!</p>
+              </div>
+              <div className="createUser-popUp-text">
+                <p> Your account has been created succesfully! </p>
+              </div>
+            </div>
           </PopUp>
         </div>
       </div>
