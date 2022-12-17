@@ -1,6 +1,6 @@
 .sign-up-headline{
   text-align: center;
-  margin-top: 20px;
+  padding-top: 5%;
   font: var(--inter-1);
 }
 
@@ -11,7 +11,7 @@
 }
 
 .buttons-row{
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 30px;
   justify-content: center;
   display: flex;

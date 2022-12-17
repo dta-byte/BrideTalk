@@ -15,7 +15,7 @@
 /* The logo parent element */
 .logo-image {
   height: 80px;
-  width: 150px;
+  /* width: 0px; */
   /* overflow: visible; */
 }
 /* The logo img */
