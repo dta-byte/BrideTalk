@@ -119,7 +119,14 @@ export const CreateUserForm = () => {
           />
 
           <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
-            <p> Heeeey popUp</p>
+            <p> Noget text</p>
+
+            <Button
+            color={"var(--global-primary-2)"}
+            text={"Sign me up"}
+            handleClick={() => addUser(username, password)}
+          />
+
           </PopUp>
         </div>
       </div>
