@@ -6,7 +6,6 @@ import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessage } from "../../../../services/parse-functions/_MessageRequest";
 
-
 export const LiveChatComponent = (props) => {
   // State variable to hold message text input
   const [messageInput, setMessageInput] = useState("");
@@ -38,14 +37,10 @@ export const LiveChatComponent = (props) => {
       enableLiveQuery: true, // Enables live query for real-time update (default: true)
     });
 
-    const sendMessage = () => {
-      addMessage(
-        messageInput, 
-        props.receiverUserId,
-        props.senderUserId,)
-      setMessageInput();
-    }
-
+  const sendMessage = () => {
+    addMessage(messageInput, props.receiverUserId, props.senderUserId);
+    setMessageInput();
+  };
 
   // Helper to format createdAt value on Message
   const formatDateToTime = (date) => {
@@ -55,7 +50,6 @@ export const LiveChatComponent = (props) => {
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
-
         <div className="livechat-headline">Username</div>
         <div className="livechat-line" />
       </div>
@@ -81,20 +75,16 @@ export const LiveChatComponent = (props) => {
         ></MessageBoxComponent>
 
         <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}/>
+          text={"Your loooooooooooooooooong message has been sent"}
+        />
       </div>
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">
-          <textarea
-            className="messagetextinput"
-            type="text"
-
-          ></textarea>
+          <textarea className="messagetextinput" type="text"></textarea>
         </div>
 
         <div className="flexgrandchild2-sendmessage-icon">
           <FiSend className="sendmessage-icon" size={25} />
-
         </div>
       </div>
     </div>

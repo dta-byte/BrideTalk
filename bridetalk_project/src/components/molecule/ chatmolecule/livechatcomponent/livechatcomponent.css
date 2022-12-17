@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+
 }
 .flexchild1-livechat {
   flex-grow: 0;
@@ -27,11 +28,13 @@
   flex-direction: row;
   align-items: center;
   max-width: 100%;
+ 
 }
 
 .flexgrandchild1-messagetextinput {
-  width: 90%;
+  width: 100%;
   margin-left: 10px;
+  
 }
 
 .flexgrandchild2-sendmessage-icon {
@@ -42,14 +45,11 @@
 
 .livechat-line {
   height: 1.5px;
-  background-color: black;
+  background-color: var(--global-black-3);
   justify-content: center;
 }
 
 .messagetextinput {
-  width: 100%;
-  max-height: 80px;
-  height: fit-content;
   border-radius: 10px;
   margin-bottom: 0px;
   border: solid;
@@ -62,15 +62,23 @@
   /* Space between the label an input */
   margin-top: 8px;
   margin-bottom: 8px;
+  margin-right: 10px;
+  height: 25px;
+  min-height: 25px;
+  max-height: 80px;
+  
+  resize: vertical;
+  width: 100%;
 }
 
-.textarea:focus {
-  outline-color: var(--global-primary-1) !important;
-}
-.textarea:hover {
-  outline-color: var(--global-primary-1) !important;
-}
+
 
 .messagetextinput:hover {
-  border-color: var(--global-primary-1);
+  border-color: var(--global-primary-1) !important;
+
 }
+.messagetextinput:focus {
+  outline-color: var(--global-primary-1) !important;
+}
+
+

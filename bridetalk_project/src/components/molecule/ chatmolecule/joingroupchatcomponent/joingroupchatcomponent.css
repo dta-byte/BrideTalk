@@ -7,13 +7,26 @@
   height: "1.5px";
  
 }
-
+.joingroupchat-divider-line{
+  height: 1.5px;
+  background-color: var(--global-black-3);
+  justify-content: center;
+}
 .grid-container-groupthemebox {
   display: grid;
   gap: 50px;
   grid-template-columns: repeat(3, 1fr); 
   margin-left: 50px;
   margin-top: 50px;
+  
 }
 
+@media screen and (max-width: 1000px) {
+  .grid-container-groupthemebox {
+    gap: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+}
 

@@ -1,17 +1,20 @@
 import { IoIosCreate } from "react-icons/io";
-import { addThread, getUserThreads } from "../../../../services/parse-functions";
+import {
+  addThread,
+  getUserThreads,
+} from "../../../../services/parse-functions";
 import { useState } from "react";
 import { Button, InputField, ThreadBox } from "../../../atoms";
-import Parse from 'parse'
+import Parse from "parse";
 import { useEffect } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import "./threadview.css";
-
 
 export const ThreadView = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [receiver, setReceiver] = useState();
   const [chatname, setChatName] = useState();
+
   const [threadsArr, setThreadsArr] = useState([])
 
   const user = Parse.User.current();
@@ -19,42 +22,43 @@ export const ThreadView = () => {
   const doAddThreads = () => {
     try {
       addThread(user, receiver, chatname);
-      // return <PopUp> hej </PopUp>
-      alert(`New threads is created`)
+
+      alert(`New threads is created`);
+
     } catch (error) {
       console.log("Error creading new thread.");
-      alert(`Thre reciever does not exist :()`)
+      alert(`Thre reciever does not exist :()`);
     }
   };
 
   const handleClick = () => {
-    setIsVisible((prevState) =>
-      !prevState
-    )
-  }
+
+    setIsVisible((prevState) => !prevState);
+  };
+
 
   //Function to redirect the chatview into the chosen thread box
   const handleClickToThreadBox = () => {
     console.log("Thread box is clicked!");
-  }
+  };
 
   const doFindThreads = async () => {
     try {
       const threadsArr = await getUserThreads();
-      console.log(threadsArr)
+      console.log(threadsArr);
 
-      console.log("This is the threads", threadsArr)
-      setThreadsArr(threadsArr)
+
+      console.log("This is the threads", threadsArr);
+      setThreadsArr(threadsArr);
+
     } catch (error) {
       throw error;
     }
-  }
+  };
   useEffect(() => {
-    doFindThreads()
 
-  }, [])
-
-
+    doFindThreads();
+  }, []);
 
 
   return (
@@ -62,6 +66,7 @@ export const ThreadView = () => {
       <div className="flexbox-treadview-top">
         <div className="thread-headline">Chats </div>
         <div className="flex-newchat-icon">
+
           <IoIosCreate 
           onClick={handleClick} className="io-icon" 
           size={37} 
@@ -95,22 +100,25 @@ export const ThreadView = () => {
                   text={"Close window"}
                   handleClick={() => handleClick()} />
               </div>
+
             </div>
             {/* Dropdown to new thread  ENDS*/}
-
           </div>
         </div>
       </div>
       <div className="line-under-text" />
       <div classname="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
-        {threadsArr.map(({ sender, receiver, thread }) =>
+
+        {threadsArr.map(({ sender, receiver, thread }) => (
           <ThreadBox
             key={thread.id}
-            text={receiver.get('username')}
+            text={receiver.get("username")}
             handleClick={handleClickToThreadBox}
           />
-        )}
+        ))}
+
+
       </div>
     </div>
   );
