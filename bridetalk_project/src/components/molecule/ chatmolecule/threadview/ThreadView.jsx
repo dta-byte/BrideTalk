@@ -32,7 +32,6 @@ export const ThreadView = () => {
   };
 
   const handleClick = () => {
-
     setIsVisible((prevState) => !prevState);
   };
 
@@ -46,11 +45,8 @@ export const ThreadView = () => {
     try {
       const threadsArr = await getUserThreads();
       console.log(threadsArr);
-
-
       console.log("This is the threads", threadsArr);
       setThreadsArr(threadsArr);
-
     } catch (error) {
       throw error;
     }
