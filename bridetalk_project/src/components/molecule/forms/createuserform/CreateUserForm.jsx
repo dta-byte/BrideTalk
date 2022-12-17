@@ -100,12 +100,6 @@ export const CreateUserForm = () => {
           />
 
 
-          <Button
-            color={"var(--global-primary-2)"}
-            text={"popup"}
-            handleClick={() => setButtonPopup(true)}
-          />
-
 
           <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
             <div className="createUser-popUp-container">
