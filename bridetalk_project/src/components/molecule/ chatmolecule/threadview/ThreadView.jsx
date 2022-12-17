@@ -68,7 +68,8 @@ export const ThreadView = () => {
         <div className="flex-newchat-icon">
 
           <IoIosCreate 
-          onClick={handleClick} className="io-icon" 
+          onClick={handleClick} 
+          className="io-icon" 
           size={37} 
           color={"var(--global-secondary-1"} />
           {/* Dropdown to new thread  STARTS*/}

@@ -1,22 +1,35 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
-import { BiMenu } from "react-icons/bi";
 import { useState } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import { Button } from "../../../atoms";
 import "./navbar.css";
-import { DropdownProfile } from "../../../atoms";
-
+import { logout, getCurrentUser } from "../../../../services/parse-functions";
+import Parse, { User } from 'parse'
 /*Functional component that creates the navigation bar.*/
 export const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
+  // const [username, setUsername] = useState(""); 
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setIsVisible(!isVisible);
   };
+  
 
-  const [buttonPopup, setButtonPopup] = useState(false);
+  const doLogOut = async () => {
+    try {
+      await logout(Parse.User.current());
+      setButtonPopup(false)
+      navigate('/');
+    } catch (error) {
+      console.log("Error loggin user out");
+    }
+  }
 
+  const currentuser = Parse.User.current();
+  // const username = currentuser.getUsername();
   return (
     <>
       <div className="topnav">
@@ -35,15 +48,27 @@ export const Navbar = () => {
         {/* Right side of navigation bar */}
         <div className="topnav-right">
           <div className="nav-container">
-            <button
-              type="button"
-              className="nav-profile-button"
-              onClick={handleClick}
-            >
-              <div className="profile-icon-column2">
-                <BsPersonCircle className="profile-icon" size={35} />
-              </div>
-            </button>
+          {!currentuser &&
+            <div className="text-navbar"> 
+            Hey stranger!
+            </div>
+          }
+
+          {currentuser &&
+            <div className="text-navbar"> 
+            Hey, {currentuser.get('username')}!
+            </div>
+          }
+            
+            <div className="profile-icon">
+              <BsPersonCircle
+                size={35}
+                onClick={handleClick}
+                color={"var(--global-black-4)"}
+              />
+            </div>
+
+
             <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
               <div className="nav-dropdown">
                 <ul>
@@ -66,7 +91,8 @@ export const Navbar = () => {
 
                     <Button
                       color={"var(--global-primary-2)"}
-                      text={"Sign Out"}
+                      text={"Sign out"}
+                      handleClick={doLogOut}
                     />
                   </div>
                 </div>

@@ -1,5 +1,6 @@
 import Parse from 'parse'
 
+
 export const addUser = async (formData) => {
     try {
         // create a new Parse User instance and since the signUp method returns a Promise, we need to call it using await
@@ -53,21 +54,19 @@ export const login = async  (userData) => {
   };
 
 
-export const logout = async (userData) => {
+  export const logout = async () => {
     try {
       await Parse.User.logOut();
       // To verify that current user is now empty, currentAsync can be used
       const currentUser = Parse.User.current();
-      if (currentUser === null) {
-        alert('Success! No user is logged in anymore!');
-      }
+    
       // Update state variable holding current user
-      userData = await Parse.User.current();
+      // getCurrentUser();
       return true;
     } catch (error) {
-      throw error;
+      
+      return false;
     }
   };
-
 
   

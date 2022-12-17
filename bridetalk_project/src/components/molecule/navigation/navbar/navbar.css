@@ -29,45 +29,34 @@
   text-align: center;
 }
 
-.profile-icon-column {
-  float: right;
-  padding-top: 2px;
-}
-
 .profile-icon > * {
-  fill: hsl(0, 0%, 20%);
+  
+  border: none;
+  background-color: Transparent;
+  cursor: pointer;
 }
 
-.menu-icon-column {
-  float: right;
-  padding-right: 30px;
-  padding-left: 25px;
-  padding-top: 0px;
-}
-
-.menu-icon-column2 {
-  float: right;
-  padding-right: 400px;
-  padding-left: 20px;
-  margin-top: 100px;
-  margin-right: 200px;
-}
-
-.menu-icon > * {
-  fill: hsl(0, 0%, 20%);
+.text-navbar{
+  padding-left: 49%;
+  font: var(--inter-2);
+  padding: 5px;
 }
 
 .nav-container {
   position: relative;
-  display: inline-block;
+  display: flex;
+  gap: 10px;
+  margin-right: 100px;
+  margin-top: 15%;
 }
+
+
+
+
+
+
 .nav-profile-button {
-  margin-top: 17px;
-  margin-bottom: 2px;
-  margin-right: 30px;
-  border: none;
-  background-color: Transparent;
-  cursor: pointer;
+ 
 }
 
 .nav-dropdown {
