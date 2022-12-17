@@ -1,28 +1,19 @@
-.joingroupchat-headline{
-    font: var(--inter-1);
-    margin-left: 2%;
-    margin-top:12px;
-    margin-bottom: 12px;
-    font-weight: bold;
+.joingroupchat-headline {
+  font: var(--inter-1);
+  margin-left: 2%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-weight: bold;
+  height: "1.5px";
  
-  }
-  /*
-  .grid-container-groupthemebox{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px;
-  }
-  */
+}
 
-  .container1-groupthemebox{
-    display: flex;
-    gap: 100px;
-    margin-left: 50px;
-    margin-top: 50px;
-  }
-  .container2-groupthemebox{
-    display: flex;
-    gap: 100px;
-    margin-left: 50px;
-    margin-top: 50px;
-  }
+.grid-container-groupthemebox {
+  display: grid;
+  gap: 50px;
+  grid-template-columns: repeat(3, 1fr); 
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+

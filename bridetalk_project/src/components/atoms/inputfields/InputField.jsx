@@ -6,7 +6,7 @@ export const InputField = (props) => {
 
   return (
     <div className="input-form">
-      <label className="inputlabel-form" for="text">
+      <label className="inputlabel-form" htmlFor="text">
         {text}
         <div> </div>
       </label>
@@ -14,7 +14,6 @@ export const InputField = (props) => {
       <input
         className="userinput-form"
         type={type}
-        id="text"
         // placeholder={text}
         onChange={onChangeOut}
       />

@@ -89,6 +89,7 @@ export const ThreadView = () => {
           </div>
         </div>
       </div>
+
       <div className="line-under-text" />
       <div classname="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
@@ -100,6 +101,7 @@ export const ThreadView = () => {
           )}
 
       </div>
+
     </div>
   );
 };

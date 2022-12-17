@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { InputField, DropdownLocation, Button } from "../../../atoms";
 import { addUser } from "../../../../services/parse-functions";
+import { PopUp } from "../../popUp/PopUp";
 import "./createuserform.css";
 
 
@@ -14,6 +15,18 @@ export const CreateUserForm = () => {
     password: "",
     location: ""
   });
+
+  const navigateTo = (path) => {
+    navigate(path);
+  };
+
+  const [buttonPopup, setButtonPopup] = useState(false);
+
+
+
+  //Todo: If user does not input a valid e-mail the user should not be created/save, and a alert should be send.
+
+
 
   const toAddUser = async () => {
     try {
@@ -80,6 +93,23 @@ export const CreateUserForm = () => {
             text={"Sign me up"}
             handleClick={toAddUser}
           />
+
+          <Button
+            color={"var(--global-primary-2)"}
+            text={"popup"}
+            handleClick={() => setButtonPopup(true)}
+          />
+
+          <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <p> Noget text</p>
+
+            <Button
+            color={"var(--global-primary-2)"}
+            text={"Sign me up"}
+            handleClick={() => addUser(username, password)}
+          />
+
+          </PopUp>
         </div>
       </div>
     </div>

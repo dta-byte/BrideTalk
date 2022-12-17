@@ -55,38 +55,46 @@ export const LiveChatComponent = (props) => {
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
-        <div className="livechat-headline">{`${props.receiverUserName}!`}</div>
-        <div
-          style={{
-            height: "1px",
-            width: "90%",
-            marginLeft: "5%",
-            backgroundColor: "black",
-            justifyContent: "center",
-          }}
-        />
+
+        <div className="livechat-headline">Username</div>
+        <div className="livechat-line" />
+      </div>
+      <div className="flexchild2-livechat">
+        <MessageBoxComponent text={"Hey"}></MessageBoxComponent>
         <MessageBoxComponent
-          text={"Hey"}/>
+          text={"Your message has been sent"}
+        ></MessageBoxComponent>
         <MessageBoxComponent
-          text={"Your message has been sent"}/>
+          text={"Your loooooooooooooooooong message has been sent"}
+        ></MessageBoxComponent>
+        <MessageBoxComponent
+          text={"Your loooooooooooooooooong message has been sent"}
+        ></MessageBoxComponent>
+        <MessageBoxComponent
+          text={"Your loooooooooooooooooong message has been sent"}
+        ></MessageBoxComponent>
+        <MessageBoxComponent
+          text={"Your loooooooooooooooooong message has been sent"}
+        ></MessageBoxComponent>
+        <MessageBoxComponent
+          text={"Your loooooooooooooooooong message has been sent"}
+        ></MessageBoxComponent>
+
         <MessageBoxComponent
           text={"Your loooooooooooooooooong message has been sent"}/>
       </div>
-      <div className="flexchild2-livechat">
-        <div className="flexchild1-messagetextinput">
-          <InputField
+      <div className="flexchild3-livechat">
+        <div className="flexgrandchild1-messagetextinput">
+          <textarea
             className="messagetextinput"
-            text={"Your message..."}
             type="text"
-            value={messageInput}
-            onChangeOut={(event) => setMessageInput(event.target.value)}
-          />
-        </div>
-        <div className="flexchild2-sendmessage-icon">
-          <Button handleClick={sendMessage}>
 
-            <FiSend className="sendmessage-icon" size={15} />
-          </Button>
+          ></textarea>
+        </div>
+
+        <div className="flexgrandchild2-sendmessage-icon">
+          <FiSend className="sendmessage-icon" size={25} />
+
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@
   margin-left: 2%;
   margin-top: 12px;
   margin-bottom: 12px;
+  
   font-weight: bold;
 }
 
@@ -13,6 +14,7 @@
   flex-grow: 10;
 }
 
+
 .flex-newchat-icon {
   border: 0px;
   flex-grow: 1;
@@ -20,6 +22,23 @@
 }
 
 .line-under-text {
+
+ .flexbox-treadview-top{
+   display: flex;  
+  
+ }
+ .thread-headline {
+   flex-grow: 10;
+ }
+
+ .flex-newchat-icon {
+border: 0px;
+flex-grow: 1;
+margin-top: 8px;
+ }
+
+.threadview-line{
+
   height: 1.5px;
   background-color: black;
   justify-content: center;
@@ -28,3 +47,4 @@
 .threads-list {
   background-color: red;
 }
+
