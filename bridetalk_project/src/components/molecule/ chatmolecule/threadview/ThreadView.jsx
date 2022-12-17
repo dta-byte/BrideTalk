@@ -12,7 +12,7 @@ export const ThreadView = () => {
   const [receiver, setReceiver] = useState();
   const [chatname, setChatName] = useState();
   const [threadsArr, setThreadsArr] = useState([])
-  // const threadArr = [[]];
+
   const user = Parse.User.current();
 
   const doAddThreads = () => {
@@ -36,21 +36,15 @@ export const ThreadView = () => {
   const doFindThreads = () => {
     try {
       const threadsArr = getUserThreads();
-      console.log(threadsArr)
-      // const threadArray = userThreads.map((item, index) => {
-      //   console.log(item)
-
-      //   return <ThreadBox
-      //     text={item}
-      //     handleClick={handleClickToThreadBox} />
-      // })
-      console.log("This is the threads",threadsArr)
+      setThreadsArr(threadsArr)
+      console.log("This is the threads", threadsArr)
       return threadsArr;
     } catch (error) {
       throw error;
     }
   }
-   
+
+  // doFindThreads();
 
   return (
     <div>
@@ -91,7 +85,7 @@ export const ThreadView = () => {
       </div>
 
       <div className="line-under-text" />
-      <div classname="threads-list">
+      <div className="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
         {threadsArr.map(item => 
           <ThreadBox

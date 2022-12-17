@@ -106,7 +106,7 @@ export const CreateUserForm = () => {
             <Button
             color={"var(--global-primary-2)"}
             text={"Sign me up"}
-            handleClick={() => addUser(username, password)}
+            handleClick={() => addUser(user.username, user.password)}
           />
 
           </PopUp>
