@@ -1,15 +1,13 @@
 .flex-container-chatnavigation {
-    display: flex;  
-    flex-direction: column;
-    background-color:var(--global-grey-5);
-    height: fit-content;
-    border-top-left-radius: 18px;
-    border-bottom-left-radius: 18px;
-
-
+  display: flex;
+  flex-direction: column;
+  background-color: var(--global-grey-5);
+  height: fit-content;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
 }
 
-.chat-icon{
+.chat-icon {
   padding: 50px;
   padding-top: 60px;
   padding-bottom: 60px;
@@ -17,50 +15,45 @@
   font-size: 130px;
 }
 
-
-.groupchat-icon{
-    padding: 50px;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    color: var(--global-black-2);
-    font-size: 130px;
-   
+.groupchat-icon {
+  padding: 50px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  color: var(--global-black-2);
+  font-size: 130px;
 }
 
-@media only screen and (max-width: 1000px)
-{
-    .chat-icon{
-        padding: 10px;
-        padding-top: 80px;
-        padding-bottom: 80px;
-        font-size: 100px;
-     
-    }
-    .groupchat-icon{
-        padding: 10px;
-        padding-top: 80px;
-        padding-bottom: 80px;
-        font-size: 100px;
-    }
+@media only screen and (max-width: 1000px) {
+  .chat-icon {
+    padding: 10px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-size: 100px;
+  }
+  .groupchat-icon {
+    padding: 10px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    font-size: 100px;
+  }
 }
 
-.flex-child1-chatnavigation{
-    border-top-left-radius: 18px;
+.flex-child1-chatnavigation {
+  border-top-left-radius: 18px;
 }
 
-.flex-child2-chatnavigation{
-    border-bottom-left-radius: 18px;
+.flex-child2-chatnavigation {
+  border-bottom-left-radius: 18px;
 }
 
-.flex-child1-chatnavigation :hover{
-    background-color: var(--global-grey-3);
-    flex-shrink: 3;
-    border-top-left-radius: 18px;
+.flex-child1-chatnavigation :hover {
+  background-color: var(--global-grey-3);
+  flex-shrink: 3;
+  border-top-left-radius: 18px;
 }
 
-.flex-child2-chatnavigation :hover{
-    background-color: var(--global-grey-3);
-    flex-shrink: 3;
-    border-bottom-left-radius: 18px;
+.flex-child2-chatnavigation :hover {
+  background-color: var(--global-grey-3);
+  flex-shrink: 3;
+  border-bottom-left-radius: 18px;
 }
-
