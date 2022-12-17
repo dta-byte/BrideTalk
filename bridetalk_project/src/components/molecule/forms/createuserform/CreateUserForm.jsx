@@ -99,8 +99,6 @@ export const CreateUserForm = () => {
             handleClick={toAddUser}
           />
 
-
-
           <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
             <div className="createUser-popUp-container">
               <BsCheckCircle className="Check-Cirkle-icon" size={65} />
