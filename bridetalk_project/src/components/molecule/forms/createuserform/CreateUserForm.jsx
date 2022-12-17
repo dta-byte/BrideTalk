@@ -27,7 +27,6 @@ export const CreateUserForm = () => {
   const toAddUser = async () => {
     try {
       await addUser(user);
-      alert("Congratz! You have created a user! :)");
       setButtonPopup(true);
     } catch (error) {
       console.error("Error saving new user: ", error);
@@ -100,11 +99,13 @@ export const CreateUserForm = () => {
             handleClick={toAddUser}
           />
 
+
           <Button
             color={"var(--global-primary-2)"}
             text={"popup"}
             handleClick={() => setButtonPopup(true)}
           />
+
 
           <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
             <div className="createUser-popUp-container">
