@@ -62,7 +62,10 @@ export const ThreadView = () => {
       <div className="flexbox-treadview-top">
         <div className="thread-headline">Chats </div>
         <div className="flex-newchat-icon">
-          <IoIosCreate onClick={handleClick} className="io-icon" size={37} color={"var(--global-secondary-1"} />
+          <IoIosCreate 
+          onClick={handleClick} className="io-icon" 
+          size={37} 
+          color={"var(--global-secondary-1"} />
           {/* Dropdown to new thread  STARTS*/}
           <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
             <div className="newThread-box">
