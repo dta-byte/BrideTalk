@@ -96,3 +96,17 @@ li:hover {
   cursor: pointer;
   border-radius: 8px;
 }
+
+.nav-popUp-container{
+  font: var(--inter-2);
+}
+
+.nav-popUp-btn{
+  display: flex;
+  gap: 30px; 
+  justify-content: center;
+  margin-top: 50px;
+  margin-top: 50px;
+
+
+}
