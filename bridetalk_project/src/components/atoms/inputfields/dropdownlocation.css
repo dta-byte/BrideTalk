@@ -4,6 +4,7 @@
   margin-right: 20%;
   font: var(--inter-normal-text);
   color: var(--global-black-2);
+  margin-top:2px;
 
 }
 
@@ -16,7 +17,8 @@
   border-color: var(--global-primary-3);
   font: var(--inter-normal-text);
   /* Space between the label an input */
-  margin-top: 5px;
+  margin-top: 6px;
+
 }
 .dropdown__label{
  

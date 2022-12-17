@@ -20,7 +20,6 @@ export const CreateUserForm = () => {
     navigate(path);
   };
 
-
   const [buttonPopup, setButtonPopup] = useState(false);
 
   //Todo: If user does not input a valid e-mail the user should not be created/save, and a alert should be send.
@@ -28,9 +27,7 @@ export const CreateUserForm = () => {
   const toAddUser = async () => {
     try {
       await addUser(user);
-      alert("Congratz! You have created a user! :)");
       setButtonPopup(true);
-
     } catch (error) {
       console.error("Error saving new user: ", error);
       alert("Could not add user :(");
@@ -100,15 +97,9 @@ export const CreateUserForm = () => {
             color={"var(--global-primary-2)"}
             text={"Sign me up"}
             handleClick={toAddUser}
-          
           />
 
-          <Button
-            color={"var(--global-primary-2)"}
-            text={"popup"}
-            handleClick={() => setButtonPopup(true)}
-           
-          />
+
 
           <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
             <div className="createUser-popUp-container">
