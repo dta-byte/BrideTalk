@@ -49,8 +49,6 @@ export const MasterLayout = () => {
 
             {/* <Route path="/chat" element={<ChatSetup />} /> */}
 
-            {/* <Route path="/chat" element={<MainChatPageComponent />} /> */}
-
             <Route path="/findgroups" element={<JoinGroupOverviewPage />} />
           </Routes>
           <Footer />

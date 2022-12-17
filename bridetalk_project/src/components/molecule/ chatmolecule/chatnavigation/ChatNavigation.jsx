@@ -18,7 +18,7 @@ export const ChatNavigation = () => {
               : "var(--global-grey-5)",
         }}
       >
-        <Link to="/chat1">
+        <Link to="/chat">
           {" "}
           <BsChatDots className="chat-icon" />
         </Link>

@@ -4,6 +4,7 @@ import { addThread, getUserThreads } from "../../../../services/parse-functions"
 import { useState } from "react";
 import { Button, InputField, ThreadBox } from "../../../atoms";
 import Parse from 'parse'
+import { useEffect } from "react";
 
 
 export const ThreadView = () => {
@@ -12,7 +13,7 @@ export const ThreadView = () => {
   const [receiver, setReceiver] = useState();
   const [chatname, setChatName] = useState();
   const [threadsArr, setThreadsArr] = useState([])
-
+  // const threadArr = [[]];
   const user = Parse.User.current();
 
   const doAddThreads = () => {
@@ -26,25 +27,35 @@ export const ThreadView = () => {
   };
 
   const handleClick = () => {
-    setIsVisible(!isVisible)
+    
+    setIsVisible((prevState) => 
+    !prevState
+    )
   }
+
 //Function to redirect the chatview into the chosen thread box
   const handleClickToThreadBox = () => {
     console.log("Thread box is clicked!");
   }
 
-  const doFindThreads = () => {
+  const doFindThreads = async () => {
     try {
-      const threadsArr = getUserThreads();
+      const threadsArr = await getUserThreads();
+      console.log(threadsArr)
+
+      console.log("This is the threads",threadsArr)
       setThreadsArr(threadsArr)
-      console.log("This is the threads", threadsArr)
-      return threadsArr;
     } catch (error) {
       throw error;
     }
   }
-
-  // doFindThreads();
+  useEffect(() => {
+    doFindThreads()
+  
+  }, [])
+  
+  
+  
 
   return (
     <div>
@@ -83,19 +94,17 @@ export const ThreadView = () => {
           </div>
         </div>
       </div>
-
       <div className="line-under-text" />
-      <div className="threads-list">
+      <div classname="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
-        {threadsArr.map(item => 
+        {threadsArr.map(({sender, receiver, thread}) => 
           <ThreadBox
-          text={item}
+          key={thread.id}
+          text={receiver.get('username')}
           handleClick={handleClickToThreadBox}
           />
           )}
-
       </div>
-
     </div>
   );
 };
