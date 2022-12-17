@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import { BiMenu } from "react-icons/bi";
 import { useState } from "react";
-
+import { PopUp } from "../../popUp/PopUp";
+import { Button } from "../../../atoms";
 import "./navbar.css";
 import { DropdownProfile } from "../../../atoms";
 
@@ -13,6 +14,8 @@ export const Navbar = () => {
   const handleClick = () => {
     setIsVisible(!isVisible);
   };
+
+  const [buttonPopup, setButtonPopup] = useState(false);
 
   return (
     <>
@@ -46,9 +49,28 @@ export const Navbar = () => {
                 <ul>
                   <li>Edit profile</li>
                   <li>Help</li>
-                  <li>Log out</li>
+                  <li onClick={() => setButtonPopup(true)}>Log out </li>
                 </ul>
               </div>
+
+              <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+                <div className="nav-popUp-container">
+                  <p> Are you sure you want to sign out? </p>
+
+                  <div className="nav-popUp-btn">
+                    <Button
+                      color={"var(--global-grey-4)"}
+                      text={"Cancel"}
+                      handleClick={() => setButtonPopup(false)}
+                    />
+
+                    <Button
+                      color={"var(--global-primary-2)"}
+                      text={"Sign Out"}
+                    />
+                  </div>
+                </div>
+              </PopUp>
             </div>
           </div>
         </div>
@@ -56,4 +78,3 @@ export const Navbar = () => {
     </>
   );
 };
-
