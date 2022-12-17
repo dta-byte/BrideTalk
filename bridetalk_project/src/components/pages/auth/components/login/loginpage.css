@@ -2,7 +2,6 @@
 .login-form-container {
   width: 40%;
   background-color: var(--global-primary-5);
-  height: 810%;
   padding: 40px 10px 40px 10px;
   border-radius: 35px;
   display: block;

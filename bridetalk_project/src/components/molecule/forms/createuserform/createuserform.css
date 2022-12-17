@@ -1,21 +1,21 @@
 .sign-up-headline{
   text-align: center;
-  padding-top: 5%;
+  padding-top: 3%;
   font: var(--inter-1);
 }
 
 .link-to-login {
   text-align: center;
-  margin: 15px 0 15px 0;
+  margin: 10px 0 10px 0;
   font: var(--inter-normal-text)
 }
 
 .buttons-row{
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   justify-content: center;
   display: flex;
-  gap: 7%;
+  gap: 6%;
 }
 
 /* Change color for Link */
@@ -30,7 +30,8 @@ a:hover {
 }
 
 .inputfields-createuserform-container{
-  padding: 10px 10px;
+  padding:1px;
+  padding-right: 10px;
   padding-left: 0;
   margin-left: 20%;
   margin-right: 20%;
@@ -54,6 +55,5 @@ a:hover {
 .createUser-popUp-text {
   margin-bottom: 40px;
  
-
- 
 }
+

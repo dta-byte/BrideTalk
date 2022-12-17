@@ -27,8 +27,8 @@
   font: var(--inter-normal-text);
   color: var(--global-black-3);
   /* Space between the label an input */
-  margin-top: 3px;
-  margin-bottom: 12px;
+  margin-top: 1.5px;
+  margin-bottom: 10px;
 }
 
 .userinput-form:hover{
