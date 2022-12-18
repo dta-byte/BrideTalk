@@ -73,7 +73,7 @@ const init = async () => {
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">
           <textarea 
-          className="messagetextinput" type="text"/>
+          className="messagetextinput" type="text" value= {messageInput}/>
         </div>
         <div className="flexgrandchild2-sendmessage-icon">
           <FiSend 
