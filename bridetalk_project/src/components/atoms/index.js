@@ -11,8 +11,8 @@ export { ThreadBox }
 export { Button }
 export { InputField }
 export { DropdownLocation }
-export {MessageBoxComponent}
-export {GroupThemeBox}
-export {DropdownProfile}
-export {CarouselItem}
+export { MessageBoxComponent }
+export { GroupThemeBox }
+export { DropdownProfile }
+export { CarouselItem }
 

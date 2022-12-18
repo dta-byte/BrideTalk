@@ -42,7 +42,7 @@ export const LiveChatComponent = (props) => {
   const sendMessage = () => {
     console.log("clicked");
     addMessage(messageInput, props.receiverUserId, props.senderUserId);
-    setMessageInput("");
+    setMessageInput();
   };
 
   // Helper to format createdAt value on Message
@@ -76,7 +76,8 @@ const init = async () => {
         <InputField
          className="messagetextinput" type="text" 
          value={messageInput}
-         onChangeOut={(event) => setMessageInput(event.target.value)}>
+         onChangeOut={(event => setMessageInput(event.target.value))}>
+
         </InputField>
           {/* <textarea 
           className="messagetextinput" type="text" /> */}

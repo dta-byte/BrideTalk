@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { Button, InputField } from "../../atoms";
 import { LiveChatComponent } from "../../molecule";
 import Parse from "parse";
+import { useAuth } from "../auth/core/Auth";
 
 export const ChatSetup = () => {
+  const   { currentUser } = useAuth();
   // State variables holding input values and results
   const [senderUserInput, setSenderUserInput] = useState("");
   const [senderUserId, setSenderUserId] = useState(null);
   const [receiverUserInput, setReceiverUserInput] = useState("");
   const [receiverUserId, setReceiverUserId] = useState(null);
-
+  const [receiver, setReceiver] = useState();
+  
   // Create or retrieve User objects and start LiveChat component
   const startLiveChat = async () => {
     const senderUserName = senderUserInput;
@@ -78,7 +81,7 @@ export const ChatSetup = () => {
   return (
     <div>
       <div className="container-bacground">
-        {senderUserId === null && receiverUserId === null && (
+        {/* {senderUserId === null && receiverUserId === null && (
           <div>
             <InputField
               type="text"
@@ -98,15 +101,15 @@ export const ChatSetup = () => {
               handleClick={() => startLiveChat() }
               />
           </div>
-        )}
-        {senderUserId !== null && receiverUserId !== null && (
+        )} */}
+        {/* {senderUserId !== null && receiverUserId !== null && ( */}
           <LiveChatComponent
-            senderUserName={senderUserInput}
-            senderUserId={senderUserId}
-            receiverUserName={receiverUserInput}
+            senderUserName={currentUser}
+            senderUserId={currentUser}
+            receiverUserName={receiverUserId}
             receiverUserId={receiverUserId}
           />
-        )}
+        {/* )} */}
       </div>
     </div>
   );
