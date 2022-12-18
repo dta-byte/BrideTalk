@@ -10,8 +10,8 @@ export const addMessage = async (messageInput, reciever, senderUserObject, chatn
     // Create query for reciever
     const receiverUserObjectQuery = new Parse.Query("User");
     receiverUserObjectQuery.equalTo("objectId", reciever);
-    // query runs
 
+    // query runs
     let receiverUserObject = await receiverUserObjectQuery.first();
 
     // Create new Message object and save it
