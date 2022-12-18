@@ -34,13 +34,12 @@ export const getUserThreads = async () => {
   try {
     const threadResults = await threadObjects.findAll();
     threadResults.map((object => {
-      const thread = object.get('objectId');
       const sender = object.get('sender');
       const receiver = object.get('receiver');
    
 
       threadArr.push({
-        thread: thread, 
+        thread: object, 
         sender: sender, 
         receiver: receiver})
     })

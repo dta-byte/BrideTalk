@@ -44,7 +44,6 @@ export const ThreadView = () => {
   const doFindThreads = async () => {
     try {
       const threadsArr = await getUserThreads();
-      console.log(threadsArr);
       setThreadsArr(threadsArr);
     } catch (error) {
       throw error;
@@ -71,13 +70,6 @@ export const ThreadView = () => {
           <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
             <div className="newThread-box">
               <div className="inputfield-newthread-dropdown">
-                <InputField
-                  text="Chat name: "
-                  value={chatname}
-                  onChangeOut={(event) => {
-                    setChatName(event.target.value)
-                  }}
-                />
                 <InputField
                   text="To: "
                   value={receiver}
@@ -106,15 +98,17 @@ export const ThreadView = () => {
       <div className="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
 
-        {threadsArr.map(({ sender, receiver, thread }) => (
+        {threadsArr.map(({ receiver, thread }) => {
+
+          console.log(receiver)
 
 
-          <ThreadBox
+          return <ThreadBox
             key={thread.id}
             handleClick={changeLiveChatView}
             recieverId={receiver.id}
           />
-        ))}
+        })}
       </div>
     </div>
   );

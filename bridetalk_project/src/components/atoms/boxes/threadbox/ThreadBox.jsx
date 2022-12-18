@@ -21,11 +21,9 @@ export const ThreadBox = (props) => {
         <div 
             className="thread-container"
             onClick={() => handleClick()}>
-
             <div className="thread-text">
                 {recivername}
             </div>
-
         </div>
     )
 }
