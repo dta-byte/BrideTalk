@@ -9,20 +9,20 @@ import Parse from "parse";
 import { useEffect } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import "./threadview.css";
+import { useAuth } from "../../../pages/auth/core/Auth";
 
 export const ThreadView = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [receiver, setReceiver] = useState();
   const [chatname, setChatName] = useState();
+  const { currentUser } = useAuth();
 
   const [threadsArr, setThreadsArr] = useState([])
 
-  const user = Parse.User.current();
-
   const doAddThreads = () => {
     try {
-      addThread(user, receiver, chatname);
-
+      addThread(currentUser, receiver, chatname);
+      setIsVisible((prevState) => !prevState);
       alert(`New threads is created`);
 
     } catch (error) {
@@ -35,24 +35,23 @@ export const ThreadView = () => {
     setIsVisible((prevState) => !prevState);
   };
 
-
   //Function to redirect the chatview into the chosen thread box
-  const handleClickToThreadBox = () => {
-    console.log("Thread box is clicked!");
+  const changeLiveChatView = () => {
+    //1: username overskrift skal ændres 
+    //2: beskeder skal ændres 
   };
 
   const doFindThreads = async () => {
     try {
       const threadsArr = await getUserThreads();
       console.log(threadsArr);
-      console.log("This is the threads", threadsArr);
       setThreadsArr(threadsArr);
     } catch (error) {
       throw error;
     }
   };
-  useEffect(() => {
 
+  useEffect(() => {
     doFindThreads();
   }, []);
 
@@ -104,18 +103,18 @@ export const ThreadView = () => {
         </div>
       </div>
       <div className="line-under-text" />
-      <div classname="threads-list">
+      <div className="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
 
         {threadsArr.map(({ sender, receiver, thread }) => (
+
+
           <ThreadBox
             key={thread.id}
-            text={receiver.get("username")}
-            handleClick={handleClickToThreadBox}
+            handleClick={changeLiveChatView}
+            recieverId={receiver.id}
           />
         ))}
-
-
       </div>
     </div>
   );

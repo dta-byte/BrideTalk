@@ -54,29 +54,7 @@ export const LiveChatComponent = (props) => {
         <div className="livechat-line" />
       </div>
       <div className="flexchild2-livechat">
-        <MessageBoxComponent text={"Hey"}></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        />
+       {/* MESSAGE BOXES GOES HERE */}
       </div>
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">
@@ -84,7 +62,9 @@ export const LiveChatComponent = (props) => {
         </div>
 
         <div className="flexgrandchild2-sendmessage-icon">
-          <FiSend className="sendmessage-icon" size={25} />
+          <FiSend 
+          className="sendmessage-icon" size={25}
+          onClick={sendMessage} />
         </div>
       </div>
     </div>

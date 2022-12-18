@@ -4,12 +4,12 @@ import { useState } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import { Button } from "../../../atoms";
 import "./navbar.css";
-import { logout, getCurrentUser } from "../../../../services/parse-functions";
 import Parse, { User } from 'parse'
+import { useAuth } from "../../../pages/auth/core/Auth";
 /*Functional component that creates the navigation bar.*/
 export const Navbar = () => {
+  const { logout } = useAuth();
   const [isVisible, setIsVisible] = useState(false);
-  // const [username, setUsername] = useState(""); 
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
@@ -20,7 +20,7 @@ export const Navbar = () => {
 
   const doLogOut = async () => {
     try {
-      await logout(Parse.User.current());
+      await logout();
       setButtonPopup(false)
       navigate('/');
     } catch (error) {

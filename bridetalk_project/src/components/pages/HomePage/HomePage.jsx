@@ -18,30 +18,6 @@ export const HomePage = () => {
     navigate(path);
   };
 
-  // // State variables holding input values and flags
-  // const [currentUser, setCurrentUser] = useState(null);
-
-  //   // This effect hook runs at every render and checks if there is a
-  // // logged in user, redirecting to Log-in screen if needed
-  // useEffect(() => {
-  //   const checkCurrentUser = async () => {
-  //     try {
-  //       const user = await Parse.User.currentAsync();
-  //       if (user === null || user === undefined) {
-  //         console.log("No user is logged in, go to homepage")
-  //         navigate("/");
-  //       } else {
-  //         if (currentUser === null) {
-  //           setCurrentUser(user);
-  //         }
-  //       }
-  //       return true;
-  //     } catch (error) {}
-  //     return false;
-  //   };
-  //   checkCurrentUser();
-  // });
-
   return (
     <>
       {/* Container starts*/}

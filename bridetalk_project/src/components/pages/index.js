@@ -5,6 +5,7 @@ import { ResetPasswordPage } from "./reset-password/ResetPasswordPage";
 import { JoinGroupOverviewPage } from "./Chat/joingroupoverviewpage/JoinGroupOverviewPage";
 import { MainChatPageComponent } from "./Chat/mainchatpagecomponent/MainChatPageComponent";
 import { AuthProvider } from "./auth/core/Auth";
+import { AuthInit } from "./auth/core/Auth";
 
 
 export { CreateUserPage }
@@ -14,3 +15,4 @@ export { ResetPasswordPage }
 export { JoinGroupOverviewPage }
 export { MainChatPageComponent }
  export { AuthProvider }
+ export { AuthInit }
