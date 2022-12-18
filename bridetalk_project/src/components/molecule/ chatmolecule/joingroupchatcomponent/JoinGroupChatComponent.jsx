@@ -16,8 +16,6 @@ export const JoinGroupChatComponent = () => {
   addGroup("Rings");
   addGroup("xxx");
 
-  console.log(groupsArr);
-
   return (
     <div>
       <div className="joingroupchat-headline">Join group chats</div>

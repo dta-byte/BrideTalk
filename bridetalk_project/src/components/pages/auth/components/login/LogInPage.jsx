@@ -1,15 +1,20 @@
 import Parse from "parse";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { InputField, Button } from "../../../../atoms";
-import { login } from "../../../../../services/parse-functions";
+
+import {
+  InputField,
+  Button,
+} from "../../../../atoms";
+import { signIn } from "../../../../../services/parse-functions";
+
 import { useAuth } from "../../core/Auth";
 import "./loginpage.css";
 
 export const LoginPage = () => {
   let navigate = useNavigate();
 
-  const { currentUser, setCurrentUser } = useAuth();
+  const { setCurrentUser, login } = useAuth();
   const [user, setUser] = useState({});
 
   const doLogin = async () => {
