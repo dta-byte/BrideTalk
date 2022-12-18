@@ -75,39 +75,39 @@ export const ChatSetup = () => {
     return true;
   };
 
-  // return (
-  //   <div>
-  //     <div className="container-bacground">
-  //       {senderUserId === null && receiverUserId === null && (
-  //         <div>
-  //           <InputField
-  //             type="text"
-  //             value={senderUserInput}
-  //             onChangeOut={(event) => setSenderUserInput(event.target.value)}
-  //             text={"Sender"}
-  //           />
-  //           <InputField
-  //             type="text"
-  //             value={receiverUserInput}
-  //             onChangeOut={(event) => setReceiverUserInput(event.target.value)}
-  //             text={"Receiver"}
-  //           />
-  //           <Button
-  //             text={"Start chatting!"}
-  //             color={"var(--global-primary-2)"}
-  //             handleClick={() => startLiveChat() }
-  //             />
-  //         </div>
-  //       )}
-  //       {senderUserId !== null && receiverUserId !== null && (
-  //         <LiveChatComponent
-  //           senderUserName={senderUserInput}
-  //           senderUserId={senderUserId}
-  //           receiverUserName={receiverUserInput}
-  //           receiverUserId={receiverUserId}
-  //         />
-  //       )}
-  //     </div>
-  //   </div>
-  // );
+  return (
+    <div>
+      <div className="container-bacground">
+        {senderUserId === null && receiverUserId === null && (
+          <div>
+            <InputField
+              type="text"
+              value={senderUserInput}
+              onChangeOut={(event) => setSenderUserInput(event.target.value)}
+              text={"Sender"}
+            />
+            <InputField
+              type="text"
+              value={receiverUserInput}
+              onChangeOut={(event) => setReceiverUserInput(event.target.value)}
+              text={"Receiver"}
+            />
+            <Button
+              text={"Start chatting!"}
+              color={"var(--global-primary-2)"}
+              handleClick={() => startLiveChat() }
+              />
+          </div>
+        )}
+        {senderUserId !== null && receiverUserId !== null && (
+          <LiveChatComponent
+            senderUserName={senderUserInput}
+            senderUserId={senderUserId}
+            receiverUserName={receiverUserInput}
+            receiverUserId={receiverUserId}
+          />
+        )}
+      </div>
+    </div>
+  );
 };

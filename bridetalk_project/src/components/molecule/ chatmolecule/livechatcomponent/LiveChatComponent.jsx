@@ -40,8 +40,9 @@ export const LiveChatComponent = (props) => {
     });
 
   const sendMessage = () => {
+    console.log("clicked");
     addMessage(messageInput, props.receiverUserId, props.senderUserId);
-    setMessageInput();
+    setMessageInput("");
   };
 
   // Helper to format createdAt value on Message
@@ -72,13 +73,21 @@ const init = async () => {
       </div>
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">
-          <textarea 
-          className="messagetextinput" type="text" value= {messageInput}/>
+        <InputField
+         className="messagetextinput" type="text" 
+         value={messageInput}
+         onChangeOut={(event) => setMessageInput(event.target.value)}>
+        </InputField>
+          {/* <textarea 
+          className="messagetextinput" type="text" /> */}
         </div>
         <div className="flexgrandchild2-sendmessage-icon">
+        <button onClick={()=>sendMessage()}>
+
           <FiSend 
           className="sendmessage-icon" size={25}
-          onClick={sendMessage} />
+        />
+        </button>
         </div>
       </div>
     </div>
