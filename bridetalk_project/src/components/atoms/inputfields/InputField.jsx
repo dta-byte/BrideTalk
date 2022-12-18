@@ -14,7 +14,6 @@ export const InputField = (props) => {
       <input
         className="userinput-form"
         type={type}
-        // placeholder={text}
         onChange={onChangeOut}
       />
     </div>

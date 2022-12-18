@@ -21,12 +21,10 @@
 
 }
 .dropdown__label{
- 
   width: 100%;
   color:var(--global-black-2);
   font: var(--inter-normal-text);
-
-   /* Text being exactly above the text in the input field */
+  /* Text being exactly above the text in the input field */
   margin-left: 6px;
 }
 

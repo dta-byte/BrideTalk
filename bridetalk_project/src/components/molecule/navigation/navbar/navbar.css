@@ -15,8 +15,6 @@
 /* The logo parent element */
 .logo-image {
   height: 80px;
-  /* width: 0px; */
-  /* overflow: visible; */
 }
 /* The logo img */
 .logo-image img {
@@ -30,13 +28,10 @@
 }
 
 .profile-icon > * {
-  
-  border: none;
-  background-color: Transparent;
   cursor: pointer;
 }
 
-.text-navbar{
+.text-navbar {
   padding-left: 49%;
   font: var(--inter-2);
   padding: 5px;
@@ -50,14 +45,6 @@
   margin-top: 15%;
 }
 
-
-
-
-
-
-.nav-profile-button {
- 
-}
 
 .nav-dropdown {
   position: absolute;
@@ -86,16 +73,14 @@ li:hover {
   border-radius: 8px;
 }
 
-.nav-popUp-container{
+.nav-popUp-container {
   font: var(--inter-2);
 }
 
-.nav-popUp-btn{
+.nav-popUp-btn {
   display: flex;
-  gap: 30px; 
+  gap: 30px;
   justify-content: center;
   margin-top: 50px;
   margin-top: 50px;
-
-
 }

@@ -4,8 +4,10 @@ import { useState } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import { Button } from "../../../atoms";
 import "./navbar.css";
-import Parse, { User } from 'parse'
 import { useAuth } from "../../../pages/auth/core/Auth";
+import { logout, getCurrentUser } from "../../../../services/parse-functions";
+import Parse, { User } from "parse";
+
 /*Functional component that creates the navigation bar.*/
 export const Navbar = () => {
   const { logout } = useAuth();
@@ -16,17 +18,17 @@ export const Navbar = () => {
   const handleClick = () => {
     setIsVisible(!isVisible);
   };
-  
 
   const doLogOut = async () => {
     try {
       await logout();
       setButtonPopup(false)
       navigate('/');
+
     } catch (error) {
       console.log("Error loggin user out");
     }
-  }
+  };
 
   const currentuser = Parse.User.current();
   // const username = currentuser.getUsername();
@@ -48,18 +50,14 @@ export const Navbar = () => {
         {/* Right side of navigation bar */}
         <div className="topnav-right">
           <div className="nav-container">
-          {!currentuser &&
-            <div className="text-navbar"> 
-            Hey stranger!
-            </div>
-          }
+            {!currentuser && <div className="text-navbar">Hey stranger!</div>}
 
-          {currentuser &&
-            <div className="text-navbar"> 
-            Hey, {currentuser.get('username')}!
-            </div>
-          }
-            
+            {currentuser && (
+              <div className="text-navbar">
+                Hey, {currentuser.get("username")}!
+              </div>
+            )}
+
             <div className="profile-icon">
               <BsPersonCircle
                 size={35}
@@ -68,10 +66,10 @@ export const Navbar = () => {
               />
             </div>
 
-
             <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
               <div className="nav-dropdown">
                 <ul>
+                  <li onClick={() => navigate("/chat")}>My chats</li>
                   <li>Edit profile</li>
                   <li>Help</li>
                   <li onClick={() => setButtonPopup(true)}>Log out </li>
