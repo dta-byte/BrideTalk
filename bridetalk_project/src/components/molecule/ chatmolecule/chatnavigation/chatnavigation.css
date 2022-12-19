@@ -23,6 +23,7 @@
   font-size: 130px;
 }
 
+
 @media only screen and (max-width: 1000px) {
   .chat-icon {
     padding: 10px;

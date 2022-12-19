@@ -1,6 +1,6 @@
 .flexbox-treadview-top {
   display: flex;
-}
+} 
 
 .thread-headline {
   font: var(--inter-1);
@@ -15,11 +15,6 @@
   flex-grow: 1;
   padding-left: 35%;
   padding-top: 4%;
-
-}
-
-.flexbox-treadview-top {
-  display: flex;
 }
 
 .threadview-line {

@@ -1,3 +1,4 @@
+/* popup container (whole sreen) */
 .popup {
   position: fixed;
   top: 0;
@@ -10,6 +11,7 @@
   align-items: center;
 }
 
+/* popup inner container */
 .popup-inner {
   position: relative;
   padding: 40px;
@@ -20,6 +22,7 @@
   border: 3px solid var(--global-primary-3);
 }
 
+/* close button */
 .popup-inner .close-btn {
   position: absolute;
   top: 16px;

@@ -7,6 +7,7 @@
   display: block;
   margin: 100px auto;
   text-align: center;
+  font: var(--inter-normal-text);
 }
 
 .log-in-headline {
@@ -18,7 +19,7 @@
 /* Link to sign up */
 .link-to-signup {
   margin: 15px 0 15px 0;
-  font: var(--inter-normal-text);
+  
 }
 
 /* The input fields */
@@ -26,10 +27,7 @@
   text-align: start;
   display: block;
   margin-top: 10px;
-  margin-bottom: 10px;
-  font: var(--inter-normal-text);
   padding: 10px 10px;
-  padding-left: 0;
   margin-left: 20%;
   margin-right: 20%;
 
