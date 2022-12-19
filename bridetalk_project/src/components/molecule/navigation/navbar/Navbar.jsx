@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import { Button } from "../../../atoms";
 import "./navbar.css";
@@ -14,6 +14,16 @@ export const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
+
+  let menuRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (event) => {
+      if (!menuRef.current.contains(event.target)) {
+        setIsVisible(false);
+      }
+    });
+  });
 
   const handleClick = () => {
     setIsVisible((prevState) => !prevState);
@@ -68,7 +78,7 @@ export const Navbar = () => {
 
             {/* drop-down will be visible when clicking on the profile icon */}
             <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
-              <div className="nav-dropdown">
+              <div ref={menuRef} className="nav-dropdown">
                 {currentuser && (
                   <ul className="nav-dropdown-ul">
                     <li onClick={() => navigate("/chat")}>My chats</li>
