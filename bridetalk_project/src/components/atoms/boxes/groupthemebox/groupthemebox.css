@@ -1,3 +1,5 @@
+
+/* Theme box */
 .theme-box {
   box-sizing: border-box;
   width: 167px;
@@ -10,10 +12,12 @@
   text-align: center;
 }
 
+/* Text inside the theme box */
 .theme-text {
   padding-top: 25%;
 }
 
+/* button inside the theme box */
 .join-group-button {
   border: none;
   border-radius: 90px;
@@ -24,6 +28,7 @@
   margin-left: 24%;
 }
 
+/* hover effect for button inside the theme box */
 .join-group-button:hover {
   box-shadow: 0 12px 16px 0 var(--global-primary-3), 
   0 17px 50px 0 var(--global-primary-3);

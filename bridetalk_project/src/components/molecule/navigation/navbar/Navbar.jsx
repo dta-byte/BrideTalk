@@ -9,7 +9,6 @@ import Parse, { User } from "parse";
 /*Functional component that creates the navigation bar.*/
 export const Navbar = () => {
   const [isVisible, setIsVisible] = useState(false);
-  // const [username, setUsername] = useState("");
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
@@ -55,6 +54,7 @@ export const Navbar = () => {
               </div>
             )}
 
+            {/* profile icon in the right side of navigation bar */}
             <div className="profile-icon">
               <BsPersonCircle
                 size={35}
@@ -63,9 +63,10 @@ export const Navbar = () => {
               />
             </div>
 
+            {/* drop-down will be visible when clicking on the profile icon */}
             <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
               <div className="nav-dropdown">
-                <ul>
+                <ul className="nav-dropdown-ul">
                   <li onClick={() => navigate("/chat")}>My chats</li>
                   <li>Edit profile</li>
                   <li>Help</li>
@@ -73,11 +74,12 @@ export const Navbar = () => {
                 </ul>
               </div>
 
+              {/* Pop up when clicking on logout indside the dropdown*/}
               <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
                 <div className="nav-popUp-container">
                   <p> Are you sure you want to sign out? </p>
 
-                  <div className="nav-popUp-btn">
+                  <div className="nav-logout-popUp-btn">
                     <Button
                       color={"var(--global-grey-4)"}
                       text={"Cancel"}
