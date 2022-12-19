@@ -1,7 +1,7 @@
 
 import Parse from 'parse'
 
-export const addMessage = async (messageInput, reciever, senderUserObject, chatname) => {
+export const addMessage = async (messageInput, recieverId, senderUserObject) => {
   try {
     const messageText = messageInput;
 
@@ -9,21 +9,16 @@ export const addMessage = async (messageInput, reciever, senderUserObject, chatn
 
     // Create query for reciever
     const receiverUserObjectQuery = new Parse.Query("User");
-    receiverUserObjectQuery.equalTo("objectId", reciever);
-
+    receiverUserObjectQuery.equalTo("objectId", recieverId);
     // query runs
     let receiverUserObject = await receiverUserObjectQuery.first();
-
+   
     // Create new Message object and save it
     let Message = new Parse.Object("Message");
     Message.set("text", messageText);
     Message.set("senderObject", senderUserObject);
     Message.set("receiver", receiverUserObject);
-    Message.set("thread", chatname)
     Message.save();
-
-    // Clear input
-      // setMessageInput();
 
   } catch (error) {
 
@@ -31,11 +26,5 @@ export const addMessage = async (messageInput, reciever, senderUserObject, chatn
   }
 };
 
-export const setLiveChatView = (username) => {
-  try {
 
-  } catch (error) {
-
-  }
-}
 

@@ -5,16 +5,16 @@ import "./threadbox.css"
 
 export const ThreadBox = (props) => {
 
-    const { handleClick, recieverId } = props;
-    const [recivername, setRecievername] = useState(null);
+    const { handleClick, receiverId } = props;
+    const [receivername, setReceiverName] = useState(null);
 
     useEffect(() => {
         init();
     }, [])
 
     const init = async () => {
-        const reciver = await getUser(recieverId);
-        setRecievername(reciver.get('username'))
+        const receiver = await getUser(receiverId);
+        setReceiverName(receiver.get('username'))
     };
 
     return (
@@ -22,7 +22,7 @@ export const ThreadBox = (props) => {
             className="thread-container"
             onClick={() => handleClick()}>
             <div className="thread-text">
-                {recivername}
+                {receivername}
             </div>
         </div>
     )

@@ -5,7 +5,7 @@ import {
 } from "../../../../services/parse-functions";
 import { useState } from "react";
 import { Button, InputField, ThreadBox } from "../../../atoms";
-import Parse from "parse";
+
 import { useEffect } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import "./threadview.css";
@@ -36,7 +36,9 @@ export const ThreadView = () => {
 
   //Function to redirect the chatview into the chosen thread box
   const changeLiveChatView = () => {
+    let changes = false;
     //1: username overskrift skal ændres 
+    const receiverUsername = receiver.get('username')
     //2: beskeder skal ændres 
   };
 
@@ -68,16 +70,7 @@ export const ThreadView = () => {
           <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
             <div className="newThread-box">
               <div className="inputfield-newthread-dropdown">
-                {/* <InputField
-
-                  text="Chat name: "
-                  value={chatname}
-                  onChangeOut={(event) => {
-                    setChatName(event.target.value);
-                  }}
-                /> */}
                 <InputField
-
                   text="To: "
                   value={receiver}
                   onChangeOut={(event) => {
@@ -105,8 +98,6 @@ export const ThreadView = () => {
       <div className="line-under-text" />
       <div className="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
-
-
         {threadsArr.map(({ receiver, thread }) => {
 
           console.log(receiver)
@@ -114,10 +105,9 @@ export const ThreadView = () => {
           return <ThreadBox
             key={thread.id}
             handleClick={changeLiveChatView}
-            recieverId={receiver.id}
+            receiverId={receiver.id}
           />
         })}
-
       </div>
     </div>
   );
