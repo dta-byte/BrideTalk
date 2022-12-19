@@ -14,7 +14,8 @@ const PARSE_JAVASCRIPT_KEY = '7J6sRaT1cZzsspBkFB91RfGCwwcSFxxb6eXIovzq';
 	initializeParse(
 		PARSE_LIVE_QUERY_URL,
 		PARSE_APPLICATION_ID, 
-    PARSE_JAVASCRIPT_KEY);
+    PARSE_JAVASCRIPT_KEY
+    );
 
 function App() {
   // initializeParse(); 

@@ -21,7 +21,7 @@ export const addUser = async (formData) => {
 
 export const getUser = async (objectId) => {
   try {
-    let userQuery = new Parse.Query("User");
+    const userQuery = new Parse.Query("User");
     userQuery.equalTo("objectId", objectId);
     const user = await userQuery.first();
     return user; 

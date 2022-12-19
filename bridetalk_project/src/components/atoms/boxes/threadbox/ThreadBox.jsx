@@ -5,7 +5,7 @@ import "./threadbox.css"
 
 export const ThreadBox = (props) => {
 
-    const { handleClick, receiverId } = props;
+    const { handleClick, recieverId } = props;
     const [receivername, setReceiverName] = useState(null);
 
     useEffect(() => {
@@ -13,14 +13,14 @@ export const ThreadBox = (props) => {
     }, [])
 
     const init = async () => {
-        const receiver = await getUser(receiverId);
+        const receiver = await getUser(recieverId);
         setReceiverName(receiver.get('username'))
     };
 
     return (
         <div 
             className="thread-container"
-            onClick={() => handleClick()}>
+            onClick={() => handleClick(recieverId, receivername)}>
             <div className="thread-text">
                 {receivername}
             </div>
