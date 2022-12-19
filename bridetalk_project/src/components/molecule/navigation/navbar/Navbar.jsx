@@ -4,10 +4,13 @@ import { useState } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import { Button } from "../../../atoms";
 import "./navbar.css";
+import { useAuth } from "../../../pages/auth/core/Auth";
 import { logout, getCurrentUser } from "../../../../services/parse-functions";
 import Parse, { User } from "parse";
+
 /*Functional component that creates the navigation bar.*/
 export const Navbar = () => {
+  const { logout } = useAuth();
   const [isVisible, setIsVisible] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
@@ -18,9 +21,10 @@ export const Navbar = () => {
 
   const doLogOut = async () => {
     try {
-      await logout(Parse.User.current());
-      setButtonPopup(false);
-      navigate("/");
+      await logout();
+      setButtonPopup(false)
+      navigate('/');
+
     } catch (error) {
       console.log("Error loggin user out");
     }

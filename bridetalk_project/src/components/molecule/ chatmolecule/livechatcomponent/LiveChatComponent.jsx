@@ -2,13 +2,15 @@ import "./livechatcomponent.css";
 import Parse from "parse";
 import { useParseQuery } from "@parse/react";
 import { InputField, MessageBoxComponent, Button } from "../../../atoms";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessage } from "../../../../services/parse-functions/_MessageRequest";
+import { getUser } from "../../../../services/parse-functions";
 
 export const LiveChatComponent = (props) => {
   // State variable to hold message text input
   const [messageInput, setMessageInput] = useState("");
+  const [recivername, setRecievername] = useState(null);
 
   // Create parse query for live querying using useParseQuery hook
   const messageParseQuery = new Parse.Query("Message");
@@ -38,6 +40,7 @@ export const LiveChatComponent = (props) => {
     });
 
   const sendMessage = () => {
+    console.log("clicked");
     addMessage(messageInput, props.receiverUserId, props.senderUserId);
     setMessageInput();
   };
@@ -47,44 +50,45 @@ export const LiveChatComponent = (props) => {
     return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
   };
 
+  useEffect(() => {
+    init();
+}, [])
+
+const init = async () => {
+    const reciver = await getUser(props.receiverUserId);
+    setRecievername(reciver.get('username'))
+};
+
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
-        <div className="livechat-headline">Username</div>
+        <div className="livechat-headline">{recivername}</div>
         <div className="livechat-line" />
       </div>
       <div className="flexchild2-livechat">
-        <MessageBoxComponent text={"Hey"}></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
+       {/* MESSAGE BOXES GOES HERE */}
+       <MessageBoxComponent>
 
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        />
+       </MessageBoxComponent>
       </div>
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">
-          <textarea className="messagetextinput" type="text"></textarea>
-        </div>
+        <InputField
+         className="messagetextinput" type="text" 
+         value={messageInput}
+         onChangeOut={(event => setMessageInput(event.target.value))}>
 
+        </InputField>
+          {/* <textarea 
+          className="messagetextinput" type="text" /> */}
+        </div>
         <div className="flexgrandchild2-sendmessage-icon">
-          <FiSend className="sendmessage-icon" size={25} />
+        <button onClick={()=>sendMessage()}>
+
+          <FiSend 
+          className="sendmessage-icon" size={25}
+        />
+        </button>
         </div>
       </div>
     </div>
