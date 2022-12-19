@@ -7,6 +7,8 @@ import "./navbar.css";
 import { useAuth } from "../../../pages/auth/core/Auth";
 import { logout, getCurrentUser } from "../../../../services/parse-functions";
 import Parse, { User } from "parse";
+import { useDetectClickOutside } from "react-detect-click-outside";
+import { useEffect, useRef } from "react";
 
 /*Functional component that creates the navigation bar.*/
 export const Navbar = () => {
@@ -15,6 +17,16 @@ export const Navbar = () => {
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
+  let menuRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (event) => {
+      if (!menuRef.current.contains(event.target)) {
+        setIsVisible(false);
+      }
+    });
+  });
+
   const handleClick = () => {
     setIsVisible((prevState) => !prevState);
   };
@@ -22,8 +34,8 @@ export const Navbar = () => {
   const doLogOut = async () => {
     try {
       await logout();
-      setButtonPopup(false)
-      navigate('/');
+      setButtonPopup(false);
+      navigate("/");
     } catch (error) {
       console.log("Error loggin user out");
     }
@@ -68,7 +80,7 @@ export const Navbar = () => {
 
             {/* drop-down will be visible when clicking on the profile icon */}
             <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
-              <div className="nav-dropdown">
+              <div ref={menuRef} className="nav-dropdown">
                 <ul className="nav-dropdown-ul">
                   <li onClick={() => navigate("/chat")}>My chats</li>
                   <li>Edit profile</li>
