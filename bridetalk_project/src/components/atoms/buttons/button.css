@@ -1,12 +1,12 @@
 .button-component{
   text-align: center;
   border-radius: 6px;
-  padding-right: 0px;
-  padding-left: 0px;
+  padding: 3% 0%;
   color: var(--global-black-1);
   font: var(--inter-buttons); 
   width: 110px;
   font-weight: bolder;
+  transition-duration: 0.4s;
   border: none;
   line-height: 3;
 }

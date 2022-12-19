@@ -8,8 +8,6 @@
 }
 
 
-
-
 @media screen and (max-width:990px){
   .container-createuserpage{ flex-wrap: wrap; width: 50%; margin-left: 1.5%; gap: 10px; }
 }

@@ -22,30 +22,36 @@
   width: 100%;
 }
 
+/* Right side og navgation bar */
 .topnav-right {
   float: right;
   text-align: center;
 }
 
-.profile-icon > * {
+/* profile-icon */
+.profile-icon {
+  padding-top: 0;
+  margin-top: 0;
   cursor: pointer;
 }
 
+/* text that show the user who are logged in  */
 .text-navbar {
   padding-left: 49%;
   font: var(--inter-2);
   padding: 5px;
 }
 
+/*  */
 .nav-container {
   position: relative;
   display: flex;
   gap: 10px;
   margin-right: 100px;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
-
+/* dropdown when click in profile icon */
 .nav-dropdown {
   position: absolute;
   top: 100%;
@@ -58,11 +64,12 @@
   text-align: left;
 }
 
-ul {
+.nav-dropdown-ul{
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 li {
   padding: 8px 12px;
 }
@@ -73,11 +80,13 @@ li:hover {
   border-radius: 8px;
 }
 
+/* sign out popUp-container */
 .nav-popUp-container {
   font: var(--inter-2);
 }
 
-.nav-popUp-btn {
+/* cancel and sign out buttons inside popUp */
+.nav-logout-popUp-btn {
   display: flex;
   gap: 30px;
   justify-content: center;
