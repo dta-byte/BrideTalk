@@ -68,14 +68,14 @@ export const ThreadView = () => {
           <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
             <div className="newThread-box">
               <div className="inputfield-newthread-dropdown">
-                <InputField
+                {/* <InputField
 
                   text="Chat name: "
                   value={chatname}
                   onChangeOut={(event) => {
                     setChatName(event.target.value);
                   }}
-                />
+                /> */}
                 <InputField
 
                   text="To: "
