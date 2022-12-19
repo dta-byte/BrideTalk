@@ -7,26 +7,6 @@ import { useAuth } from "../auth/core/Auth";
 import { getUser } from "../../../services/parse-functions";
 
 export const ChatSetup = () => {
-  // const { currentUser } = useAuth();
-  // // State variables holding input values and results
-  // const [senderUserInput, setSenderUserInput] = useState("");
-  // const [senderUserId, setSenderUserId] = useState(null);
-  // // const [receiverUserInput, setReceiverUserInput] = useState("");
-  // // const [receiverUserId, setReceiverUserId] = useState(null);
-  // const [receiver, setReceivername] = useState(null);
-  // useEffect(() => {
-  //   init();
-  // }, [])
-
-  // const init = async () => {
-  //   const receiver = await getUser(props.receiverUserId);
-  //   console.log(receiver);
-  //   setReceivername(receiver.get('username'))
-  // };
-
-  // const getLiveChat = async () => {
-
-  // }
    // State variables holding input values and results
    const [senderUserInput, setSenderUserInput] = useState("");
    const [senderUserId, setSenderUserId] = useState(null);
@@ -93,18 +73,6 @@ export const ChatSetup = () => {
    };
 
   return (
-    <div>
-    <div className="header">
-      <img
-        className="header_logo"
-        alt="Back4App Logo"
-        src={
-          "https://blog.back4app.com/wp-content/uploads/2019/05/back4app-white-logo-500px.png"
-        }
-      />
-      <p className="header_text_bold">{"React on Back4App"}</p>
-      <p className="header_text">{"Live query chat app"}</p>
-    </div>
     <div className="container">
       {senderUserId === null && receiverUserId === null && (
         <div>
@@ -139,7 +107,6 @@ export const ChatSetup = () => {
         />
       )}
     </div>
-  </div>
 );
 };
 //     <div>

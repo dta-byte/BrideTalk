@@ -16,7 +16,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    setIsVisible(!isVisible);
+    setIsVisible((prevState) => !prevState);
   };
 
   const doLogOut = async () => {
@@ -24,7 +24,6 @@ export const Navbar = () => {
       await logout();
       setButtonPopup(false)
       navigate('/');
-
     } catch (error) {
       console.log("Error loggin user out");
     }
@@ -82,14 +81,12 @@ export const Navbar = () => {
               <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
                 <div className="nav-popUp-container">
                   <p> Are you sure you want to sign out? </p>
-
                   <div className="nav-logout-popUp-btn">
                     <Button
                       color={"var(--global-grey-4)"}
                       text={"Cancel"}
                       handleClick={() => setButtonPopup(false)}
                     />
-
                     <Button
                       color={"var(--global-primary-2)"}
                       text={"Sign out"}

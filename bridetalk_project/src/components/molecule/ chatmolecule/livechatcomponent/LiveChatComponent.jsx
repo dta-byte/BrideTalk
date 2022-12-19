@@ -5,7 +5,6 @@ import { InputField, MessageBoxComponent, Button } from "../../../atoms";
 import { useState, useEffect } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessage } from "../../../../services/parse-functions/_MessageRequest";
-import { getUser } from "../../../../services/parse-functions";
 import { Tooltip } from "antd";
 import { SyncOutlined } from "@ant-design/icons";
 export const LiveChatComponent = (props) => {
@@ -61,41 +60,6 @@ export const LiveChatComponent = (props) => {
 //     setReceivername(receiver.get('username'))
 // };
 
-//   return (
-//     <div className="flexbox-container-livechat">
-//       <div className="flexchild1-livechat">
-//         <div className="livechat-headline">{props.receivername}</div>
-//         <div className="livechat-line" />
-//       </div>
-//       <div className="flexchild2-livechat">
-//        {/* MESSAGE BOXES GOES HERE */}
-//        <MessageBoxComponent>
-
-//        </MessageBoxComponent>
-//       </div>
-//       <div className="flexchild3-livechat">
-//         <div className="flexgrandchild1-messagetextinput">
-//         <InputField
-//          className="messagetextinput" type="text" 
-//          value={messageInput}
-//          onChangeOut={(event => setMessageInput(event.target.value))}>
-
-//         </InputField>
-//           {/* <textarea 
-//           className="messagetextinput" type="text" /> */}
-//         </div>
-//         <div className="flexgrandchild2-sendmessage-icon">
-//         <button onClick={()=>sendMessage()}>
-
-//           <FiSend 
-//           className="sendmessage-icon" size={25}
-//         />
-//         </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 // State variable to hold message text input
 const [messageInput, setMessageInput] = useState("");
 
@@ -106,6 +70,7 @@ parseQuery.containedIn("sender", [
   props.senderUserId,
   props.receiverUserId,
 ]);
+
 parseQuery.containedIn("receiver", [
   props.senderUserId,
   props.receiverUserId,
@@ -137,8 +102,38 @@ const formatDateToTime = (date) => {
 
 return (
   <div>
+   <div className="flexbox-container-livechat">
+      <div className="flexchild1-livechat">
+        <div className="livechat-headline">{props.receivername}</div>
+        <div className="livechat-line" />
+      </div>
+      <div className="flexchild2-livechat">
+       {/* MESSAGE BOXES GOES HERE */}
+       <MessageBoxComponent>
+
+       </MessageBoxComponent>
+      </div>
+      <div className="flexchild3-livechat">
+        <div className="flexgrandchild1-messagetextinput">
+        <InputField
+        value={messageInput}
+        onChangeOut={(event) => setMessageInput(event.target.value)}
+        placeholder={"Your message..."}
+      />
+          {/* <textarea 
+          className="messagetextinput" type="text" /> */}
+        </div>
+        <div className="flexgrandchild2-sendmessage-icon">
+        <button onClick={()=>sendMessage()}>
+          <FiSend 
+          className="sendmessage-icon" size={25}
+        />
+        </button>
+        </div>
+      </div>
+    </div>
     <div className="flex_between">
-      <h2 className="list_heading">{`${props.senderUserName} sending, ${props.receiverUserName} receiving!`}</h2>
+      {/* <h2 className="list_heading">{`${props.senderUserName} sending, ${props.receiverUserName} receiving!`}</h2> */}
       <Tooltip title="Reload">
         <Button
           handleClick={reload}
@@ -174,17 +169,44 @@ return (
     )}
     <div className="new_message">
       <h2 className="new_message_title">New message</h2>
-      <InputField
-        value={messageInput}
-        onChangeOut={(event) => setMessageInput(event.target.value)}
-        placeholder={"Your message..."}
-      />
+   
       <Button
         color={"#208AEC"}
         handleClick={() => sendMessage()}
         text={"Send message"}
       >
-        
+         <div className="flexbox-container-livechat">
+      <div className="flexchild1-livechat">
+        <div className="livechat-headline">{props.receivername}</div>
+        <div className="livechat-line" />
+      </div>
+      <div className="flexchild2-livechat">
+       {/* MESSAGE BOXES GOES HERE */}
+       <MessageBoxComponent>
+
+       </MessageBoxComponent>
+      </div>
+      <div className="flexchild3-livechat">
+        <div className="flexgrandchild1-messagetextinput">
+        <InputField
+         className="messagetextinput" type="text" 
+         value={messageInput}
+         onChangeOut={(event => setMessageInput(event.target.value))}>
+
+        </InputField>
+          {/* <textarea 
+          className="messagetextinput" type="text" /> */}
+        </div>
+        <div className="flexgrandchild2-sendmessage-icon">
+        <button onClick={()=>sendMessage()}>
+
+          <FiSend 
+          className="sendmessage-icon" size={25}
+        />
+        </button>
+        </div>
+      </div>
+    </div>
       </Button>
     </div>
     <div>
@@ -195,5 +217,10 @@ return (
       {count && <p>{`Count: ${count}`}</p>}
     </div>
   </div>
+
+  
+
 );
 };
+
+
