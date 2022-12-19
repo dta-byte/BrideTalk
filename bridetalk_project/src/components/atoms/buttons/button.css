@@ -1,7 +1,6 @@
 .button-component{
   text-align: center;
   border-radius: 6px;
-  padding: 3% 0%;
   color: var(--global-black-1);
   font: var(--inter-buttons); 
   width: 110px;
