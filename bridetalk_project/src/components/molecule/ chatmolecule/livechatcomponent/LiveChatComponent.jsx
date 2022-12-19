@@ -53,31 +53,13 @@ export const LiveChatComponent = (props) => {
         <div className="livechat-headline">Username</div>
         <div className="livechat-line" />
       </div>
-      <div className="flexchild2-livechat">
-        <MessageBoxComponent text={"Hey"}></MessageBoxComponent>
+      {/* className="currentUser == senderObject? sender-flexchild2-livechat : receiver-flexchild2-livechat"*/}
+      <div className="sender-flexchild2-livechat">
         <MessageBoxComponent
           text={"Your message has been sent"}
         ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        ></MessageBoxComponent>
-
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}
-        />
       </div>
+
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">
           <textarea className="messagetextinput" type="text"></textarea>
