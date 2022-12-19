@@ -28,10 +28,6 @@
   justify-content: center;
 }
 
-.threads-list {
-  background-color: red;
-}
-
 .newThread-box {
   background-color: var(--global-secondary-3);
   padding: 40px;

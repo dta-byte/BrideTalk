@@ -27,7 +27,6 @@ export const CreateUserForm = () => {
   const toAddUser = async () => {
     try {
       //Do something if the e-mail input is wrong
-      // if (user.email == "")
       await addUser(user);
       setButtonPopup(true);
     } catch (error) {

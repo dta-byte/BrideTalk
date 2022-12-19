@@ -10,7 +10,7 @@ export const addUser = async (formData) => {
         newUser.set("email", formData.email);
         newUser.set("password", formData.password);
         newUser.set("location", formData.location);
-        newUser = Parse.User.logIn(); 
+        // newUser = Parse.User.logIn(); 
         
         return await newUser.save();
         
