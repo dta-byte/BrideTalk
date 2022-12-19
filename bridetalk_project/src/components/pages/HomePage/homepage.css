@@ -66,8 +66,8 @@ gap: 20px;
 }
 
 .gotochat-button{
-  background-color:var(--global-secondary-4);
-  border-color: var(--global-secondary-4);
+  background-color:var(--global-primary-2);
+  border-color: var(--global-primary-2);
   font-size: 20px;
   padding: 40px;
   border-radius: 20px;
@@ -80,11 +80,15 @@ gap: 20px;
   background-color: var(--global-secondary-5);
 }
 
+.gotochat-button:hover {
+  background-color: var(--global-primary-3);
+}
+
 .homepage-column-right {
   justify-content: center;
   padding-top: 50px;
   padding-right: 50px;
-
+  overflow: hidden;
  
 }
 .caroussel{

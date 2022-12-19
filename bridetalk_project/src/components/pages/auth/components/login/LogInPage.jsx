@@ -2,10 +2,7 @@ import Parse from "parse";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import {
-  InputField,
-  Button,
-} from "../../../../atoms";
+import { InputField, Button } from "../../../../atoms";
 import { signIn } from "../../../../../services/parse-functions";
 
 import { useAuth } from "../../core/Auth";
@@ -61,8 +58,16 @@ export const LoginPage = () => {
         <div className="link-forgot-password">
           <Link to="/reset"> Forgot password?</Link>
         </div>
+        <div className="buttons-login-row">
+          <Button
+            className="button-back"
+            color={"var(--global-grey-4)"}
+            text={"Go back"}
+            handleClick={() => navigate(-1)}
+          />
 
-        <Button text={"Let me chat"} handleClick={doLogin} />
+          <Button text={"Let me chat"} handleClick={doLogin} />
+        </div>
       </div>
     </>
   );
