@@ -6,7 +6,7 @@ import { JoinGroupOverviewPage } from "./Chat/joingroupoverviewpage/JoinGroupOve
 import { MainChatPageComponent } from "./Chat/mainchatpagecomponent/MainChatPageComponent";
 import { AuthProvider } from "./auth/core/Auth";
 import { AuthInit } from "./auth/core/Auth";
-
+import { MainChatPageProvider } from "./Chat/mainchatpagecomponent/MainChatPageProvider";
 
 export { CreateUserPage }
 export { HomePage }
@@ -14,5 +14,6 @@ export { LoginPage }
 export { ResetPasswordPage }
 export { JoinGroupOverviewPage }
 export { MainChatPageComponent }
- export { AuthProvider }
- export { AuthInit }
+export { AuthProvider }
+export { AuthInit }
+export { MainChatPageProvider }

@@ -1,6 +1,5 @@
 import { createContext, useContext, useEffect, useState, useRef } from "react";
-import { getUserThreadsQuery } from "../../../../services/parse-functions";
-import { getUser } from "../../../../services/parse-functions";
+import { getUserThreadsQuery, getUser } from "../../../../services/parse-functions";
 import { useAuth } from "../../auth/core/Auth";
 
 const ChatContext = createContext(undefined);
@@ -19,7 +18,13 @@ export const MainChatPageProvider = ({ children }) => {
     const [threadList, setThreadList] = useState([]);
 
     return (
-        <ChatContext.Provider value={{ currentReciever, setCurrentReciever, threadList, setThreadList }}>{children}</ChatContext.Provider>
+        <ChatContext.Provider 
+            value={{ 
+                currentReciever, setCurrentReciever, 
+                threadList, setThreadList }}
+                >
+                {children}
+        </ChatContext.Provider>
     )
 
 }

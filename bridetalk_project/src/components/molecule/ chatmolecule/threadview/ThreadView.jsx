@@ -1,16 +1,13 @@
+import { useState } from "react";
 import { IoIosCreate } from "react-icons/io";
+import { BsCheckCircle } from "react-icons/bs";
 import {
   addThread,
-  getUserThreads,
 } from "../../../../services/parse-functions";
-import { useState } from "react";
-import { Button, InputField, ThreadBox } from "../../../atoms";
-import { useEffect } from "react";
-import "./threadview.css";
+import { Button, InputField, ThreadBox, PopUp } from "../../../atoms";
 import { useAuth } from "../../../pages/auth/core/Auth";
 import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
-import { PopUp } from "../../popUp/PopUp";
-import { BsCheckCircle } from "react-icons/bs";
+import "./threadview.css";
 
 export const ThreadView = () => {
   const { threadList, setCurrentReciever } = useChatContext();
@@ -21,6 +18,7 @@ export const ThreadView = () => {
   const { currentUser } = useAuth();
   const [buttonPopupCreated, setButtonPopupCreated] = useState(false);
   const [buttonPopupError, setButtonPopupError] = useState(false);
+  const [activeReceiver, setActiveReceiver] = useState(false)
 
   const doAddThreads = () => {
     try {
@@ -42,6 +40,8 @@ export const ThreadView = () => {
   const changeLiveChatView = (recieverId, recieverUsername) => {
     // Ændrer current receiver til hvad useren har trykket på
     setCurrentReciever({ recieverId, recieverUsername });
+    setActiveReceiver(true);
+    console.log(activeReceiver);
   };
 
   return (
@@ -67,14 +67,12 @@ export const ThreadView = () => {
                   }}
                 />
               </div>
-
               <div className="buttons-newthread-dropdown">
                 <Button
                   color={"var(--global-grey-4"}
                   text={"Close window"}
                   handleClick={() => handleClick()}
                 />
-
                 <Button
                   text={"Add thread"}
                   handleClick={() => doAddThreads()}
@@ -98,10 +96,9 @@ export const ThreadView = () => {
         </div>
       </PopUp>
 
-      <div className="line-under-text" />
+      <div className="line-under-headline" />
       <div className="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
-
         {threadList.map(({ receiver, thread }) => {
           return (
             <ThreadBox

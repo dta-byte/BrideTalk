@@ -1,4 +1,4 @@
-import { Button, GroupThemeBox } from "../../../atoms";
+import { GroupThemeBox } from "../../../atoms";
 import "./joingroupchatcomponent.css";
 
 export const JoinGroupChatComponent = () => {

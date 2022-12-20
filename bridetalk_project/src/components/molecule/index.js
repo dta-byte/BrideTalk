@@ -6,19 +6,16 @@ import { JoinGroupChatComponent } from "./ chatmolecule/joingroupchatcomponent/J
 import { LiveChatComponent } from "./ chatmolecule/livechatcomponent/LiveChatComponent";
 import { ThreadView } from "./ chatmolecule/threadview/ThreadView";
 import { Carousel } from "./carousel/Carousel";
-import { PopUp } from "./popUp/PopUp";
-
-
 
 export { Footer };
 export { Navbar };
-export { CreateUserForm}
-export {ChatNavigation}
-export {JoinGroupChatComponent}
-export {LiveChatComponent}
-export {ThreadView}
-export {Carousel}
-export {PopUp}
+export { CreateUserForm }
+export { ChatNavigation }
+export { JoinGroupChatComponent }
+export { LiveChatComponent }
+export { ThreadView }
+export { Carousel }
+
 
 
 

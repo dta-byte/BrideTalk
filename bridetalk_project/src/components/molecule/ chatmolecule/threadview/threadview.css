@@ -17,12 +17,6 @@
   padding-top: 4%;
 }
 
-.threadview-line {
-  height: 1.5px;
-  background-color: black;
-  justify-content: center;
-}
-
 .newThread-box {
   background-color: var(--global-secondary-3);
   padding: 40px;
@@ -32,6 +26,11 @@
   position: absolute;
 }
 
+.line-under-headline{
+  height: 1.5px;
+  background-color: black;
+  justify-content: center;
+}
 .buttons-newthread-dropdown {
   display: flex;
   gap: 6px;

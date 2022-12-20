@@ -6,7 +6,7 @@ import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessage } from "../../../../services/parse-functions/_MessageRequest";
 import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
-export const LiveChatComponent = (props) => {
+export const LiveChatComponent = () => {
 
   const { currentReciever } = useChatContext();
   const { recieverId, recieverUsername } = currentReciever;
@@ -52,7 +52,8 @@ export const LiveChatComponent = (props) => {
   const formatDateToTime = (date) => {
     return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
   };
-
+console.log(currentUser.id);
+console.log(senderUserId);
 
   return (
     <div className="flexbox-container-livechat">
@@ -72,7 +73,7 @@ export const LiveChatComponent = (props) => {
         {results && (
           <div
             className={
-              currentUser == senderUserId
+              senderUserId == senderUserId
                 ? "sender-flexchild2-livechat"
                 : "receiver-flexchild2-livechat"
             }

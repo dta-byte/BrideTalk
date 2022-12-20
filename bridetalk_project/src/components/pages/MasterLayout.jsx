@@ -6,12 +6,9 @@ import {
   ResetPasswordPage,
   MainChatPageComponent,
   JoinGroupOverviewPage,
-  AuthWrapper,
 } from ".";
 import { Footer, Navbar } from "../molecule";
 import { useAuth } from "./auth/core/Auth";
-import { ChatSetup } from "./Chat/ChatSetUp";
-
 import "./masterlayout.css";
 
 // MasterLayout renders different (master) pages in DOM

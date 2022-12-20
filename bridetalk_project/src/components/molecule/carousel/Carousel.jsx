@@ -1,7 +1,5 @@
 import "./carousel.css";
 import React, { useState, useEffect } from "react";
-import { Button } from "../../atoms";
-
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io"
 
 export const Carousel = (props) => {

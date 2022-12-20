@@ -4,11 +4,9 @@ import {
   LiveChatComponent,
   ThreadView,
 } from "../../../molecule";
-import { ChatSetup } from "../ChatSetUp";
 import { MainChatPageInit, MainChatPageProvider } from "./MainChatPageProvider";
 
 export const MainChatPageComponent = () => {
-
   return <MainChatPage />
 };
 

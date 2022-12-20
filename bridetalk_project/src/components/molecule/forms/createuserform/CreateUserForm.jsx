@@ -1,8 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { InputField, DropdownLocation, Button } from "../../../atoms";
+import { InputField, DropdownLocation, Button, PopUp } from "../../../atoms";
 import { addUser } from "../../../../services/parse-functions";
-import { PopUp } from "../../popUp/PopUp";
 import { BsCheckCircle } from "react-icons/bs";
 import "./createuserform.css";
 
@@ -15,10 +14,6 @@ export const CreateUserForm = () => {
     password: "",
     location: "",
   });
-
-  const navigateTo = (path) => {
-    navigate(path);
-  };
 
   const [buttonPopup, setButtonPopup] = useState(false);
 

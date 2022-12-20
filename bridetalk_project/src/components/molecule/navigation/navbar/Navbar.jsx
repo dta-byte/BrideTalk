@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import { useState, useEffect, useRef } from "react";
-import { PopUp } from "../../popUp/PopUp";
+import { PopUp } from "../../../atoms/popUp/PopUp";
 import { Button } from "../../../atoms";
 import "./navbar.css";
 import { useAuth } from "../../../pages/auth/core/Auth";
