@@ -37,26 +37,9 @@ export const MainChatPageInit = ({ children }) => {
             const threads = await getUserThreadsQuery();
             await handleThreadsOnInit(threads);
 
-            // setThreadList(threads);
-            // try {
-            //     // set current reciever to be the person at index 0
-            //     // get username
-            //     const receiverUsername = await getUser(threads[0].receiver.id);
-            //     setCurrentReciever({
-            //         recieverId: threads[0].receiver.id,
-            //         recieverUsername: receiverUsername.get('username')
-            //     })
-            // } catch (error) {
-            //     setCurrentReciever({
-            //         recieverId: null,
-            //         recieverUsername: null
-            //     })
-            // }
-
             setIsLoading(false);
             hasRequested.current = true;
         }
-
         if (!hasRequested.current) {
             try {
                 getThreads();
@@ -65,8 +48,7 @@ export const MainChatPageInit = ({ children }) => {
                 setIsLoading(false);
                 hasRequested.current = true;
             }
-        }
-
+        }               
     }, []);
 
     const handleThreadsOnInit = async (threadArray) => {

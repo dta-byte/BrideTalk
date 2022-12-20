@@ -12,7 +12,7 @@ export const LiveChatComponent = (props) => {
   const { recieverId, recieverUsername } = currentReciever;
 
   const { id: senderUserId } = Parse.User.current();
-
+  const currentUser = Parse.User.current();
   // State variable to hold message text input
   const [messageInput, setMessageInput] = useState(null);
 
@@ -53,15 +53,30 @@ export const LiveChatComponent = (props) => {
     return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
   };
 
+
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
+      {recieverUsername&&(
+
         <div className="livechat-headline">{recieverUsername}</div>
+      )}
+      
+      {!recieverUsername&&(
+        <div className="livechat-headline">Start a chat with someone!</div>
+      )}
         <div className="livechat-line" />
       </div>
-      <div className="livechat-line">
+      <div className="livechat-line">    </div>
+      <div className="for-scroll">
         {results && (
-          <div className="messages">
+          <div
+            className={
+              currentUser == senderUserId
+                ? "sender-flexchild2-livechat"
+                : "receiver-flexchild2-livechat"
+            }
+          >
             {results
               .sort((a, b) => a.get("createdAt") > b.get("createdAt"))
               .map((result) => (
@@ -74,23 +89,21 @@ export const LiveChatComponent = (props) => {
           </div>
         )}
       </div>
-      <div className="flexchild2-livechat">
 
-        <div className="flexchild3-livechat">
-          <div className="flexgrandchild1-messagetextinput">
-            <InputField
-              className="messagetextinput" type="text"
-              // text={messageInput}
-              onChangeOut={(event => setMessageInput(event.target.value))}>
-            </InputField>
-          </div>
-          <div className="flexgrandchild2-sendmessage-icon">
-            <button onClick={() => sendMessage()}>
-              <FiSend
-                className="sendmessage-icon" size={25}
-              />
-            </button>
-          </div>
+
+      <div className="flexchild3-livechat">
+        <div className="flexgrandchild1-messagetextinput">
+        <textarea 
+        className="messagetextinput" 
+        type="text" 
+        value={messageInput}
+        onChange={(event => setMessageInput(event.target.value))} >
+        </textarea>
+        </div>
+        <div className="flexgrandchild2-sendmessage-icon">
+            <FiSend
+              className="sendmessage-icon" size={25} onClick={() => sendMessage()}
+            />
         </div>
       </div>
     </div>

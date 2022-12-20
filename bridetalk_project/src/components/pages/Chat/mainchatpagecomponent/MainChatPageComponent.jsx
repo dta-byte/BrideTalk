@@ -24,7 +24,7 @@ const MainChatPage = () => {
       <div className="flex-child2-chatpage">
         <ThreadView/>
       </div>
-      <LiveChatComponent />
+      <LiveChatComponent className="flex-child3-chatpage"/>
       {/* <LiveChatComponent props={} /> */}
       {/* <ChatSetup className="flex-child3-chatpage"/> */}
     </div>
