@@ -2,28 +2,24 @@ import { GroupThemeBox } from "../../../atoms";
 import "./joingroupchatcomponent.css";
 
 export const JoinGroupChatComponent = () => {
-  let groupsArr = [[]];
+  const groupsArr = [[]];
 
-  function addGroup(name) {
+  const  addGroupToArr = (name) => {
     groupsArr.push(<GroupThemeBox text={name}></GroupThemeBox>);
   }
-
-  addGroup("Hair");
-  addGroup("Music");
-  addGroup("Dresses");
-  addGroup("Catering");
-  addGroup("Flowers");
-  addGroup("Rings");
-  addGroup("Venues");
+  addGroupToArr("Hair");
+  addGroupToArr("Music");
+  addGroupToArr("Dresses");
+  addGroupToArr("Catering");
+  addGroupToArr("Flowers");
+  addGroupToArr("Rings");
+  addGroupToArr("Venues");
 
   return (
     <div>
-      <div className="joingroupchat-headline">Join group chats</div>
+      <div className="joingroupchat-headline">Join a group chat</div>
       <div className="joingroupchat-divider-line" />
-
-      <div className>
-        <div className="grid-container-groupthemebox">{groupsArr}</div>
-      </div>
+      <div className="grid-container-groupthemebox">{groupsArr}</div>
     </div>
   );
 };

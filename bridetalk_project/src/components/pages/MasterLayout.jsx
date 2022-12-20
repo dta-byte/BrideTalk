@@ -7,7 +7,7 @@ import {
   MainChatPageComponent,
   JoinGroupOverviewPage,
 } from ".";
-import { Footer, Navbar } from "../molecule";
+import { Footer, Navbar, GroupChatView } from "../molecule";
 import { useAuth } from "./auth/core/Auth";
 import "./masterlayout.css";
 
@@ -22,10 +22,13 @@ export const MasterLayout = () => {
           <Navbar />
 
           <Routes>
+          {/* Private */}
             {currentUser && (
               /* Private route */
               <Route path="/chat" element={<MainChatPageComponent />} />
+              
             )}
+            <Route path="/group-chat" element={<GroupChatView/>}/>
 
             {/* Public route for HomePage */}
             <Route path="/" element={<HomePage />} />

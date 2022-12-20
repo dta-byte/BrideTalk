@@ -6,7 +6,9 @@ import { JoinGroupChatComponent } from "./ chatmolecule/joingroupchatcomponent/J
 import { LiveChatComponent } from "./ chatmolecule/livechatcomponent/LiveChatComponent";
 import { ThreadView } from "./ chatmolecule/threadview/ThreadView";
 import { Carousel } from "./carousel/Carousel";
+import { GroupChatView } from "./ chatmolecule/groupchatview/GroupChatView";
 
+export { GroupChatView };
 export { Footer };
 export { Navbar };
 export { CreateUserForm }

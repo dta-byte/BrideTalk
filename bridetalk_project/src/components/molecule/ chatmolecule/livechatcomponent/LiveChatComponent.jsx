@@ -1,7 +1,7 @@
 import "./livechatcomponent.css";
 import Parse from "parse";
 import { useParseQuery } from "@parse/react";
-import { InputField, MessageBoxComponent } from "../../../atoms";
+import { MessageBoxComponent } from "../../../atoms";
 import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessage } from "../../../../services/parse-functions/_MessageRequest";
@@ -27,7 +27,7 @@ export const LiveChatComponent = () => {
   parseQuery.includeAll();
 
   // Declare hook and variables to hold hook responses
-  const { isLive, isLoading, isSyncing, results, count, error, reload } =
+  const { results } =
     useParseQuery(parseQuery, {
       enableLocalDatastore: true, // Enables cache in local datastore (default: true)
       enableLiveQuery: true, // Enables live query for real-time update (default: true)
@@ -35,18 +35,9 @@ export const LiveChatComponent = () => {
 
   // Message sender handler
   const sendMessage = async () => {
-    console.log("sendMessage clicked");
     addMessage(messageInput, recieverId, senderUserId);
-    console.log(messageInput);
     setMessageInput(null);
   };
-
-  // Helper to format createdAt value on Message
-  const formatDateToTime = (date) => {
-    return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-  };
-  console.log(currentUser.id);
-  console.log(senderUserId);
 
   return (
     <div className="flexbox-container-livechat">

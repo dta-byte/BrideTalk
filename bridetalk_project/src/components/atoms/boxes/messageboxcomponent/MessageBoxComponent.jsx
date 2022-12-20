@@ -16,14 +16,6 @@ export const MessageBoxComponent = (props) => {
         }
       >
         <p className="message_bubble">{result.get("text")}</p>
-        {/* <p className="message_time">
-    {formatDateToTime(result.get("createdAt"))}
-  </p>
-  <p className="message_name">
-    {result.get("senderObject").get("username")}
-  </p>
-  </div> */
-        }
       </div>
     </div>
   )

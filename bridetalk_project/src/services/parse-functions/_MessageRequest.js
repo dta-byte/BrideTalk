@@ -22,5 +22,21 @@ export const addMessage = async (messageInput, recieverId, senderUserObject) => 
   }
 };
 
+export const addMessageToAllUsers = async (messageInput, senderUserObject) => {
+  try {
+    const messageText = messageInput;
+
+    senderUserObject = Parse.User.current();
+   
+    // Create new Message object and save it
+    const Theme = new Parse.Object("Theme");
+    Theme.set("Message", messageText);
+    Theme.set("senderObject", senderUserObject);
+    Theme.save();
+  } catch (error) {
+    throw error;
+  }
+};
+
 
 
