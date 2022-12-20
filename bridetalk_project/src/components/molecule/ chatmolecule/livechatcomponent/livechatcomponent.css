@@ -1,11 +1,11 @@
 .livechat-headline {
   font: var(--inter-1);
+  color: var(--global-black-2);
   margin-left: 2%;
   margin-top: 12px;
   margin-bottom: 12px;
   font-weight: bold;
 }
-
 .flexbox-container-livechat {
   display: flex;
   flex-direction: column;
@@ -39,6 +39,10 @@
   flex-grow: 2;
   margin-left: 25px;
   margin-right: 28px;
+}
+
+.flexgrandchild2-sendmessage-icon :hover{
+  color: var(--global-primary-1);
 }
 
 .livechat-line {

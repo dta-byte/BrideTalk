@@ -48,7 +48,6 @@ export const ThreadView = () => {
             onClick={handleClick}
             className="io-icon"
             size={37}
-            color={"var(--global-secondary-1"}
           />
           {/* Dropdown to new thread  STARTS*/}
           <div style={{ visibility: isVisible ? "visible" : "hidden" }}>

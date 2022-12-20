@@ -4,6 +4,7 @@
 
 .thread-headline {
   font: var(--inter-1);
+  color: var(--global-black-2);
   margin-left: 5%;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -11,10 +12,14 @@
   flex-grow: 10;
 }
 
+.flex-newchat-icon:hover{
+  color: var(--global-secondary-1)
+}
 .flex-newchat-icon {
   flex-grow: 1;
   padding-left: 35%;
   padding-top: 4%;
+  color: var(--global-black-3)
 }
 
 .newThread-box {
