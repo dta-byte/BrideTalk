@@ -1,36 +1,28 @@
-.message-box-container {
-  white-space: nowrap;
- 
+.message-box{
+  clear:right;
+  color: var(--global-black-1);
+  font: var( --inter-normal-text);
 }
-
-
 
 .message_sent {
   background-color: var(--global-primary-3);
   border: 2px solid var(--global-primary-2);
-  border-radius: 18px;
-  color: var(--global-black-1);
-  font: var( --inter-normal-text);
   width: fit-content;
   max-width: 280px;
   padding: 0px 15px;
   margin-top: 5px;
-  right: 20px;
   float: right;
   align-self:end;
-  clear:right;
+  border-radius: 18px;
 }
 
 .message_received {
   background-color: var(--global-grey-4);
   border: 2px solid var(--global-grey-3);
-  border-radius: 18px;
-  color: var(--global-black-1);
-  font: var( --inter-normal-text);
   width: fit-content;
   max-width: 280px;
   padding: 0px 15px;
   right: 20px;
-  clear: right;
- 
+  border-radius: 18px;
+  margin-top: 5px;
 }
