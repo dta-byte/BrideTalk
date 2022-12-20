@@ -1,13 +1,12 @@
 import "./livechatcomponent.css";
 import Parse from "parse";
 import { useParseQuery } from "@parse/react";
-import { InputField, MessageBoxComponent, } from "../../../atoms";
+import { InputField, MessageBoxComponent } from "../../../atoms";
 import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessage } from "../../../../services/parse-functions/_MessageRequest";
 import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
 export const LiveChatComponent = () => {
-
   const { currentReciever } = useChatContext();
   const { recieverId, recieverUsername } = currentReciever;
 
@@ -19,14 +18,8 @@ export const LiveChatComponent = () => {
   // Create parse query for live querying using useParseQuery hook
   const parseQuery = new Parse.Query("Message");
   // Get messages that involve both Users
-  parseQuery.containedIn("senderObject", [
-    senderUserId,
-    recieverId,
-  ]);
-  parseQuery.containedIn("receiver", [
-    senderUserId,
-    recieverId,
-  ]);
+  parseQuery.containedIn("senderObject", [senderUserId, recieverId]);
+  parseQuery.containedIn("receiver", [senderUserId, recieverId]);
   // Set results ordering
   parseQuery.ascending("createdAt");
 
@@ -52,32 +45,25 @@ export const LiveChatComponent = () => {
   const formatDateToTime = (date) => {
     return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
   };
-console.log(currentUser.id);
-console.log(senderUserId);
+  console.log(currentUser.id);
+  console.log(senderUserId);
 
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
-      {recieverUsername&&(
+        {recieverUsername && (
+          <div className="livechat-headline">{recieverUsername}</div>
+        )}
 
-        <div className="livechat-headline">{recieverUsername}</div>
-      )}
-      
-      {!recieverUsername&&(
-        <div className="livechat-headline">Start a chat with someone!</div>
-      )}
+        {!recieverUsername && (
+          <div className="livechat-headline">Start a chat with someone!</div>
+        )}
         <div className="livechat-line" />
       </div>
-      <div className="livechat-line">    </div>
+
       <div className="for-scroll">
         {results && (
-          <div
-            className={
-              senderUserId == senderUserId
-                ? "sender-flexchild2-livechat"
-                : "receiver-flexchild2-livechat"
-            }
-          >
+          <div className="flexchild2-livechat">
             {results
               .sort((a, b) => a.get("createdAt") > b.get("createdAt"))
               .map((result) => (
@@ -85,30 +71,28 @@ console.log(senderUserId);
                   result={result}
                   senderUserId={senderUserId}
                 />
-              )
-              )}
+              ))}
           </div>
         )}
       </div>
 
-
       <div className="flexchild3-livechat">
         <div className="flexgrandchild1-messagetextinput">
-        <textarea 
-        className="messagetextinput" 
-        type="text" 
-        value={messageInput}
-        onChange={(event => setMessageInput(event.target.value))} >
-        </textarea>
+          <textarea
+            className="messagetextinput"
+            type="text"
+            value={messageInput}
+            onChange={(event) => setMessageInput(event.target.value)}
+          ></textarea>
         </div>
         <div className="flexgrandchild2-sendmessage-icon">
-            <FiSend
-              className="sendmessage-icon" size={25} onClick={() => sendMessage()}
-            />
+          <FiSend
+            className="sendmessage-icon"
+            size={25}
+            onClick={() => sendMessage()}
+          />
         </div>
       </div>
     </div>
-  )
+  );
 };
-
-

@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoIosCreate } from "react-icons/io";
 import { BsCheckCircle } from "react-icons/bs";
-import {
-  addThread,
-} from "../../../../services/parse-functions";
+import { addThread } from "../../../../services/parse-functions";
 import { Button, InputField, ThreadBox, PopUp } from "../../../atoms";
 import { useAuth } from "../../../pages/auth/core/Auth";
 import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
@@ -18,7 +16,16 @@ export const ThreadView = () => {
   const { currentUser } = useAuth();
   const [buttonPopupCreated, setButtonPopupCreated] = useState(false);
   const [buttonPopupError, setButtonPopupError] = useState(false);
-  const [activeReceiver, setActiveReceiver] = useState(false)
+  const [activeReceiver, setActiveReceiver] = useState(false);
+
+  let newThreadRef = useRef();
+  useEffect(() => {
+    document.addEventListener("mousedown", (event) => {
+      if (!newThreadRef.current.contains(event.target)) {
+        setIsVisible(false);
+      }
+    });
+  });
 
   const doAddThreads = () => {
     try {
@@ -57,7 +64,7 @@ export const ThreadView = () => {
           />
           {/* Dropdown to new thread  STARTS*/}
           <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
-            <div className="newThread-box">
+            <div ref={newThreadRef} className="newThread-box">
               <div className="inputfield-newthread-dropdown">
                 <InputField
                   text="To: "
@@ -85,7 +92,7 @@ export const ThreadView = () => {
       </div>
       <PopUp trigger={buttonPopupCreated} setTrigger={setButtonPopupCreated}>
         <div className="thread-popUp-created">
-        <BsCheckCircle className="Check-Cirkle-icon-tread" size={65} />
+          <BsCheckCircle className="Check-Cirkle-icon-tread" size={65} />
           <p> New thread is created </p>
         </div>
       </PopUp>
