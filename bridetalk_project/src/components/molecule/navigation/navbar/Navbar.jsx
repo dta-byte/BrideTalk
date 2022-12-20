@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PopUp } from "../../popUp/PopUp";
 import { Button } from "../../../atoms";
 import "./navbar.css";
@@ -15,6 +15,16 @@ export const Navbar = () => {
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
+  let menuRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener("mousedown", (event) => {
+      if (!menuRef.current.contains(event.target)) {
+        setIsVisible(false);
+      }
+    });
+  });
+
   const handleClick = () => {
     setIsVisible((prevState) => !prevState);
   };
@@ -22,8 +32,8 @@ export const Navbar = () => {
   const doLogOut = async () => {
     try {
       await logout();
-      setButtonPopup(false)
-      navigate('/');
+      setButtonPopup(false);
+      navigate("/");
     } catch (error) {
       console.log("Error loggin user out");
     }
@@ -68,13 +78,21 @@ export const Navbar = () => {
 
             {/* drop-down will be visible when clicking on the profile icon */}
             <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
-              <div className="nav-dropdown">
-                <ul className="nav-dropdown-ul">
-                  <li onClick={() => navigate("/chat")}>My chats</li>
-                  <li>Edit profile</li>
-                  <li>Help</li>
-                  <li onClick={() => setButtonPopup(true)}>Log out </li>
-                </ul>
+              <div ref={menuRef} className="nav-dropdown">
+                {currentuser && (
+                  <ul className="nav-dropdown-ul">
+                    <li onClick={() => navigate("/chat")}>My chats</li>
+                    <li>Edit profile</li>
+                    <li>Help</li>
+                    <li onClick={() => setButtonPopup(true)}>Log out </li>
+                  </ul>
+                )}
+                {!currentuser && (
+                  <ul className="nav-dropdown-ul">
+                    <li onClick={() => navigate("/login")}>Login</li>
+                    <li onClick={() => navigate("/sign-up")}>Sign up</li>
+                  </ul>
+                )}
               </div>
 
               {/* Pop up when clicking on logout indside the dropdown*/}

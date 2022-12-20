@@ -14,7 +14,7 @@ export const JoinGroupChatComponent = () => {
   addGroup("Catering");
   addGroup("Flowers");
   addGroup("Rings");
-  addGroup("xxx");
+  addGroup("Venues");
 
   return (
     <div>

@@ -86,7 +86,7 @@ export const CreateUserForm = () => {
           }
         />
 
-        <div className="buttons-row">
+        <div className="buttons-createuser-row">
           <Button
             className="button-back"
             color={"var(--global-grey-4)"}

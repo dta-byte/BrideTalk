@@ -3,9 +3,11 @@ import { BsBack, BsChatDots } from "react-icons/bs";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const ChatNavigation = () => {
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div className="flex-container-chatnavigation">
@@ -18,10 +20,11 @@ export const ChatNavigation = () => {
               : "var(--global-grey-5)",
         }}
       >
-        <Link to="/chat">
-          {" "}
+        {" "}
+        <div className="chat-box" onClick={() => navigate("/chat")}>
           <BsChatDots className="chat-icon" />
-        </Link>
+          <div>Chats </div>
+        </div>
       </div>
       <div
         style={{
@@ -40,9 +43,10 @@ export const ChatNavigation = () => {
               : "var(--global-grey-5)",
         }}
       >
-        <Link to="/findgroups">
+        <div className="groupchat-box" onClick={() => navigate("/findgroups")}>
           <HiOutlineUserGroup className="groupchat-icon" />{" "}
-        </Link>
+          <div>Join group chats </div>
+        </div>
       </div>
     </div>
   );

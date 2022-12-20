@@ -8,36 +8,31 @@
 }
 
 .chat-icon {
-  padding: 50px;
-  padding-top: 60px;
-  padding-bottom: 60px;
   color: var(--global-black-2);
-  font-size: 130px;
+  font-size: 100px;
+}
+.chat-box{
+  padding: 10px;
+  padding-top: 70.3px;
+  padding-bottom: 70.3px;
+  text-align: center;
+  color: var(--global-black-2);
+  font: var(--inter-normal-text);
 }
 
 .groupchat-icon {
-  padding: 50px;
-  padding-top: 70px;
-  padding-bottom: 70px;
   color: var(--global-black-2);
-  font-size: 130px;
+    font-size: 100px;
+}
+.groupchat-box{
+  padding: 10px;
+  padding-top: 70.3px;
+  padding-bottom: 70.3px;
+  text-align: center;
+  color: var(--global-black-2);
+  font: var(--inter-normal-text);
 }
 
-
-@media only screen and (max-width: 1000px) {
-  .chat-icon {
-    padding: 10px;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    font-size: 100px;
-  }
-  .groupchat-icon {
-    padding: 10px;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    font-size: 100px;
-  }
-}
 
 .flex-child1-chatnavigation {
   border-top-left-radius: 18px;

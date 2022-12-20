@@ -6,7 +6,7 @@ import carouselPhotographer from "./Photographer.jpg";
 import carouselVenue from "./Venue.jpg";
 // import { useHistory } from "react-router-dom";
 // import { useState, useEffect } from "react";
-// import Parse from "parse";
+import Parse from "parse";
 
 import "./homepage.css";
 // import { ChatSetup } from "../Chat/ChatSetUp";
@@ -18,33 +18,50 @@ export const HomePage = () => {
     navigate(path);
   };
 
+  const currentuser = Parse.User.current();
+
   return (
     <>
       {/* Container starts*/}
       <div className="homepage-container">
         {/* Buttons */}
         <div className="homepage-column-left">
-          <div className="homepage-headline">
-            Welcome to a universe for future brides!
-          </div>
-          <div className="buttons-container">
-            <button
-              className="login-button"
-              onClick={() => navigateTo("/login")}
-            >
-              {" "}
-              Log in
-            </button>
-            <button
-              className="signin-button"
-              onClick={() => navigateTo("/sign-up")}
-            >
-              {" "}
-              Sign up
-            </button>
-          </div>
-        </div>
+          {!currentuser && (
+            <div>
+              <div className="homepage-headline">
+                Welcome to a universe for future brides!
+              </div>
 
+              <div className="buttons-container">
+                <button
+                  className="login-button"
+                  onClick={() => navigateTo("/login")}
+                >
+                  {" "}
+                  Log in
+                </button>
+
+                <button
+                  className="signin-button"
+                  onClick={() => navigateTo("/sign-up")}
+                >
+                  {" "}
+                  Sign up
+                </button>
+              </div>
+            </div>
+          )}
+
+          {currentuser && (
+            <button
+              className="gotochat-button"
+              onClick={() => navigateTo("/chat")}
+            >
+              {" "}
+              Go to chat
+            </button>
+          )}
+        </div>
         {/* Caroussel */}
 
         <div className="homepage-column-right">
@@ -60,6 +77,7 @@ export const HomePage = () => {
             <CarouselItem image={carouselVenue}></CarouselItem>
           </Carousel>
         </div>
+
         {/* Container ends */}
       </div>
     </>
