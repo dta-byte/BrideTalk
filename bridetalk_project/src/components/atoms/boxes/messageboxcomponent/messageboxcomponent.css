@@ -1,20 +1,9 @@
 .message-box-container {
-
+  white-space: nowrap;
+ 
 }
 
-.message-box {
-  background-color: var(--global-primary-3);
-  border: 2px solid var(--global-primary-1);
-  border-radius: 18px;
-  color: var(--global-black-1);
-  font: var( --inter-normal-text);
-  width: fit-content;
-  max-width: 280px;
-  height: fit-content;
-  padding: 8px 20px;
-  margin-top: 5px;
-  right: 20px;
-}
+
 
 .message_sent {
   background-color: var(--global-primary-3);
@@ -24,12 +13,12 @@
   font: var( --inter-normal-text);
   width: fit-content;
   max-width: 280px;
-  height: fit-content;
-  padding: 8px 20px;
+  padding: 0px 15px;
   margin-top: 5px;
   right: 20px;
   float: right;
   align-self:end;
+  clear:right;
 }
 
 .message_received {
@@ -40,8 +29,8 @@
   font: var( --inter-normal-text);
   width: fit-content;
   max-width: 280px;
-  height: fit-content;
-  padding: 8px 20px;
-  margin-top: 5px;
+  padding: 0px 15px;
   right: 20px;
+  clear: right;
+ 
 }
