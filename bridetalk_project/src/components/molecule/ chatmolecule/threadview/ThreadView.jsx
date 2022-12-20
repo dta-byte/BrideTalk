@@ -9,29 +9,28 @@ import { useEffect } from "react";
 import "./threadview.css";
 import { useAuth } from "../../../pages/auth/core/Auth";
 import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
+import { PopUp } from "../../popUp/PopUp";
+import { BsCheckCircle } from "react-icons/bs";
 
 export const ThreadView = () => {
-
-
   const { threadList, setCurrentReciever } = useChatContext();
 
   const [isVisible, setIsVisible] = useState(false);
   const [receiver, setReceiver] = useState();
   const [chatname, setChatName] = useState();
   const { currentUser } = useAuth();
-  const [buttonPopup, setButtonPopup] = useState(false);
+  const [buttonPopupCreated, setButtonPopupCreated] = useState(false);
+  const [buttonPopupError, setButtonPopupError] = useState(false);
 
   const doAddThreads = () => {
     try {
       addThread(currentUser, receiver, chatname);
       setIsVisible((prevState) => !prevState);
-      alert(`New thread is created`);
-      setButtonPopup(true);
-      
-
+      setButtonPopupCreated(true);
     } catch (error) {
       console.log("Error creading new thread.");
       alert(`The reciever does not exist :()`);
+      setButtonPopupError(true);
     }
   };
 
@@ -42,7 +41,7 @@ export const ThreadView = () => {
   //Function to redirect the chatview into the chosen thread box
   const changeLiveChatView = (recieverId, recieverUsername) => {
     // Ændrer current receiver til hvad useren har trykket på
-    setCurrentReciever({recieverId, recieverUsername});
+    setCurrentReciever({ recieverId, recieverUsername });
   };
 
   return (
@@ -50,12 +49,12 @@ export const ThreadView = () => {
       <div className="flexbox-treadview-top">
         <div className="thread-headline">Chats </div>
         <div className="flex-newchat-icon">
-
-          <IoIosCreate 
-          onClick={handleClick} 
-          className="io-icon" 
-          size={37} 
-          color={"var(--global-secondary-1"} />
+          <IoIosCreate
+            onClick={handleClick}
+            className="io-icon"
+            size={37}
+            color={"var(--global-secondary-1"}
+          />
           {/* Dropdown to new thread  STARTS*/}
           <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
             <div className="newThread-box">
@@ -64,37 +63,53 @@ export const ThreadView = () => {
                   text="To: "
                   value={receiver}
                   onChangeOut={(event) => {
-                    setReceiver(event.target.value)
+                    setReceiver(event.target.value);
                   }}
                 />
               </div>
+
               <div className="buttons-newthread-dropdown">
+                <Button
+                  color={"var(--global-grey-4"}
+                  text={"Close window"}
+                  handleClick={() => handleClick()}
+                />
+
                 <Button
                   text={"Add thread"}
                   handleClick={() => doAddThreads()}
-                  />
-                   
-                <Button
-                  color={"var(--global-grey-3"}
-                  text={"Close window"}
-                  handleClick={() => handleClick()} />
+                />
               </div>
-
             </div>
             {/* Dropdown to new thread  ENDS*/}
           </div>
         </div>
       </div>
+      <PopUp trigger={buttonPopupCreated} setTrigger={setButtonPopupCreated}>
+        <div className="thread-popUp-created">
+        <BsCheckCircle className="Check-Cirkle-icon-tread" size={65} />
+          <p> New thread is created </p>
+        </div>
+      </PopUp>
+
+      <PopUp trigger={buttonPopupError} setTrigger={setButtonPopupError}>
+        <div className="thread-popUp-error">
+          <p> The reciever does not exist </p>
+        </div>
+      </PopUp>
+
       <div className="line-under-text" />
       <div className="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
 
         {threadList.map(({ receiver, thread }) => {
-          return <ThreadBox
-            key={thread.id}
-            handleClick={changeLiveChatView}
-            recieverId={receiver.id}
-          />
+          return (
+            <ThreadBox
+              key={thread.id}
+              handleClick={changeLiveChatView}
+              recieverId={receiver.id}
+            />
+          );
         })}
       </div>
     </div>
