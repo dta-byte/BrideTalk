@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { Carousel } from "../../molecule";
 import { CarouselItem } from "../../atoms";
-import carouselHair from ".//homepage_images/Hair.png";
-import carouselPhotographer from ".//homepage_images/Photographer.png";
-import carouselVenue from ".//homepage_images/Venue.jpg";
+import carouselHair from "./homepage_images/Hair.png";
+import carouselPhotographer from "./homepage_images/Photographer.png";
+import carouselVenue from "./homepage_images/Venue.jpg";
 import Parse from "parse";
 import "./homepage.css";
 
