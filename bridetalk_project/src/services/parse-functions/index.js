@@ -1,5 +1,5 @@
 //Thread requests
-import { getUserThreads } from "./_ThreadsRequests";
+import { getUserThreadsQuery } from "./_ThreadsRequests";
 import { addThread } from "./_ThreadsRequests";
 
 //Message requests
@@ -12,7 +12,7 @@ import { signOut } from "./_UserRequest";
 import { getUser } from "./_UserRequest";
 
 export { getUser };
-export { getUserThreads };
+export { getUserThreadsQuery };
 export { addThread };
 export { addUser };
 export { signIn };

@@ -30,6 +30,7 @@
   border-color: var(--global-black-1);
   flex-grow: 0;
   width: 25%;
+  overflow-y: auto;
 }
 
 .flex-child3-chatpage {

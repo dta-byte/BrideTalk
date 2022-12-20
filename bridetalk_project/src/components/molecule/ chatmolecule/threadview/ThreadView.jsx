@@ -5,31 +5,33 @@ import {
 } from "../../../../services/parse-functions";
 import { useState } from "react";
 import { Button, InputField, ThreadBox } from "../../../atoms";
-import Parse from "parse";
 import { useEffect } from "react";
-import { PopUp } from "../../popUp/PopUp";
 import "./threadview.css";
 import { useAuth } from "../../../pages/auth/core/Auth";
+import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
 
 export const ThreadView = () => {
+
+
+  const { threadList, setCurrentReciever } = useChatContext();
+
   const [isVisible, setIsVisible] = useState(false);
   const [receiver, setReceiver] = useState();
   const [chatname, setChatName] = useState();
   const { currentUser } = useAuth();
   const [buttonPopup, setButtonPopup] = useState(false);
-  const [threadsArr, setThreadsArr] = useState([])
 
   const doAddThreads = () => {
     try {
       addThread(currentUser, receiver, chatname);
       setIsVisible((prevState) => !prevState);
-      alert(`New threads is created`);
+      alert(`New thread is created`);
       setButtonPopup(true);
-      // window.location.reload();
+      
 
     } catch (error) {
       console.log("Error creading new thread.");
-      alert(`Thre reciever does not exist :()`);
+      alert(`The reciever does not exist :()`);
     }
   };
 
@@ -38,24 +40,10 @@ export const ThreadView = () => {
   };
 
   //Function to redirect the chatview into the chosen thread box
-  const changeLiveChatView = () => {
-    //1: username overskrift skal ændres 
-    //2: beskeder skal ændres 
+  const changeLiveChatView = (recieverId, recieverUsername) => {
+    // Ændrer current receiver til hvad useren har trykket på
+    setCurrentReciever({recieverId, recieverUsername});
   };
-
-  const doFindThreads = async () => {
-    try {
-      const threadsArr = await getUserThreads();
-      setThreadsArr(threadsArr);
-    } catch (error) {
-      throw error;
-    }
-  };
-
-  useEffect(() => {
-    doFindThreads();
-  }, []);
-
 
   return (
     <div>
@@ -101,11 +89,7 @@ export const ThreadView = () => {
       <div className="threads-list">
         {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
 
-        {threadsArr.map(({ receiver, thread }) => {
-
-          console.log(receiver)
-
-
+        {threadList.map(({ receiver, thread }) => {
           return <ThreadBox
             key={thread.id}
             handleClick={changeLiveChatView}

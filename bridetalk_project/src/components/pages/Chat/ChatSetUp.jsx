@@ -28,7 +28,7 @@ export const ChatSetup = () => {
      let senderUserObject = null;
      try {
        const senderParseQuery = new Parse.Query("User");
-       senderParseQuery.equalTo("name", senderUserName);
+       senderParseQuery.equalTo("username", senderUserName);
        const senderParseQueryResult = await senderParseQuery.first();
        if (
          senderParseQueryResult !== undefined &&
@@ -37,7 +37,7 @@ export const ChatSetup = () => {
          senderUserObject = senderParseQueryResult;
        } else {
          senderUserObject = new Parse.Object("User");
-         senderUserObject.set("name", senderUserName);
+         senderUserObject.set("username", senderUserName);
          senderUserObject = await senderUserObject.save();
        }
      } catch (error) {
@@ -49,7 +49,7 @@ export const ChatSetup = () => {
      let receiverUserObject = null;
      try {
        const receiverParseQuery = new Parse.Query("User");
-       receiverParseQuery.equalTo("name", receiverUserName);
+       receiverParseQuery.equalTo("username", receiverUserName);
        const receiverParseQueryResult = await receiverParseQuery.first();
        if (
          receiverParseQueryResult !== undefined &&
@@ -58,7 +58,8 @@ export const ChatSetup = () => {
          receiverUserObject = receiverParseQueryResult;
        } else {
          receiverUserObject = new Parse.Object("User");
-         receiverUserObject.set("name", receiverUserName);
+         console.log(receiverUserObject);
+         receiverUserObject.set("username", receiverUserName);
          receiverUserObject = await receiverUserObject.save();
        }
      } catch (error) {
