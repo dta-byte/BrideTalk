@@ -11,12 +11,13 @@ export const GroupThemeBox = (props) => {
   };
 
   return (
-    <div Classname="theme-box-container">
+    <div classname="theme-box-container">
       <div className="theme-box">
         <div className="theme-text">{text}</div>
 
+        {/* Join group button change color and text when clicking */}
         <button
-          class="join-group-button"
+          className="join-group-button"
           onClick={handleClick}
           style={{
             backgroundColor: active
@@ -30,11 +31,3 @@ export const GroupThemeBox = (props) => {
     </div>
   );
 };
-
-/*
-          <Button
-            color={"var(--global-grey-4)"}
-            text={"Join group"}
-            onClick={handleClick}
-            style={{ backgroundColor: active ? "red" : "white" }}
-            /*handleClick={() => navigateTo(-1)} */

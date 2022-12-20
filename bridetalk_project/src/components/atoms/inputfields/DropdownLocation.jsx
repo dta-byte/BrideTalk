@@ -6,20 +6,18 @@ export const DropdownLocation = (props) => {
 
   return (
     <div className="dropdown">
-      <label className="dropdown__label" onChange={onChangeOut}>{question}</label>
+      <label className="dropdown__label" onChange={onChangeOut}>
+        {question}
+      </label>
 
       <select className="select-location">
-
-        <option hidden selected>
-          Choose location
-        </option>
+        <option hidden selected> Choose location </option>
 
         <option value="options">All areas in Denmark</option>
         <option value="option 1">Sjælland</option>
         <option value="option 2">Jylland</option>
         <option value="option 2">Fyn</option>
       </select>
-
     </div>
   );
 };

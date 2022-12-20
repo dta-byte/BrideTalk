@@ -2,12 +2,12 @@
 .login-form-container {
   width: 40%;
   background-color: var(--global-primary-5);
-  height: 810%;
   padding: 40px 10px 40px 10px;
   border-radius: 35px;
   display: block;
-  margin: 100px auto;
+  margin: 65px auto;
   text-align: center;
+  font: var(--inter-normal-text);
 }
 
 .log-in-headline {
@@ -15,11 +15,9 @@
   color: var(--global-black-1);
 }
 
-
 /* Link to sign up */
 .link-to-signup {
   margin: 15px 0 15px 0;
-  font: var(--inter-normal-text);
 }
 
 /* The input fields */
@@ -27,10 +25,7 @@
   text-align: start;
   display: block;
   margin-top: 10px;
-  margin-bottom: 10px;
-  font: var(--inter-normal-text);
   padding: 10px 10px;
-  padding-left: 0;
   margin-left: 20%;
   margin-right: 20%;
 }
@@ -38,8 +33,8 @@
 /* Link to forgot password */
 .link-forgot-password {
   font-weight: bold;
-  margin-bottom: 20px;
-  margin-top: 20px;
+  margin-bottom: 35px;
+  margin-top: 4px;
   font: var(--inter-normal-text);
 }
 
@@ -50,6 +45,13 @@ a {
 
 /* Hover to link */
 a:hover {
-  color: hsl(345, 39%, 67%);
+  color: var(--global-primary-1)
 }
 
+.buttons-login-row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  display: flex;
+  gap: 5%;
+}

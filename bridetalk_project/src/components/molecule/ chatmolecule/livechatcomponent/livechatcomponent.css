@@ -1,31 +1,85 @@
-.livechat-headline{
-    font: var(--inter-1);
-    margin-left: 6%;
-    margin-top:10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-
-  .flexbox-container-livechat {
-    display: flex;  
-    flex-direction: column;
-    gap: 420px;
-  
-  }
-
-  .flexchild2-livechat{
-    display: flex;
-    flex-direction:row;
-  }
-
-  .flexchild1-messagetextinput{
-flex-grow: 3;
-  }
-.messagetext-input{
-  margin: 0;
+.livechat-headline {
+  font: var(--inter-1);
+  color: var(--global-black-2);
+  margin-left: 2%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-weight: bold;
 }
-  .lexchild2-sendmessage-icon{
-flex-grow: 2;
-display: inline-block;
+.flexbox-container-livechat {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.flexchild1-livechat {
+  flex-grow: 0;
+  margin-bottom: auto;
+}
+.flexchild2-livechat {
+  flex-grow: 3;
+  padding-bottom: 2px;
+  overflow-y: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+}
 
-  }
+.flexchild3-livechat {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 100%;
+}
+
+.flexgrandchild1-messagetextinput {
+  width: 100%;
+  margin-left: 10px;
+}
+
+.flexgrandchild2-sendmessage-icon {
+  flex-grow: 2;
+  margin-left: 25px;
+  margin-right: 28px;
+}
+
+.flexgrandchild2-sendmessage-icon :hover{
+  color: var(--global-primary-1);
+}
+
+.livechat-line {
+  height: 1.5px;
+  background-color: var(--global-black-3);
+  justify-content: center;
+}
+
+.messagetextinput {
+  border-radius: 10px;
+  margin-bottom: 0px;
+  border: solid;
+  border-color: var(--global-primary-3);
+  padding-left: 5px;
+  padding-right: 5px;
+  font: var(--inter-normal-text);
+  color: var(--global-black-3);
+  line-height: 2;
+  /* Space between the label an input */
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 10px;
+  height: 25px;
+  min-height: 25px;
+  max-height: 80px;
+
+  resize: vertical;
+  width: 100%;
+}
+
+.messagetextinput:hover {
+  border-color: var(--global-primary-1) !important;
+}
+.messagetextinput:focus {
+  outline-color: var(--global-primary-1) !important;
+}
+
+.for-scroll {
+  overflow-y: auto;
+}

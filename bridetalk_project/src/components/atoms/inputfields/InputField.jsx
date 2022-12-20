@@ -6,18 +6,15 @@ export const InputField = (props) => {
 
   return (
     <div className="input-form">
-      <label className="inputlabel-form" for="text">
+      <label className="inputlabel-form" htmlFor="text">
         {text}
         <div> </div>
       </label>
 
-      <input
-        className="userinput-form"
-        type={type}
-        id="text"
-        // placeholder={text}
-        onChange={onChangeOut}
-      />
+      <input 
+        className="userinput-form" 
+        type={type} 
+        onChange={onChangeOut} />
     </div>
   );
 };

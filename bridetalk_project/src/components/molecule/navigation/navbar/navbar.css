@@ -2,7 +2,6 @@
 .topnav {
   /* Transparent background color */
   background-color: hsla(346, 58%, 98%, 0.9);
-  overflow: hidden;
   height: 80px;
 }
 
@@ -16,8 +15,6 @@
 /* The logo parent element */
 .logo-image {
   height: 80px;
-  width: 150px;
-  /* overflow: visible; */
 }
 /* The logo img */
 .logo-image img {
@@ -25,27 +22,74 @@
   width: 100%;
 }
 
-.topnav-right{
+/* Right side and navgation bar */
+.topnav-right {
   float: right;
   text-align: center;
 }
 
-.profile-icon-column{
-  float: right;
-  padding-top: 30px;
+/* profile-icon */
+.profile-icon {
+  padding-top: 0;
+  margin-top: 0;
+  cursor: pointer;
 }
 
-.profile-icon > * {
-  fill:hsl(0, 0%, 20%)
+/* text that show the user who are logged in  */
+.text-navbar {
+  padding-left: 49%;
+  font: var(--inter-2);
+  padding: 5px;
 }
 
-.menu-icon-column{
-  float: right;
-  padding-right: 30px;
-  padding-left: 25px;
-  padding-top: 30px;
+/*  */
+.nav-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin-right: 100px;
+  margin-top: 10%;
 }
 
-.menu-icon > * {
-  fill:hsl(0, 0%, 20%)
+/* dropdown when click in profile icon */
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 30px;
+  width: 150px;
+  border: 1px solid;
+  background-color: var(--global-primary-4);
+  border-radius: 8px;
+  font: var(--inter-buttons);
+  text-align: left;
+}
+
+.nav-dropdown-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 8px 12px;
+}
+
+li:hover {
+  background-color: var(--global-primary-3);
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* sign out popUp-container */
+.nav-popUp-container {
+  font: var(--inter-2);
+}
+
+/* cancel and sign out buttons inside popUp */
+.nav-logout-popUp-btn {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 50px;
+  margin-top: 50px;
 }

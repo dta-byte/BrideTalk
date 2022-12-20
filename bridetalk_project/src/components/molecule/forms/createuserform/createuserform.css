@@ -1,21 +1,21 @@
-.sign-up-headline{
+.sign-up-headline {
   text-align: center;
-  margin-top: 20px;
+  padding-top: 3%;
   font: var(--inter-1);
 }
 
 .link-to-login {
   text-align: center;
-  margin: 15px 0 15px 0;
-  font: var(--inter-normal-text)
+  margin: 10px 0 10px 0;
+  font: var(--inter-normal-text);
 }
 
-.buttons-row{
-  margin-top: 50px;
-  margin-bottom: 30px;
+.buttons-createuser-row {
+  margin-top: 20px;
+  margin-bottom: 20px;
   justify-content: center;
   display: flex;
-  gap: 7%;
+  gap: 5%;
 }
 
 /* Change color for Link */
@@ -26,12 +26,31 @@ a {
 
 /*  Hover to link  */
 a:hover {
-  color:  var(--global-primary-1);
+  color: var(--global-primary-1);
 }
 
-.inputfields-createuserform-container{
-  padding: 10px 10px;
+.inputfields-createuserform-container {
+  padding: 1px;
+  padding-right: 10px;
   padding-left: 0;
   margin-left: 20%;
   margin-right: 20%;
+}
+
+.createUser-popup-container {
+  text-align: center;
+  font: var(--inter-normal-text);
+}
+
+.check-cirkle-icon {
+  color: var(--global-green);
+}
+
+.createUser-popup-headline {
+  font: var(--inter-1);
+  margin-bottom: 2px;
+}
+
+.createUser-popup-text {
+  margin-bottom: 40px;
 }

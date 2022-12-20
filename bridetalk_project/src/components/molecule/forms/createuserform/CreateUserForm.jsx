@@ -1,46 +1,28 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { InputField, DropdownLocation, Button } from "../../../atoms";
+import { InputField, DropdownLocation, Button, PopUp } from "../../../atoms";
+import { addUser } from "../../../../services/parse-functions";
+import { BsCheckCircle } from "react-icons/bs";
 import "./createuserform.css";
 
-import Parse from "parse";
-
 export const CreateUserForm = () => {
-  let navigate = useNavigate();
-
-  const navigateTo = (path) => {
-    navigate(path);
-  };
-
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPasword] = useState("");
-  const [location, setLocation] = useState("");
+  const navigate = useNavigate();
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    password: "",
+    location: "",
+  });
 
   //Todo: If user does not input a valid e-mail the user should not be created/save, and a alert should be send.
-
-  const addUser = async function () {
-    const userNameValue = username;
-    const passWordValue = password;
-
+  const toAddUser = async () => {
     try {
-      // create a new Parse User instance and since the signUp method returns a Promise, we need to call it using await
-
-      const createdUser = await Parse.User.signUp(userNameValue, passWordValue);
-      // const createdUser = new Parse.Object("_User");
-
-      createdUser.set("username", username);
-      createdUser.set("email", email);
-      createdUser.set("password", password);
-      createdUser.set("location", location);
-
-      alert("Succes! User " + createdUser + " was created");
-
-      await createdUser.save();
-      return true;
+      //Do something if the e-mail input is wrong
+      await addUser(user);
+      setButtonPopup(true);
     } catch (error) {
-      console.log("Error saving new User: ", error);
-      return false;
+      alert("Could not add user :(");
     }
   };
 
@@ -54,59 +36,73 @@ export const CreateUserForm = () => {
         <div className="inputfields-createuserform-container">
           <InputField
             text="Username "
-            value={username}
-            onChangeOut={(event) => {
-              setUsername(event.target.value);
-              // console.log(event.target.value)
-            }}
+            value={user.username}
+            onChangeOut={(event) =>
+              setUser({ ...user, username: event.target.value })
+            }
           />
 
           <InputField
             text="E-mail "
-            value={email}
+            value={user.email}
             type="email"
-            onChangeOut={(event) => {
-              setEmail(event.target.value);
-            }}
+            onChangeOut={(event) =>
+              setUser({ ...user, email: event.target.value })
+            }
           />
 
           <InputField
             text="Password"
-            value={password}
+            value={user.password}
             type="password"
-            onChangeOut={(event) => {
-              setPasword(event.target.value);
-            }}
+            onChangeOut={(event) =>
+              setUser({ ...user, password: event.target.value })
+            }
           />
 
           <InputField
             text="Confirm Password "
-            value={password}
+            value={user.password}
             type="password"
-            onChangeOut={(event) => {
-              setPasword(event.target.value);
-            }}
+            onChangeOut={(event) =>
+              setUser({ ...user, password: event.target.value })
+            }
           />
         </div>
-
+      {/* Currently not included in the database */}
         <DropdownLocation
           question="Which locations are you interested in?"
-          onChangeOut={setLocation}
+          onChangeOut={(event) =>
+            setUser({ ...user, location: event.target.value })
+          }
         />
 
-        <div className="buttons-row">
+        <div className="buttons-createuser-row">
           <Button
             className="button-back"
             color={"var(--global-grey-4)"}
             text={"Go back"}
-            handleClick={() => navigateTo(-1)}
+            handleClick={() => navigate(-1)}
           />
 
           <Button
             color={"var(--global-primary-2)"}
             text={"Sign me up"}
-            handleClick={() => addUser(username, password)}
+            handleClick={toAddUser}
           />
+
+          <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+            <div className="createUser-popup-container">
+              <BsCheckCircle className="check-cirkle-icon" size={65} />
+
+              <div className="createUser-popup-headline">
+                <p> Congrats!</p>
+              </div>
+              <div className="createUser-popup-text">
+                <p> Your account has been created successfully! </p>
+              </div>
+            </div>
+          </PopUp>
         </div>
       </div>
     </div>

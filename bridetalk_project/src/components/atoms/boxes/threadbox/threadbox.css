@@ -1,0 +1,11 @@
+.thread-box{
+    padding: 30px;
+    background-color: var(--global-secondary-3);
+    border-color: var(--global-black-3);
+    border-bottom: 1px solid; 
+    font: var(--inter-2)
+}
+
+.thread-box:hover{
+    background-color: var(--global-secondary-5);
+}

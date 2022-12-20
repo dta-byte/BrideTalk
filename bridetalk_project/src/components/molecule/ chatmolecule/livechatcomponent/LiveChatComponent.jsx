@@ -1,29 +1,27 @@
 import "./livechatcomponent.css";
 import Parse from "parse";
 import { useParseQuery } from "@parse/react";
-import { InputField, MessageBoxComponent, Button } from "../../../atoms";
+import { MessageBoxComponent } from "../../../atoms";
 import { useState } from "react";
 import { FiSend } from "react-icons/fi";
+import { addMessage } from "../../../../services/parse-functions/_MessageRequest";
+import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
 
-export const LiveChatComponent = (props) => {
-  console.log(props)
+export const LiveChatComponent = () => {
   // State variable to hold message text input
-  const [messageInput, setMessageInput] = useState("");
+  const [messageInput, setMessageInput] = useState(null);
+  // Gets the current receiver
+  const { currentReciever } = useChatContext();
+  const { recieverId, recieverUsername } = currentReciever;
+  const { id: senderUserId } = Parse.User.current();
 
   // Create parse query for live querying using useParseQuery hook
   const parseQuery = new Parse.Query("Message");
 
   // Get messages that involve both Users
-  parseQuery.containedIn("sender", [
-    props.senderUserId,
-    props.receiverUserId,
-  ]);
-
-  parseQuery.containedIn("receiver", [
-    props.senderUserId,
-    props.receiverUserId,
-  ]);
-
+  parseQuery.containedIn("senderObject", [senderUserId, recieverId]);
+  parseQuery.containedIn("receiver", [senderUserId, recieverId]);
+  
   // Set results ordering
   parseQuery.ascending("createdAt");
 
@@ -31,7 +29,7 @@ export const LiveChatComponent = (props) => {
   parseQuery.includeAll();
 
   // Declare hook and variables to hold hook responses
-  const { isLive, isLoading, isSyncing, results, count, error, reload } =
+  const { results } =
     useParseQuery(parseQuery, {
       enableLocalDatastore: true, // Enables cache in local datastore (default: true)
       enableLiveQuery: true, // Enables live query for real-time update (default: true)
@@ -39,79 +37,54 @@ export const LiveChatComponent = (props) => {
 
   // Message sender handler
   const sendMessage = async () => {
-    try {
-      const messageText = messageInput;
-      console.log(messageText + " this is the messagetext")
-
-      // Get sender and receiver User Parse objects
-      const senderUserObjectQuery = new Parse.Query("User");
-
-      senderUserObjectQuery.equalTo("objectId", props.senderUserId);
-
-      let senderUserObject = await senderUserObjectQuery.first();
-      console.log("this is senderuserobject ", senderUserObject)
-
-      // creates the query 
-      const receiverUserObjectQuery = new Parse.Query("User");
-
-      receiverUserObjectQuery.equalTo("objectId", props.receiverUserId);
-      // query runs
-      let receiverUserObject = await receiverUserObjectQuery.first();
-      console.log("this is receiverUserObject ", receiverUserObject)
-
-      // Create new Message object and save it
-      let Message = new Parse.Object("Message");
-      Message.set("text", messageText);
-      Message.set("senderObject", senderUserObject);
-      Message.set("receiver", receiverUserObject);
-      Message.save();
-
-      // Clear input
-      setMessageInput();
-
-    } catch (error) {
-      alert(error);
-    }
+    addMessage(messageInput, recieverId, senderUserId);
+    setMessageInput(null);
   };
 
-  // Helper to format createdAt value on Message
-  const formatDateToTime = (date) => {
-    return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
-  };
+
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
-        <div className="livechat-headline">{`${props.senderUserName} sending, ${props.receiverUserName} receiving!`}</div>
-        <div
-          style={{
-            height: "1px",
-            width: "90%",
-            marginLeft: "5%",
-            backgroundColor: "black",
-            justifyContent: "center",
-          }}
-        />
-        <MessageBoxComponent 
-          text={"Hey"}/>
-        <MessageBoxComponent
-          text={"Your message has been sent"}/>
-        <MessageBoxComponent
-          text={"Your loooooooooooooooooong message has been sent"}/>
-      </div>
-      <div className="flexchild2-livechat">
-        <div className="flexchild1-messagetextinput">
-          <InputField
-            className="messagetextinput"
-            value="Aa"
-            type="text"
-          ></InputField>
-        </div>
-        <div className="flexchild2-sendmessage-icon">
-        <Button
-          handleClick={sendMessage}>
+        {recieverUsername && (
+          <div className="livechat-headline">{recieverUsername}</div>
+        )}
 
-          <FiSend className="sendmessage-icon" size={15} />
-        </Button>
+        {!recieverUsername && (
+          <div className="livechat-headline">Start a chat with someone!</div>
+        )}
+        <div className="livechat-line"/>
+      </div>
+
+      <div className="for-scroll">
+        {results && (
+          <div className="flexchild2-livechat">
+            {results
+              .sort((a, b) => a.get("createdAt") > b.get("createdAt"))
+              .map((result) => (
+                <MessageBoxComponent
+                  result={result}
+                  senderUserId={senderUserId}
+                />
+              ))}
+          </div>
+        )}
+      </div>
+
+      <div className="flexchild3-livechat">
+        <div className="flexgrandchild1-messagetextinput">
+          <textarea
+            className="messagetextinput"
+            type="text"
+            value={messageInput}
+            onChange={(event) => setMessageInput(event.target.value)}
+          ></textarea>
+        </div>
+        <div className="flexgrandchild2-sendmessage-icon">
+          <FiSend
+            className="sendmessage-icon"
+            size={25}
+            onClick={() => sendMessage()}
+          />
         </div>
       </div>
     </div>
