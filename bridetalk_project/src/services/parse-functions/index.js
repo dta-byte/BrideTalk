@@ -10,7 +10,9 @@ import { addUser } from "./_UserRequest";
 import { signIn } from "./_UserRequest";
 import { signOut } from "./_UserRequest";
 import { getUser } from "./_UserRequest";
+// import { updatePassword } from "./_UserRequest";
 
+// export { updatePassword };
 export { getUser };
 export { getUserThreadsQuery };
 export { addThread };

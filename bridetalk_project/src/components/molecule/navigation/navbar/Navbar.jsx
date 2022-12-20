@@ -1,21 +1,21 @@
 import { Link, useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import { useState, useEffect, useRef } from "react";
-import { PopUp } from "../../../atoms/popUp/PopUp";
-import { Button } from "../../../atoms";
-import "./navbar.css";
+import { Button, InputField, PopUp } from "../../../atoms";
 import { useAuth } from "../../../pages/auth/core/Auth";
-import { logout, getCurrentUser } from "../../../../services/parse-functions";
-import Parse, { User } from "parse";
+import { updatePassword } from "../../../../services/parse-functions";
+
+import Parse from "parse";
+import "./navbar.css";
 
 /*Functional component that creates the navigation bar.*/
 export const Navbar = () => {
-  const { logout } = useAuth();
+  const { logout, currentUser } = useAuth();
   const [isVisible, setIsVisible] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
 
-  let menuRef = useRef();
+  const menuRef = useRef();
 
   useEffect(() => {
     document.addEventListener("mousedown", (event) => {
@@ -32,12 +32,14 @@ export const Navbar = () => {
   const doLogOut = async () => {
     try {
       await logout();
-      setButtonPopup(false);
+      setButtonPopup(true);
       navigate("/");
     } catch (error) {
       console.log("Error loggin user out");
     }
   };
+
+ 
 
   const currentuser = Parse.User.current();
   // const username = currentuser.getUsername();
@@ -82,7 +84,7 @@ export const Navbar = () => {
                 {currentuser && (
                   <ul className="nav-dropdown-ul">
                     <li onClick={() => navigate("/chat")}>My chats</li>
-                    <li>Edit profile</li>
+                    <li onClick={() => navigate("/reset")}>Change password</li>
                     <li>Help</li>
                     <li onClick={() => setButtonPopup(true)}>Log out </li>
                   </ul>

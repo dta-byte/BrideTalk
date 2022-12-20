@@ -39,8 +39,6 @@ export const MasterLayout = () => {
             {/* Public route for reset page */}
             <Route path="/reset" element={<ResetPasswordPage />} />
 
-            {/* <Route path="/chat" element={<ChatSetup />} /> */}
-
             <Route path="/findgroups" element={<JoinGroupOverviewPage />} />
           </Routes>
           <Footer />
