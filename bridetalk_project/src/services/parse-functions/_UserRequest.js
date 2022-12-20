@@ -15,7 +15,7 @@ export const addUser = async (formData) => {
     throw error;
   }
 };
-
+//Returns a user from DB by objectId
 export const getUser = async (objectId) => {
   try {
     const userQuery = new Parse.Query("User");
@@ -27,10 +27,10 @@ export const getUser = async (objectId) => {
   }
 }
 
+//Logs user in
 export const signIn = async (userData) => {
   try {
     const loggedInUser = await Parse.User.logIn(userData.username, userData.password);
-
     const currentUser = Parse.User.current();
 
     if (loggedInUser === currentUser) {
@@ -43,7 +43,7 @@ export const signIn = async (userData) => {
   }
 };
 
-
+//Logs user out
 export const signOut = async () => {
   try {
     await Parse.User.logOut();
@@ -53,7 +53,6 @@ export const signOut = async () => {
     throw error;
   }
 };
-
 
 // export const updatePassword = async (currentUserId, newPassword) => {
 //   try {

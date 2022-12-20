@@ -15,11 +15,9 @@
   color: var(--global-black-1);
 }
 
-
 /* Link to sign up */
 .link-to-signup {
   margin: 15px 0 15px 0;
-  
 }
 
 /* The input fields */
@@ -30,7 +28,6 @@
   padding: 10px 10px;
   margin-left: 20%;
   margin-right: 20%;
-
 }
 
 /* Link to forgot password */
@@ -48,10 +45,10 @@ a {
 
 /* Hover to link */
 a:hover {
-  color: hsl(345, 39%, 67%);
+  color: var(--global-primary-1)
 }
 
-.buttons-login-row{
+.buttons-login-row {
   margin-top: 20px;
   margin-bottom: 20px;
   justify-content: center;

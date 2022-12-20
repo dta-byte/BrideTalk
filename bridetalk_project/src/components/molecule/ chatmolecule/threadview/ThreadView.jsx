@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { IoIosCreate } from "react-icons/io";
 import { BsCheckCircle } from "react-icons/bs";
 import { addThread } from "../../../../services/parse-functions";
@@ -16,24 +16,15 @@ export const ThreadView = () => {
   const { currentUser } = useAuth();
   const [buttonPopupCreated, setButtonPopupCreated] = useState(false);
   const [buttonPopupError, setButtonPopupError] = useState(false);
-  const [activeReceiver, setActiveReceiver] = useState(false);
 
-  let newThreadRef = useRef();
-  useEffect(() => {
-    document.addEventListener("mousedown", (event) => {
-      if (!newThreadRef.current.contains(event.target)) {
-        setIsVisible(false);
-      }
-    });
-  });
-
-  const doAddThreads = () => {
+  /**ToDo: For now the function does always create a new thread, even if the receiver does not exist. The function must check, if the receiver as a User exist. If not, the thread must not be created, since it is crashing the DOM.*/
+  const doAddThreads = async () => {
     try {
       addThread(currentUser, receiver, chatname);
       setIsVisible((prevState) => !prevState);
       setButtonPopupCreated(true);
-    } catch (error) {
-      console.log("Error creading new thread.");
+    }
+    catch (error) {
       alert(`The reciever does not exist :()`);
       setButtonPopupError(true);
     }
@@ -45,10 +36,7 @@ export const ThreadView = () => {
 
   //Function to redirect the chatview into the chosen thread box
   const changeLiveChatView = (recieverId, recieverUsername) => {
-    // Ændrer current receiver til hvad useren har trykket på
     setCurrentReciever({ recieverId, recieverUsername });
-    setActiveReceiver(true);
-    console.log(activeReceiver);
   };
 
   return (
@@ -64,7 +52,7 @@ export const ThreadView = () => {
           />
           {/* Dropdown to new thread  STARTS*/}
           <div style={{ visibility: isVisible ? "visible" : "hidden" }}>
-            <div ref={newThreadRef} className="newThread-box">
+            <div className="newThread-box">
               <div className="inputfield-newthread-dropdown">
                 <InputField
                   text="To: "
@@ -86,7 +74,7 @@ export const ThreadView = () => {
                 />
               </div>
             </div>
-            {/* Dropdown to new thread  ENDS*/}
+            {/* Dropdown to new thread ENDS*/}
           </div>
         </div>
       </div>
@@ -105,7 +93,7 @@ export const ThreadView = () => {
 
       <div className="line-under-headline" />
       <div className="threads-list">
-        {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clciked. */}
+        {/* Shows all the related threads to the current user and changes the live chat overview, if a threads gets clicked. */}
         {threadList.map(({ receiver, thread }) => {
           return (
             <ThreadBox

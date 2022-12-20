@@ -9,7 +9,6 @@ export const useChatContext = () => {
 }
 
 export const MainChatPageProvider = ({ children }) => {
-
     const [currentReciever, setCurrentReciever] = useState({
         recieverId: null,
         recieverUsername: null
@@ -18,12 +17,12 @@ export const MainChatPageProvider = ({ children }) => {
     const [threadList, setThreadList] = useState([]);
 
     return (
-        <ChatContext.Provider 
-            value={{ 
-                currentReciever, setCurrentReciever, 
-                threadList, setThreadList }}
-                >
-                {children}
+        <ChatContext.Provider value={{
+            currentReciever, setCurrentReciever,
+            threadList, setThreadList
+        }}
+        >
+            {children}
         </ChatContext.Provider>
     )
 
@@ -37,7 +36,6 @@ export const MainChatPageInit = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-
         const getThreads = async () => {
             const threads = await getUserThreadsQuery();
             await handleThreadsOnInit(threads);
@@ -53,15 +51,13 @@ export const MainChatPageInit = ({ children }) => {
                 setIsLoading(false);
                 hasRequested.current = true;
             }
-        }               
+        }
     }, []);
 
     const handleThreadsOnInit = async (threadArray) => {
-
-        threadArray.forEach( (threadObj, index) => {
-
+        threadArray.forEach((threadObj, index) => {
             // Check if reciever is the same as the current user
-            if (threadObj.receiver.id === currentUser.id ) {
+            if (threadObj.receiver.id === currentUser.id) {
                 // if true, let "sender" and "receiver" change place in the threadObj
 
                 const renamedObj = {};
@@ -71,8 +67,7 @@ export const MainChatPageInit = ({ children }) => {
                 renamedObj.receiver = threadObj.sender;
 
                 // Delete "old" object and insert renamed object into array on old objects index position
-                threadArray.splice(index, 1, renamedObj);                
-
+                threadArray.splice(index, 1, renamedObj);
             }
         })
 
@@ -95,12 +90,7 @@ export const MainChatPageInit = ({ children }) => {
         }
 
     }
-
-
     return (
         !isLoading && <>{children}</>
     )
 }
-
-
-

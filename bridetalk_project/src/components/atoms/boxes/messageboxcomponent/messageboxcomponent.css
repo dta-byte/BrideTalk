@@ -1,5 +1,5 @@
 .message-box{
-  clear:right;
+  clear: right;   /* Moves the next message under*/
   color: var(--global-black-1);
   font: var( --inter-normal-text);
 }
@@ -7,22 +7,18 @@
 .message_sent {
   background-color: var(--global-primary-3);
   border: 2px solid var(--global-primary-2);
-  width: fit-content;
   max-width: 280px;
   padding: 0px 15px;
-  margin-top: 5px;
-  float: right;
-  align-self:end;
+  margin-top: 5px;  
+  float: right;  /* Sets the box to the right inside livechat component */
   border-radius: 18px;
 }
 
 .message_received {
   background-color: var(--global-grey-4);
   border: 2px solid var(--global-grey-3);
-  width: fit-content;
   max-width: 280px;
   padding: 0px 15px;
-  right: 20px;
   border-radius: 18px;
   margin-top: 5px;
 }

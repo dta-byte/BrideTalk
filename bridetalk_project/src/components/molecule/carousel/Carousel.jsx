@@ -1,6 +1,6 @@
-import "./carousel.css";
 import React, { useState, useEffect } from "react";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io"
+import "./carousel.css";
 
 export const Carousel = (props) => {
   const { children } = props;
@@ -37,27 +37,27 @@ export const Carousel = (props) => {
       onMouseLeave={() => setPaused(false)}
     >
       <div
-        className="inner"
+        className="inner-carousel"
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {React.Children.map(children, (child, index) => {
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
-      <div className="indicators">
+      <div className="indicators-arrows">
         <IoIosArrowRoundBack
-          size={37} 
+          size={37}
           color={"var(--global-secondary-1)"}
           onClick={() => {
-            updateIndex(activeIndex -1);
+            updateIndex(activeIndex - 1);
           }}
         />
 
         <IoIosArrowRoundForward
-          size={37} 
+          size={37}
           color={"var(--global-secondary-1)"}
           onClick={() => {
-            updateIndex(activeIndex +1);
+            updateIndex(activeIndex + 1);
           }}
         />
       </div>

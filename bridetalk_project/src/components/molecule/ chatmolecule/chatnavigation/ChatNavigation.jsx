@@ -1,9 +1,8 @@
-import "./chatnavigation.css";
-import { BsBack, BsChatDots } from "react-icons/bs";
+import React from "react";
+import { BsChatDots } from "react-icons/bs";
 import { HiOutlineUserGroup } from "react-icons/hi";
-import { Link, useLocation } from "react-router-dom";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./chatnavigation.css";
 
 export const ChatNavigation = () => {
   const { pathname } = useLocation();
@@ -26,14 +25,7 @@ export const ChatNavigation = () => {
           <div>Chats </div>
         </div>
       </div>
-      <div
-        style={{
-          height: "1px",
-          width: "100%",
-          backgroundColor: "black",
-          justifyContent: "center",
-        }}
-      />
+      <div className="chatnavigation-line" />
       <div
         className="flex-child2-chatnavigation"
         style={{

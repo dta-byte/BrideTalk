@@ -1,10 +1,7 @@
 import Parse from "parse";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { InputField, Button } from "../../../../atoms";
-import { signIn } from "../../../../../services/parse-functions";
-
 import { useAuth } from "../../core/Auth";
 import "./loginpage.css";
 
@@ -18,11 +15,9 @@ export const LoginPage = () => {
     try {
       await login(user);
       setCurrentUser(await Parse.User.current());
-
       navigate("/chat");
       alert(`Success! You are now logged in and ready to chat`);
     } catch (error) {
-      console.log("Error loggin user in. ");
       alert(`Error! ${error.message}`);
     }
   };
@@ -65,7 +60,6 @@ export const LoginPage = () => {
             text={"Go back"}
             handleClick={() => navigate(-1)}
           />
-
           <Button text={"Let me chat"} handleClick={doLogin} />
         </div>
       </div>

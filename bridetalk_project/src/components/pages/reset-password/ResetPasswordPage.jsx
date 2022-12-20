@@ -5,7 +5,7 @@ import "./resetpasswordpage.css";
 // import { useState } from "react";
 // import { useAuth } from "../auth/core/Auth";
 
-/**The functionality in this component does not work. In _UserRequest.js there is this function: updatePassword(), which simply does not work. */
+/**ToDo: The functionality in this component does not work. In _UserRequest.js there is this function: updatePassword(), which simply does not work. */
 export const ResetPasswordPage = () => {
   const navigate = useNavigate();
   // const [newPassword, setNewPassword] = useState("");

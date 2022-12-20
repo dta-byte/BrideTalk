@@ -1,16 +1,14 @@
+import Parse from "parse";
 import { Link, useNavigate } from "react-router-dom";
 import { BsPersonCircle } from "react-icons/bs";
 import { useState, useEffect, useRef } from "react";
-import { Button, InputField, PopUp } from "../../../atoms";
+import { Button, PopUp } from "../../../atoms";
 import { useAuth } from "../../../pages/auth/core/Auth";
-import { updatePassword } from "../../../../services/parse-functions";
-
-import Parse from "parse";
 import "./navbar.css";
 
 /*Functional component that creates the navigation bar.*/
 export const Navbar = () => {
-  const { logout, currentUser } = useAuth();
+  const { logout } = useAuth();
   const [isVisible, setIsVisible] = useState(false);
   const [buttonPopup, setButtonPopup] = useState(false);
   const navigate = useNavigate();
@@ -39,7 +37,6 @@ export const Navbar = () => {
     }
   };
 
- 
 
   const currentuser = Parse.User.current();
   // const username = currentuser.getUsername();

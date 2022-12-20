@@ -1,4 +1,4 @@
-.sign-up-headline{
+.sign-up-headline {
   text-align: center;
   padding-top: 3%;
   font: var(--inter-1);
@@ -7,10 +7,10 @@
 .link-to-login {
   text-align: center;
   margin: 10px 0 10px 0;
-  font: var(--inter-normal-text)
+  font: var(--inter-normal-text);
 }
 
-.buttons-createuser-row{
+.buttons-createuser-row {
   margin-top: 20px;
   margin-bottom: 20px;
   justify-content: center;
@@ -26,35 +26,31 @@ a {
 
 /*  Hover to link  */
 a:hover {
-  color:  var(--global-primary-1);
+  color: var(--global-primary-1);
 }
 
-.inputfields-createuserform-container{
-  padding:1px;
+.inputfields-createuserform-container {
+  padding: 1px;
   padding-right: 10px;
   padding-left: 0;
   margin-left: 20%;
   margin-right: 20%;
 }
 
-.createUser-popUp-container {
+.createUser-popup-container {
   text-align: center;
   font: var(--inter-normal-text);
-
 }
 
-.Check-Cirkle-icon {
+.check-cirkle-icon {
   color: var(--global-green);
 }
 
-.createUser-popUp-headline {
+.createUser-popup-headline {
   font: var(--inter-1);
   margin-bottom: 2px;
 }
 
-.createUser-popUp-text {
+.createUser-popup-text {
   margin-bottom: 40px;
- 
 }
-
-

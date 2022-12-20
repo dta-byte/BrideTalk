@@ -15,9 +15,9 @@ export const GroupThemeBox = (props) => {
       <div className="theme-box">
         <div className="theme-text">{text}</div>
 
-        {/* Join group button change collor and text when clicking */}
+        {/* Join group button change color and text when clicking */}
         <button
-          class="join-group-button"
+          className="join-group-button"
           onClick={handleClick}
           style={{
             backgroundColor: active

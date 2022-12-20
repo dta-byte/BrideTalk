@@ -1,17 +1,17 @@
-import "./joingroupoverviewpage.css";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../../atoms";
 import { ChatNavigation, JoinGroupChatComponent } from "../../../molecule";
-import { useNavigate } from "react-router-dom";
+import "./joingroupoverviewpage.css";
 
 export const JoinGroupOverviewPage = () => {
   let navigate = useNavigate();
   return (
     <div className="flex-container-groupchatpage">
       <div className="flex-child1-groupchatpage">
-        <ChatNavigation/>
+        <ChatNavigation />
       </div>
       <div className="flex-child2-groupchatpage">
-        <JoinGroupChatComponent/> 
+        <JoinGroupChatComponent />
 
         <div className="group-goBack-button">
           <Button

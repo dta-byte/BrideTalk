@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-
 }
 .flexchild1-livechat {
   flex-grow: 0;
@@ -34,7 +33,6 @@
 .flexgrandchild1-messagetextinput {
   width: 100%;
   margin-left: 10px;
-  
 }
 
 .flexgrandchild2-sendmessage-icon {
@@ -66,25 +64,18 @@
   height: 25px;
   min-height: 25px;
   max-height: 80px;
-  
+
   resize: vertical;
   width: 100%;
 }
 
-
-
 .messagetextinput:hover {
   border-color: var(--global-primary-1) !important;
-
 }
 .messagetextinput:focus {
   outline-color: var(--global-primary-1) !important;
 }
 
-.for-scroll{ 
+.for-scroll {
   overflow-y: auto;
- }
-
-
-
-
+}

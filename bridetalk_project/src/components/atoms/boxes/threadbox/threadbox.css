@@ -1,7 +1,4 @@
-.thread-text{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
+.thread-box{
     padding: 30px;
     background-color: var(--global-secondary-3);
     border-color: var(--global-black-3);
@@ -9,6 +6,6 @@
     font: var(--inter-2)
 }
 
-.thread-text:hover{
+.thread-box:hover{
     background-color: var(--global-secondary-5);
 }

@@ -22,7 +22,7 @@
   width: 100%;
 }
 
-/* Right side og navgation bar */
+/* Right side and navgation bar */
 .topnav-right {
   float: right;
   text-align: center;
@@ -64,7 +64,7 @@
   text-align: left;
 }
 
-.nav-dropdown-ul{
+.nav-dropdown-ul {
   list-style: none;
   padding: 0;
   margin: 0;

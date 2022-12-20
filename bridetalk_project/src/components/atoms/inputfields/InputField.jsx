@@ -11,7 +11,10 @@ export const InputField = (props) => {
         <div> </div>
       </label>
 
-      <input className="userinput-form" type={type} onChange={onChangeOut} />
+      <input 
+        className="userinput-form" 
+        type={type} 
+        onChange={onChangeOut} />
     </div>
   );
 };

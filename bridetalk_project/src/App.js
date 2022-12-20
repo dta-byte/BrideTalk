@@ -4,6 +4,7 @@ import "./css-system/typographies.css"
 
 import { initializeParse} from "@parse/react";
 import { AuthProvider, AuthInit } from "./components/pages";
+
 // Parse initialization configuration 
 const PARSE_APPLICATION_ID = 'CjaXK1cK9RHctfrx5TstNTyXuUniIZ94YXnv3sKb';
 
@@ -18,7 +19,6 @@ const PARSE_JAVASCRIPT_KEY = '7J6sRaT1cZzsspBkFB91RfGCwwcSFxxb6eXIovzq';
     );
 
 function App() {
-  // initializeParse(); 
   return (
     <>
     <AuthProvider>

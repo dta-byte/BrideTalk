@@ -7,7 +7,7 @@ import "./createuserform.css";
 
 export const CreateUserForm = () => {
   const navigate = useNavigate();
-
+  const [buttonPopup, setButtonPopup] = useState(false);
   const [user, setUser] = useState({
     username: "",
     email: "",
@@ -15,17 +15,13 @@ export const CreateUserForm = () => {
     location: "",
   });
 
-  const [buttonPopup, setButtonPopup] = useState(false);
-
   //Todo: If user does not input a valid e-mail the user should not be created/save, and a alert should be send.
-
   const toAddUser = async () => {
     try {
       //Do something if the e-mail input is wrong
       await addUser(user);
       setButtonPopup(true);
     } catch (error) {
-      console.error("Error saving new user: ", error);
       alert("Could not add user :(");
     }
   };
@@ -73,7 +69,7 @@ export const CreateUserForm = () => {
             }
           />
         </div>
-
+      {/* Currently not included in the database */}
         <DropdownLocation
           question="Which locations are you interested in?"
           onChangeOut={(event) =>
@@ -96,13 +92,13 @@ export const CreateUserForm = () => {
           />
 
           <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
-            <div className="createUser-popUp-container">
-              <BsCheckCircle className="Check-Cirkle-icon" size={65} />
+            <div className="createUser-popup-container">
+              <BsCheckCircle className="check-cirkle-icon" size={65} />
 
-              <div className="createUser-popUp-headline">
+              <div className="createUser-popup-headline">
                 <p> Congrats!</p>
               </div>
-              <div className="createUser-popUp-text">
+              <div className="createUser-popup-text">
                 <p> Your account has been created successfully! </p>
               </div>
             </div>

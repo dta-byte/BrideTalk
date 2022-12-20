@@ -1,21 +1,18 @@
 .carousel {
-    overflow: hidden;
-
+  overflow: hidden;
 }
 
-.inner {
-    white-space: nowrap;
-    transition: transform 0.3s;
-   
+.inner-carousel {
+  white-space: nowrap;
+  transition: transform 0.3s;
 }
 
-.indicators {
-    display: flex;
-    gap: 50px;
-    justify-content: center;
+.indicators-arrows {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
 }
 
-.indicators > button {
-    margin: 5px;
+.indicators-arrows > button {
+  margin: 5px;
 }
-

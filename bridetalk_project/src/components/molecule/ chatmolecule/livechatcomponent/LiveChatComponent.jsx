@@ -6,20 +6,22 @@ import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessage } from "../../../../services/parse-functions/_MessageRequest";
 import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
-export const LiveChatComponent = () => {
-  const { currentReciever } = useChatContext();
-  const { recieverId, recieverUsername } = currentReciever;
 
-  const { id: senderUserId } = Parse.User.current();
-  const currentUser = Parse.User.current();
+export const LiveChatComponent = () => {
   // State variable to hold message text input
   const [messageInput, setMessageInput] = useState(null);
+  // Gets the current receiver
+  const { currentReciever } = useChatContext();
+  const { recieverId, recieverUsername } = currentReciever;
+  const { id: senderUserId } = Parse.User.current();
 
   // Create parse query for live querying using useParseQuery hook
   const parseQuery = new Parse.Query("Message");
+
   // Get messages that involve both Users
   parseQuery.containedIn("senderObject", [senderUserId, recieverId]);
   parseQuery.containedIn("receiver", [senderUserId, recieverId]);
+  
   // Set results ordering
   parseQuery.ascending("createdAt");
 
@@ -39,6 +41,7 @@ export const LiveChatComponent = () => {
     setMessageInput(null);
   };
 
+
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
@@ -49,7 +52,7 @@ export const LiveChatComponent = () => {
         {!recieverUsername && (
           <div className="livechat-headline">Start a chat with someone!</div>
         )}
-        <div className="livechat-line" />
+        <div className="livechat-line"/>
       </div>
 
       <div className="for-scroll">

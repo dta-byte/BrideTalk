@@ -25,16 +25,15 @@ export const addThread = async (currentUser, receiver, chatname) => {
 export const getUserThreadsQuery = async () => {
 
   try {
-
     const result = {
       sender: [],
       receiver: []
     }
     
-    // STEP 1: Get all threads where the user is the sender
+    //Get all threads where the user is the sender
     result.sender = await getThreadObject("sender");
 
-    // STEP 2: Get all threads where the user is the receiver
+    // Get all threads where the user is the receiver
     result.receiver = await getThreadObject("receiver");
 
     return result.sender.concat(result.receiver)
@@ -51,19 +50,15 @@ const getThreadObject = async (queryParam) => {
 
     const threadObjects = new Parse.Query('Threads');
     const currentUser = Parse.User.current();
-
     const threadArr = [];
 
-
-    // STEP 1: Get all threads where user is the sender
     threadObjects.equalTo(queryParam, currentUser)
-
     const threadResults = await threadObjects.findAll();
 
+    // For later use: Should proabably take a chatname
     threadResults.map((object => {
       const sender = object.get('sender');
       const receiver = object.get('receiver');
-
 
       threadArr.push({
         thread: object,
@@ -72,9 +67,7 @@ const getThreadObject = async (queryParam) => {
       })
     })
     )
-
     return threadArr;
-
   } catch (error) {
     throw error
   }

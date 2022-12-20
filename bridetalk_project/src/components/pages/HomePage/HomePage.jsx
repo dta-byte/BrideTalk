@@ -4,22 +4,13 @@ import { CarouselItem } from "../../atoms";
 import carouselHair from ".//homepage_images/Hair.png";
 import carouselPhotographer from ".//homepage_images/Photographer.png";
 import carouselVenue from ".//homepage_images/Venue.jpg";
-// import { useHistory } from "react-router-dom";
-// import { useState, useEffect } from "react";
 import Parse from "parse";
-
 import "./homepage.css";
-// import { ChatSetup } from "../Chat/ChatSetUp";
 
 export const HomePage = () => {
   let navigate = useNavigate();
 
-  const navigateTo = (path) => {
-    navigate(path);
-  };
-
   const currentuser = Parse.User.current();
-
   return (
     <>
       {/* Container starts*/}
@@ -35,7 +26,7 @@ export const HomePage = () => {
               <div className="buttons-container">
                 <button
                   className="login-button"
-                  onClick={() => navigateTo("/login")}
+                  onClick={() => navigate("/login")}
                 >
                   {" "}
                   Log in
@@ -43,7 +34,7 @@ export const HomePage = () => {
 
                 <button
                   className="signin-button"
-                  onClick={() => navigateTo("/sign-up")}
+                  onClick={() => navigate("/sign-up")}
                 >
                   {" "}
                   Sign up
@@ -59,7 +50,7 @@ export const HomePage = () => {
               </div>
               <button
                 className="gotochat-button"
-                onClick={() => navigateTo("/chat")}
+                onClick={() => navigate("/chat")}
               >
                 {" "}
                 My chats
@@ -82,7 +73,6 @@ export const HomePage = () => {
             <CarouselItem image={carouselVenue}></CarouselItem>
           </Carousel>
         </div>
-
         {/* Container ends */}
       </div>
     </>
