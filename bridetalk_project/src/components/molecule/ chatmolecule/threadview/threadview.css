@@ -1,6 +1,6 @@
 .flexbox-treadview-top {
   display: flex;
-} 
+}
 
 .thread-headline {
   font: var(--inter-1);
@@ -32,7 +32,20 @@
   position: absolute;
 }
 
-.buttons-newthread-dropdown{
+.buttons-newthread-dropdown {
   display: flex;
   gap: 6px;
+}
+.thread-popUp-created {
+  font: var(--inter-normal-text);
+  text-align: center;
+}
+
+.thread-popUp-error {
+  font: var(--inter-buttons);
+  text-align: center;
+}
+
+.Check-Cirkle-icon-tread {
+  color: var(--global-green);
 }
