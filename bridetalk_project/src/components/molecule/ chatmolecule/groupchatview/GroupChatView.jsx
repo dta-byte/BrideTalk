@@ -1,6 +1,6 @@
 import Parse from "parse";
 import { useParseQuery } from "@parse/react";
-import { MessageBoxComponent } from "../../../atoms";
+import { GroupMessageBoxComponent } from "../../../atoms";
 import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessageToAllUsers } from "../../../../services/parse-functions/_MessageRequest";
@@ -10,40 +10,33 @@ import { useLocation } from "react-router-dom";
 export const GroupChatView = (props) => {
   const location = useLocation();
   const theme = location.state.theme;
-  const currentUser = Parse.User.current();
-  const senderusername = currentUser.getUsername();
-  const { id: senderUserId } = Parse.User.current();
-  // State variable to hold message text input
-  const [messageInput, setMessageInput] = useState(null);
+  // const currentUser = location.state.user;
+  const senderusername = location.state.username;
+
+  const [messageInput, setMessageInput] = useState("");
 
   // Create parse query for live querying using useParseQuery hook
-  const parseQuery = new Parse.Query("PublicGroupChat");
-  // Get messages that involve both Users
-  parseQuery.containedIn("Theme", theme);
-  //   parseQuery.containedIn("senderName", senderusername);
+  const parseQueryPublic = new Parse.Query("PublicGroupChat");
 
-  // Set results ordering
-  parseQuery.ascending("createdAt");
+  parseQueryPublic.ascending("createdAt");
 
   // Include User fields, to enable name getting on list
-  parseQuery.includeAll();
+  parseQueryPublic.includeAll();
 
   // Declare hook and variables to hold hook responses
-  const { results } = useParseQuery(parseQuery, {
+  const { results } = useParseQuery(parseQueryPublic, {
     enableLocalDatastore: true, // Enables cache in local datastore (default: true)
     enableLiveQuery: true, // Enables live query for real-time update (default: true)
   });
 
-  console.log("are there any results?");
-  console.log(results);
   // Message sender handler
   const sendMessage = async () => {
     console.log("sendMessage to all clicked");
-    addMessageToAllUsers(messageInput, senderusername);
+    addMessageToAllUsers(messageInput, senderusername, theme);
     console.log(messageInput);
-    setMessageInput(null);
+    setMessageInput("");
   };
-  console.log(theme);
+
   return (
     <div className="flexbox-container-livechat">
       <div className="flexchild1-livechat">
@@ -56,12 +49,16 @@ export const GroupChatView = (props) => {
           <div className="flexchild2-livechat">
             {results
               .sort((a, b) => a.get("createdAt") > b.get("createdAt"))
-              .map((result) => (
-                <MessageBoxComponent
-                  result={result}
-                  senderUserId={senderUserId}
-                />
-              ))}
+              .map((result) =>
+                result.get("Theme") === theme ? (
+                  <GroupMessageBoxComponent
+                    result={result}
+                    senderusername={senderusername}
+                  />
+                ) : (
+                  ""
+                )
+              )}
           </div>
         )}
       </div>

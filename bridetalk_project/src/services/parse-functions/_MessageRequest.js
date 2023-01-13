@@ -22,20 +22,33 @@ export const addMessage = async (messageInput, recieverId, senderUserObject) => 
   }
 };
 
-export const addMessageToAllUsers = async (messageInput, senderUserObject) => {
-  try {
-    const messageText = messageInput;
-    senderUserObject = Parse.User.current();
+// export const addMessageToAllUsers = async (messageInput, senderUserObject) => {
+//   try {
+//     const messageText = messageInput;
+//     senderUserObject = Parse.User.current();
 
-    // Create new Message object and save it
-    const Theme = new Parse.Object("Theme");
-    Theme.set("Message", messageText);
-    Theme.set("senderObject", senderUserObject);
-    Theme.save();
+//     // Create new Message object and save it
+//     const Theme = new Parse.Object("Theme");
+//     Theme.set("Message", messageText);
+//     Theme.set("senderObject", senderUserObject);
+//     Theme.save();
+//   } catch (error) {
+//     throw error;
+//   }
+// };
+
+export const addMessageToAllUsers = async (messageInput, senderUsername, theme) =>{
+  try {
+    const myNewObject = new Parse.Object('PublicGroupChat');
+    myNewObject.set('Message', messageInput);
+    myNewObject.set('senderName', senderUsername);
+    myNewObject.set('Theme', theme);
+    const result = await myNewObject.save();
+    console.log('Group message added at', result)
   } catch (error) {
     throw error;
   }
-};
+}
 
 
 

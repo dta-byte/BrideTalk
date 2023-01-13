@@ -1,16 +1,18 @@
 import "./groupthemebox.css";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Parse from "parse";
 
 export const GroupThemeBox = (props) => {
   const { text } = props;
-
+  const currentUser = Parse.User.current();
+  const username = currentUser.getUsername();
   const [active, setActive] = useState(false);
 
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/group-chat", { state: { theme: text } });
+    navigate("/group-chat", { state: { theme: text, username: username } });
     console.log("navigated with " + text);
   };
 

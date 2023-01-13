@@ -9,7 +9,7 @@ export const MessageBoxComponent = (props) => {
         key={result.id}
         // Dynamic class names
         className={
-          result.get('senderObject').id === senderUserId
+          result.get("senderObject").id === senderUserId
             ? "message_sent"
             : "message_received"
         }
@@ -17,6 +17,5 @@ export const MessageBoxComponent = (props) => {
         <p>{result.get("text")}</p>
       </div>
     </div>
-  )
+  );
 };
-
