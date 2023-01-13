@@ -1,13 +1,17 @@
 import "./groupthemebox.css";
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export const GroupThemeBox = (props) => {
   const { text } = props;
 
   const [active, setActive] = useState(false);
 
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    setActive(!active);
+    navigate("/group-chat", { state: { theme: text } });
+    console.log("navigated with " + text);
   };
 
   return (
@@ -31,3 +35,4 @@ export const GroupThemeBox = (props) => {
     </div>
   );
 };
+export default GroupThemeBox;
