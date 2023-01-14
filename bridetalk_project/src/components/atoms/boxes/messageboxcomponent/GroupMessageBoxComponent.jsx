@@ -16,7 +16,7 @@ export const GroupMessageBoxComponent = (props) => {
             : "message_received"
         }
       >
-        <div>{result.get("senderName")}</div>
+        <div className="senderName-group">{result.get("senderName")}</div>
         <p>{result.get("Message")}</p>
       </div>
     </div>

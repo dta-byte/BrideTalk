@@ -22,3 +22,8 @@
   border-radius: 18px;
   margin-top: 5px;
 }
+
+.senderName-group {
+  font: var(--inter-buttons);
+  padding-top: 15px;
+}
