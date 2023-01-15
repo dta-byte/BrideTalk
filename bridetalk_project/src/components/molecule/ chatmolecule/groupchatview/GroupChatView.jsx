@@ -1,7 +1,7 @@
 import Parse from "parse";
 import { useNavigate } from "react-router-dom";
 import { useParseQuery } from "@parse/react";
-import { Button, GroupMessageBoxComponent } from "../../../atoms";
+import { GroupMessageBoxComponent } from "../../../atoms";
 import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessageToAllUsers } from "../../../../services/parse-functions/_MessageRequest";
@@ -34,7 +34,6 @@ export const GroupChatView = (props) => {
 
   // Message sender handler
   const sendMessage = async () => {
-    console.log("sendMessage to all clicked");
     addMessageToAllUsers(messageInput, senderusername, theme);
     console.log(messageInput);
     setMessageInput("");
@@ -47,14 +46,11 @@ export const GroupChatView = (props) => {
         <IoIosArrowRoundBack className="button-goback-group"
           color={"var(--global-black-1)"}
           size={50}
-
           onClick={() => navigate(-1)}
         />
         {theme && <div className="livechatforgroup-headline">{theme}</div>}
       </div>
       <div className="groupchat-line" />
-      {/* </div> */}
-
 
       <div className="for-scroll-group">
         {results && (
