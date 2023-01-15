@@ -1,0 +1,67 @@
+.flexbox-container-groupchatpage{
+    margin: 4% 3%; 
+    background-color: var(--global-primary-5);
+    height: 100%;
+    max-height: 529px;
+    min-height: 529px;
+    border-radius: 18px;
+    overflow-y: auto;
+}
+.button-goback-group{
+    /* display:flex;
+    flex-direction: column; */
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.flexchild1-headline-group{
+    flex-grow: 0;
+    margin-bottom: auto;
+    display:flex;
+    flex-direction: row;
+}
+
+.livechatforgroup-headline{
+    font: var(--inter-1);
+    color: var(--global-black-2);
+    margin-left: 2%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.groupchat-line{
+    height: 1.5px;
+    background-color: var(--global-black-3);
+    justify-content: center;
+}
+
+.flexchild2-groupchat{
+    flex-grow: 3;
+    padding-bottom: 2px;
+
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.for-scroll-group{
+    overflow-y: auto;
+
+}
+
+.flexchild3-groupchat{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%;
+}
+
+.flexgrandchild1-messagetextinput-g {
+    width: 100%;
+    margin-left: 10px;
+  }
+  
+  .flexgrandchild2-sendmessage-icon-g {
+    flex-grow: 2;
+    margin-left: 25px;
+    margin-right: 28px;
+  }

@@ -80,6 +80,6 @@
   outline-color: var(--global-primary-1) !important;
 }
 
-.for-scroll {
+.for-scroll-group{
   overflow-y: auto;
 }

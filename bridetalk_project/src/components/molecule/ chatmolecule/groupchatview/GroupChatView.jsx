@@ -1,13 +1,16 @@
 import Parse from "parse";
+import { useNavigate } from "react-router-dom";
 import { useParseQuery } from "@parse/react";
-import { GroupMessageBoxComponent } from "../../../atoms";
+import { Button, GroupMessageBoxComponent } from "../../../atoms";
 import { useState } from "react";
 import { FiSend } from "react-icons/fi";
 import { addMessageToAllUsers } from "../../../../services/parse-functions/_MessageRequest";
-import { useChatContext } from "../../../pages/Chat/mainchatpagecomponent/MainChatPageProvider";
 import { useLocation } from "react-router-dom";
+import "./groupchatview.css";
+import { IoIosArrowRoundBack } from "react-icons/io"
 
 export const GroupChatView = (props) => {
+  let navigate = useNavigate();
   const location = useLocation();
   const theme = location.state.theme;
   // const currentUser = location.state.user;
@@ -38,15 +41,24 @@ export const GroupChatView = (props) => {
   };
 
   return (
-    <div className="flexbox-container-livechat">
-      <div className="flexchild1-livechat">
-        {theme && <div className="livechat-headline">{theme}</div>}
-        <div className="livechat-line" />
-      </div>
+    <div className="flexbox-container-groupchatpage">
 
-      <div className="for-scroll">
+      <div className="flexchild1-headline-group">
+        <IoIosArrowRoundBack className="button-goback-group"
+          color={"var(--global-black-1)"}
+          size={50}
+
+          onClick={() => navigate(-1)}
+        />
+        {theme && <div className="livechatforgroup-headline">{theme}</div>}
+      </div>
+      <div className="groupchat-line" />
+      {/* </div> */}
+
+
+      <div className="for-scroll-group">
         {results && (
-          <div className="flexchild2-livechat">
+          <div className="flexchild2-groupchat">
             {results
               .sort((a, b) => a.get("createdAt") > b.get("createdAt"))
               .map((result) =>
@@ -63,8 +75,8 @@ export const GroupChatView = (props) => {
         )}
       </div>
 
-      <div className="flexchild3-livechat">
-        <div className="flexgrandchild1-messagetextinput">
+      <div className="flexchild3-groupchat">
+        <div className="flexgrandchild1-messagetextinput-g">
           <textarea
             className="messagetextinput"
             type="text"
@@ -72,7 +84,7 @@ export const GroupChatView = (props) => {
             onChange={(event) => setMessageInput(event.target.value)}
           ></textarea>
         </div>
-        <div className="flexgrandchild2-sendmessage-icon">
+        <div className="flexgrandchild2-sendmessage-icon-g">
           <FiSend
             className="sendmessage-icon"
             size={25}
@@ -82,6 +94,6 @@ export const GroupChatView = (props) => {
       </div>
     </div>
   );
-  return <div> Cuurently in construction</div>;
+
 };
-export default GroupChatView;
+
